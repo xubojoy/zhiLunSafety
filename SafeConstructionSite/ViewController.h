@@ -10,6 +10,10 @@
 
 @interface ViewController : UIViewController
 
+@property (nonatomic, strong) UILabel *nameLabel;
+@property (nonatomic, strong) UITextField *nameText;
+@property (nonatomic, strong) UIButton *loginBtn;
+
 
 @end
 

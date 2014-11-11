@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>safetyCheck</key>
+		<array>
+			<dict>
+				<key>intro</key>
+				<string>建设单位安全生产费用提取及使用符合国家行业相关要求。</string>
+				<key>score</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>intro</key>
+				<string>建设、监理、施工单位三方签订安全生产管理协议，明确各方安全职责。</string>
+				<key>score</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>intro</key>
+				<string>建设单位设置安全生产管理部门。</string>
+				<key>score</key>
+				<string></string>
+			</dict>
+            <dict>
+                <key>intro</key>
+                <string>施工单位安全生产许可证有效。</string>
+                <key>score</key>
+                <string></string>
+            </dict>
+            <dict>
+                <key>intro</key>
+                <string>施工单位安全管理人员持“三类人员”考核培训合格证书上岗，进场“三类人员”资格、实际岗位与合同文件或变更文件对应。</string>
+                <key>score</key>
+                <string></string>
+            </dict>
+            <dict>
+                <key>intro</key>
+                <string>已进场的特种作业人员操作资格证书有效，与相应工作对应。</string>
+                <key>score</key>
+                <string></string>
+            </dict>
+		</array>
+    </dict>
+</array>
+</plist>

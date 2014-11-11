@@ -14,6 +14,21 @@
 		A85A1D341A104AED007AA77D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A85A1D331A104AED007AA77D /* Images.xcassets */; };
 		A85A1D371A104AED007AA77D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A85A1D351A104AED007AA77D /* LaunchScreen.xib */; };
 		A85A1D431A104AED007AA77D /* SafeConstructionSiteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A85A1D421A104AED007AA77D /* SafeConstructionSiteTests.m */; };
+		A85A1D4D1A104C8D007AA77D /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A85A1D4C1A104C8D007AA77D /* CoreFoundation.framework */; };
+		A85A1D4F1A104C95007AA77D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A85A1D4E1A104C95007AA77D /* Foundation.framework */; };
+		A85A1D531A104D59007AA77D /* SafetyCheckController.m in Sources */ = {isa = PBXBuildFile; fileRef = A85A1D511A104D59007AA77D /* SafetyCheckController.m */; };
+		A85A1D541A104D59007AA77D /* SafetyCheckController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A85A1D521A104D59007AA77D /* SafetyCheckController.xib */; };
+		A85A1D561A104DC6007AA77D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A85A1D551A104DC6007AA77D /* Default-568h@2x.png */; };
+		A85A1D5D1A105757007AA77D /* BasicManageController.m in Sources */ = {isa = PBXBuildFile; fileRef = A85A1D5B1A105757007AA77D /* BasicManageController.m */; };
+		A85A1D5E1A105757007AA77D /* BasicManageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A85A1D5C1A105757007AA77D /* BasicManageController.xib */; };
+		A85A1D621A1057EA007AA77D /* LocaleController.m in Sources */ = {isa = PBXBuildFile; fileRef = A85A1D601A1057EA007AA77D /* LocaleController.m */; };
+		A85A1D631A1057EA007AA77D /* LocaleController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A85A1D611A1057EA007AA77D /* LocaleController.xib */; };
+		A85A1D671A105F03007AA77D /* SafetyCheckCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A85A1D651A105F03007AA77D /* SafetyCheckCell.m */; };
+		A85A1D681A105F03007AA77D /* SafetyCheckCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A85A1D661A105F03007AA77D /* SafetyCheckCell.xib */; };
+		A85A1D8D1A10AB97007AA77D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A85A1D8C1A10AB97007AA77D /* UIKit.framework */; };
+		A85A1D8F1A10ABA8007AA77D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A85A1D8E1A10ABA8007AA77D /* CoreGraphics.framework */; };
+		A88A8EBD1A10C12D00A0F417 /* NIDropDown.m in Sources */ = {isa = PBXBuildFile; fileRef = A88A8EBC1A10C12D00A0F417 /* NIDropDown.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A88A8EC11A11BA3700A0F417 /* SafetyCheck.plist in Resources */ = {isa = PBXBuildFile; fileRef = A88A8EC01A11BA3700A0F417 /* SafetyCheck.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +55,28 @@
 		A85A1D3C1A104AED007AA77D /* SafeConstructionSiteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SafeConstructionSiteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A85A1D411A104AED007AA77D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A85A1D421A104AED007AA77D /* SafeConstructionSiteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SafeConstructionSiteTests.m; sourceTree = "<group>"; };
+		A85A1D4C1A104C8D007AA77D /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		A85A1D4E1A104C95007AA77D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A85A1D501A104D59007AA77D /* SafetyCheckController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SafetyCheckController.h; sourceTree = "<group>"; };
+		A85A1D511A104D59007AA77D /* SafetyCheckController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SafetyCheckController.m; sourceTree = "<group>"; };
+		A85A1D521A104D59007AA77D /* SafetyCheckController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SafetyCheckController.xib; sourceTree = "<group>"; };
+		A85A1D551A104DC6007AA77D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		A85A1D5A1A105757007AA77D /* BasicManageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicManageController.h; sourceTree = "<group>"; };
+		A85A1D5B1A105757007AA77D /* BasicManageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicManageController.m; sourceTree = "<group>"; };
+		A85A1D5C1A105757007AA77D /* BasicManageController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BasicManageController.xib; sourceTree = "<group>"; };
+		A85A1D5F1A1057EA007AA77D /* LocaleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocaleController.h; sourceTree = "<group>"; };
+		A85A1D601A1057EA007AA77D /* LocaleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocaleController.m; sourceTree = "<group>"; };
+		A85A1D611A1057EA007AA77D /* LocaleController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocaleController.xib; sourceTree = "<group>"; };
+		A85A1D641A105F03007AA77D /* SafetyCheckCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SafetyCheckCell.h; sourceTree = "<group>"; };
+		A85A1D651A105F03007AA77D /* SafetyCheckCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SafetyCheckCell.m; sourceTree = "<group>"; };
+		A85A1D661A105F03007AA77D /* SafetyCheckCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SafetyCheckCell.xib; sourceTree = "<group>"; };
+		A85A1D8C1A10AB97007AA77D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		A85A1D8E1A10ABA8007AA77D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A88A8EBB1A10C12D00A0F417 /* NIDropDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NIDropDown.h; sourceTree = "<group>"; };
+		A88A8EBC1A10C12D00A0F417 /* NIDropDown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NIDropDown.m; sourceTree = "<group>"; };
+		A88A8EBE1A1196C400A0F417 /* SafeConstructionSite-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SafeConstructionSite-Prefix.pch"; sourceTree = "<group>"; };
+		A88A8EBF1A11A12800A0F417 /* Macro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Macro.h; sourceTree = "<group>"; };
+		A88A8EC01A11BA3700A0F417 /* SafetyCheck.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SafetyCheck.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +84,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A85A1D8F1A10ABA8007AA77D /* CoreGraphics.framework in Frameworks */,
+				A85A1D8D1A10AB97007AA77D /* UIKit.framework in Frameworks */,
+				A85A1D4F1A104C95007AA77D /* Foundation.framework in Frameworks */,
+				A85A1D4D1A104C8D007AA77D /* CoreFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +104,8 @@
 		A85A1D1A1A104AED007AA77D = {
 			isa = PBXGroup;
 			children = (
+				A85A1D8E1A10ABA8007AA77D /* CoreGraphics.framework */,
+				A85A1D8C1A10AB97007AA77D /* UIKit.framework */,
 				A85A1D251A104AED007AA77D /* SafeConstructionSite */,
 				A85A1D3F1A104AED007AA77D /* SafeConstructionSiteTests */,
 				A85A1D241A104AED007AA77D /* Products */,
@@ -81,13 +124,29 @@
 		A85A1D251A104AED007AA77D /* SafeConstructionSite */ = {
 			isa = PBXGroup;
 			children = (
+				A88A8EBF1A11A12800A0F417 /* Macro.h */,
 				A85A1D2A1A104AED007AA77D /* AppDelegate.h */,
 				A85A1D2B1A104AED007AA77D /* AppDelegate.m */,
 				A85A1D2D1A104AED007AA77D /* ViewController.h */,
 				A85A1D2E1A104AED007AA77D /* ViewController.m */,
+				A85A1D501A104D59007AA77D /* SafetyCheckController.h */,
+				A85A1D511A104D59007AA77D /* SafetyCheckController.m */,
+				A85A1D521A104D59007AA77D /* SafetyCheckController.xib */,
+				A85A1D641A105F03007AA77D /* SafetyCheckCell.h */,
+				A85A1D651A105F03007AA77D /* SafetyCheckCell.m */,
+				A85A1D661A105F03007AA77D /* SafetyCheckCell.xib */,
+				A88A8EBB1A10C12D00A0F417 /* NIDropDown.h */,
+				A88A8EBC1A10C12D00A0F417 /* NIDropDown.m */,
+				A85A1D5A1A105757007AA77D /* BasicManageController.h */,
+				A85A1D5B1A105757007AA77D /* BasicManageController.m */,
+				A85A1D5C1A105757007AA77D /* BasicManageController.xib */,
+				A85A1D5F1A1057EA007AA77D /* LocaleController.h */,
+				A85A1D601A1057EA007AA77D /* LocaleController.m */,
+				A85A1D611A1057EA007AA77D /* LocaleController.xib */,
 				A85A1D301A104AED007AA77D /* Main.storyboard */,
 				A85A1D331A104AED007AA77D /* Images.xcassets */,
 				A85A1D351A104AED007AA77D /* LaunchScreen.xib */,
+				A85A1D761A108D22007AA77D /* resource */,
 				A85A1D261A104AED007AA77D /* Supporting Files */,
 			);
 			path = SafeConstructionSite;
@@ -96,8 +155,11 @@
 		A85A1D261A104AED007AA77D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A88A8EC01A11BA3700A0F417 /* SafetyCheck.plist */,
+				A85A1D551A104DC6007AA77D /* Default-568h@2x.png */,
 				A85A1D271A104AED007AA77D /* Info.plist */,
 				A85A1D281A104AED007AA77D /* main.m */,
+				A88A8EBE1A1196C400A0F417 /* SafeConstructionSite-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -105,6 +167,8 @@
 		A85A1D3F1A104AED007AA77D /* SafeConstructionSiteTests */ = {
 			isa = PBXGroup;
 			children = (
+				A85A1D4E1A104C95007AA77D /* Foundation.framework */,
+				A85A1D4C1A104C8D007AA77D /* CoreFoundation.framework */,
 				A85A1D421A104AED007AA77D /* SafeConstructionSiteTests.m */,
 				A85A1D401A104AED007AA77D /* Supporting Files */,
 			);
@@ -117,6 +181,13 @@
 				A85A1D411A104AED007AA77D /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A85A1D761A108D22007AA77D /* resource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,8 +271,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				A85A1D321A104AED007AA77D /* Main.storyboard in Resources */,
+				A85A1D5E1A105757007AA77D /* BasicManageController.xib in Resources */,
+				A85A1D631A1057EA007AA77D /* LocaleController.xib in Resources */,
+				A85A1D541A104D59007AA77D /* SafetyCheckController.xib in Resources */,
 				A85A1D371A104AED007AA77D /* LaunchScreen.xib in Resources */,
+				A85A1D561A104DC6007AA77D /* Default-568h@2x.png in Resources */,
+				A85A1D681A105F03007AA77D /* SafetyCheckCell.xib in Resources */,
 				A85A1D341A104AED007AA77D /* Images.xcassets in Resources */,
+				A88A8EC11A11BA3700A0F417 /* SafetyCheck.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,7 +296,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A85A1D671A105F03007AA77D /* SafetyCheckCell.m in Sources */,
 				A85A1D2F1A104AED007AA77D /* ViewController.m in Sources */,
+				A85A1D5D1A105757007AA77D /* BasicManageController.m in Sources */,
+				A85A1D531A104D59007AA77D /* SafetyCheckController.m in Sources */,
+				A88A8EBD1A10C12D00A0F417 /* NIDropDown.m in Sources */,
+				A85A1D621A1057EA007AA77D /* LocaleController.m in Sources */,
 				A85A1D2C1A104AED007AA77D /* AppDelegate.m in Sources */,
 				A85A1D291A104AED007AA77D /* main.m in Sources */,
 			);
@@ -412,6 +494,7 @@
 				A85A1D481A104AED007AA77D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A85A1D491A104AED007AA77D /* Build configuration list for PBXNativeTarget "SafeConstructionSiteTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +503,7 @@
 				A85A1D4B1A104AED007AA77D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
