@@ -65,10 +65,11 @@
 //    [self.loginBtn addTarget:self action:@selector(btnClick) forControlEvents:UIControlEventTouchUpInside];
 //    [self.loginBtn setTitle:@"登陆" forState:UIControlStateNormal];
 //    [self.view addSubview:self.loginBtn];
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(20, 120, 238, self.view.frame.size.height-150) style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(20, 120, 238, self.view.frame.size.height-150) style:UITableViewStyleGrouped];
     self.tableView.backgroundColor = [UIColor clearColor];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:self.tableView];
 
 
@@ -79,7 +80,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 10;
+    return 0;
 }
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
@@ -96,13 +97,31 @@
     // 设置btn中的imageview超出部分不剪切
     titleBtn.imageView.clipsToBounds = NO;
     titleBtn.imageView.transform = CGAffineTransformMakeRotation(M_PI_2);
-
+    titleBtn.tag = section;
     titleBtn.titleEdgeInsets = UIEdgeInsetsMake(0, -5, 0, 130);
     titleBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 200, 0, 10);
+    [titleBtn addTarget:self action:@selector(titleBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     [view addSubview:titleBtn];
     
     return view;
 
+}
+
+-(void)titleBtnClick:(UIButton *)sender{
+    NSArray * arr = [[NSArray alloc] init];
+    arr = [NSArray arrayWithObjects:@"1分", @"2分", @"3分", @"4分", @"5分",nil];
+    if(dropDown == nil) {
+        CGFloat f = 200;
+        dropDown = [[NIDropDown alloc] showDropDown:sender :&f :arr :sender.tag];
+        dropDown.delegate = self;
+    }
+    else {
+        [dropDown hideDropDown:sender];
+        [self rel];
+    }
+}
+-(void)rel{
+    dropDown = nil;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{

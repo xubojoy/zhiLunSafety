@@ -7,15 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NIDropDown.h"
+@interface LeftViewController : UIViewController<UITableViewDelegate, UITableViewDataSource,NIDropDownDelegate>
+{
+    NIDropDown *dropDown;
+}
 
-@interface LeftViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UILabel *nameLabel;
 @property (nonatomic, strong) UILabel *departmentLabel;
 @property (nonatomic, strong) UIImageView *userImageView;
 @property (strong, nonatomic) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *projectArray;
-
+@property (nonatomic, strong) NIDropDown *scoreView;
 
 @property (nonatomic, strong) UITextField *nameText;
 @property (nonatomic, strong) UIButton *loginBtn;

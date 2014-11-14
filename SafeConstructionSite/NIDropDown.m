@@ -22,34 +22,24 @@
 @synthesize list;
 @synthesize delegate;
 
-- (id)showDropDown:(UIButton *)b:(CGFloat *)height:(NSArray *)arr {
+- (id)showDropDown:(UIButton *)b:(CGFloat *)height:(NSArray *)arr:(NSInteger)tag {
     btnSender = b;
     self = [super init];
     if (self) {
         // Initialization code
-        
+        NSLog(@">>>>>>>>>>>>>tag:%ld",tag);
         CGRect btn = b.superview.superview.frame;
         
-        self.frame = CGRectMake(230, btn.origin.y+btn.size.height, 100, 0);
+        self.frame = CGRectMake(100, btn.origin.y+40+40*tag, 100, 0);
         self.list = [NSArray arrayWithArray:arr];
-//        self.layer.masksToBounds = NO;
-//        self.layer.cornerRadius = 8;
-//        self.layer.shadowOffset = CGSizeMake(-5, 5);
-//        self.layer.shadowRadius = 5;
-//        self.layer.shadowOpacity = 0.5;
         self.backgroundColor = [UIColor whiteColor];
         
         table = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, 0)];
         table.delegate = self;
         table.dataSource = self;
-//        table.layer.cornerRadius = 5;
-//        table.backgroundColor = [UIColor colorWithRed:0.239 green:0.239 blue:0.239 alpha:1];
         table.separatorStyle = UITableViewCellSeparatorStyleNone;
-//        table.separatorColor = [UIColor grayColor];
-    
-        
         [UIView animateWithDuration:0.5 animations:^{
-            self.frame = CGRectMake(230, btn.origin.y+btn.size.height, 100, *height);
+            self.frame = CGRectMake(100, btn.origin.y+40+40*tag, 100, *height);
             table.frame = CGRectMake(0, 0, self.frame.size.width, *height);
         }];
         if (IOS_7) {
@@ -66,7 +56,7 @@
 -(void)hideDropDown:(UIButton *)b {
     CGRect btn = b.superview.superview.frame;
     [UIView animateWithDuration:0.5 animations:^{
-        self.frame = CGRectMake(230, btn.origin.y+btn.size.height, 100, 0);
+        self.frame = CGRectMake(100, btn.origin.y+40+40*b.tag, 100, 0);
         table.frame = CGRectMake(0, 0, self.frame.size.width, 0);
     }];
 }
@@ -106,8 +96,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self hideDropDown:btnSender];
-    UITableViewCell *c = [tableView cellForRowAtIndexPath:indexPath];
-    [btnSender setTitle:c.textLabel.text forState:UIControlStateNormal];
+//    UITableViewCell *c = [tableView cellForRowAtIndexPath:indexPath];
+//    [btnSender setTitle:c.textLabel.text forState:UIControlStateNormal];
     [self myDelegate];
 }
 
