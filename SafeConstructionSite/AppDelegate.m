@@ -41,10 +41,6 @@
     UINavigationController *naviC = [[UINavigationController alloc] initWithRootViewController:[SliderViewController sharedSliderController]];
     naviC.navigationBar.hidden = YES;
     self.window.rootViewController = naviC;
-    
-//    self.viewController=(ViewController *)self.window.rootViewController;
-//    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:self.viewController];
-//    self.window.rootViewController = nav;
     return YES;
 }
 
