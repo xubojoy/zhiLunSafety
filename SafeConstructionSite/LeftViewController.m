@@ -10,6 +10,8 @@
 #import "SafetyCheckController.h"
 #import "BasicManageController.h"
 #import "LocaleController.h"
+#import "Macro.h"
+#import "SafetyCheckCell.h"
 @interface LeftViewController ()
 
 @end
@@ -19,21 +21,109 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.view.backgroundColor = [UIColor whiteColor];
-    self.nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 200, 150, 30 )];
-    self.nameLabel.text = @"用户名：";
+    self.view.backgroundColor = RGBACOLOR(23, 48, 106, 1);
+    self.projectArray = [[NSMutableArray alloc] initWithObjects:@"工程项目A",@"工程项目B",@"工程项目C", nil];
+    [self initUserInfo];
+    [self initTable];
+}
+
+-(void)initUserInfo{
+    self.userImageView = [[UIImageView alloc] initWithFrame:CGRectMake(40, 40, 60, 60)];
+    self.userImageView.backgroundColor = [UIColor purpleColor];
+    
+    CALayer *layer = self.userImageView.layer;
+    [layer setMasksToBounds:YES];
+    [layer setCornerRadius:self.userImageView.frame.size.width/2];
+    [layer setBorderWidth:2.0f];
+    [layer setBorderColor:[UIColor whiteColor].CGColor];
+    [self.view addSubview:self.userImageView];
+    
+    self.departmentLabel = [[UILabel alloc] initWithFrame:CGRectMake(120, 40, 150, 30 )];
+    self.departmentLabel.text = @"建设单位";
+    self.departmentLabel.textColor = [UIColor whiteColor];
+    self.departmentLabel.font = [UIFont systemFontOfSize:18];
+    [self.view addSubview:self.departmentLabel];
+    
+    self.nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(120, 70, 150, 30 )];
+    self.nameLabel.text = @"用户名：张先生";
+    self.nameLabel.textColor = [UIColor whiteColor];
+    self.nameLabel.font = [UIFont systemFontOfSize:15];
     [self.view addSubview:self.nameLabel];
     
-    self.nameText = [[UITextField alloc] initWithFrame:CGRectMake(100, 200, 150, 30)];
-    self.nameText.backgroundColor = [UIColor purpleColor];
-    [self.view addSubview:self.nameText];
+}
+
+-(void)initTable{
     
-    self.loginBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    self.loginBtn.frame = CGRectMake(100, 260, 100, 50);
-    self.loginBtn.backgroundColor = [UIColor redColor];
-    [self.loginBtn addTarget:self action:@selector(btnClick) forControlEvents:UIControlEventTouchUpInside];
-    [self.loginBtn setTitle:@"登陆" forState:UIControlStateNormal];
-    [self.view addSubview:self.loginBtn];
+    
+//    self.nameText = [[UITextField alloc] initWithFrame:CGRectMake(100, 200, 150, 30)];
+//    self.nameText.backgroundColor = [UIColor purpleColor];
+//    [self.view addSubview:self.nameText];
+//    
+//    self.loginBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+//    self.loginBtn.frame = CGRectMake(100, 260, 100, 50);
+//    self.loginBtn.backgroundColor = [UIColor redColor];
+//    [self.loginBtn addTarget:self action:@selector(btnClick) forControlEvents:UIControlEventTouchUpInside];
+//    [self.loginBtn setTitle:@"登陆" forState:UIControlStateNormal];
+//    [self.view addSubview:self.loginBtn];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(20, 120, 238, self.view.frame.size.height-150) style:UITableViewStylePlain];
+    self.tableView.backgroundColor = [UIColor clearColor];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    [self.view addSubview:self.tableView];
+
+
+}
+
+-(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView{
+    return 3;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 10;
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 238, 40)];
+    view.backgroundColor = [UIColor purpleColor];
+    
+    UIButton *titleBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    titleBtn.frame = CGRectMake(0, 0, view.frame.size.width, view.frame.size.height);
+    [titleBtn setTitle:[self.projectArray objectAtIndex:section] forState:UIControlStateNormal];
+    [titleBtn setImage:[UIImage imageNamed:@"push_btn_bg"] forState:UIControlStateNormal];
+    // 设置btn中的imageview不拉伸
+    titleBtn.imageView.contentMode = UIViewContentModeCenter;
+    
+    // 设置btn中的imageview超出部分不剪切
+    titleBtn.imageView.clipsToBounds = NO;
+    titleBtn.imageView.transform = CGAffineTransformMakeRotation(M_PI_2);
+
+    titleBtn.titleEdgeInsets = UIEdgeInsetsMake(0, -5, 0, 130);
+    titleBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 200, 0, 10);
+    [view addSubview:titleBtn];
+    
+    return view;
+
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 40;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *identifier = @"Cell";
+    SafetyCheckCell *cell = [[SafetyCheckCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+    
+//    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+//    cell.label.text = [self.introArr objectAtIndex:indexPath.row];
+    
+    return cell;
+}
+
+
+void user(){
+
+
+
 }
 
 -(void)btnClick{

@@ -8,12 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LeftViewController : UIViewController
+@interface LeftViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UILabel *nameLabel;
+@property (nonatomic, strong) UILabel *departmentLabel;
+@property (nonatomic, strong) UIImageView *userImageView;
+@property (strong, nonatomic) UITableView *tableView;
+@property (nonatomic, strong) NSMutableArray *projectArray;
+
+
 @property (nonatomic, strong) UITextField *nameText;
 @property (nonatomic, strong) UIButton *loginBtn;
-
-
 @end
 

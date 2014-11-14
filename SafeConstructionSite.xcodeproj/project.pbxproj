@@ -32,6 +32,7 @@
 		A85A1D681A105F03007AA77D /* SafetyCheckCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A85A1D661A105F03007AA77D /* SafetyCheckCell.xib */; };
 		A85A1D8D1A10AB97007AA77D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A85A1D8C1A10AB97007AA77D /* UIKit.framework */; };
 		A85A1D8F1A10ABA8007AA77D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A85A1D8E1A10ABA8007AA77D /* CoreGraphics.framework */; };
+		A8828CD11A15F5A10002B1CE /* push_btn_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8828CD01A15F5A10002B1CE /* push_btn_bg@2x.png */; };
 		A88A8EBD1A10C12D00A0F417 /* NIDropDown.m in Sources */ = {isa = PBXBuildFile; fileRef = A88A8EBC1A10C12D00A0F417 /* NIDropDown.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A88A8EC11A11BA3700A0F417 /* SafetyCheck.plist in Resources */ = {isa = PBXBuildFile; fileRef = A88A8EC01A11BA3700A0F417 /* SafetyCheck.plist */; };
 		A88A8F191A12FB7A00A0F417 /* BasicManageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A88A8F171A12FB7A00A0F417 /* BasicManageCell.m */; };
@@ -88,6 +89,7 @@
 		A85A1D661A105F03007AA77D /* SafetyCheckCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SafetyCheckCell.xib; sourceTree = "<group>"; };
 		A85A1D8C1A10AB97007AA77D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A85A1D8E1A10ABA8007AA77D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A8828CD01A15F5A10002B1CE /* push_btn_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "push_btn_bg@2x.png"; sourceTree = "<group>"; };
 		A88A8EBB1A10C12D00A0F417 /* NIDropDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NIDropDown.h; sourceTree = "<group>"; };
 		A88A8EBC1A10C12D00A0F417 /* NIDropDown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NIDropDown.m; sourceTree = "<group>"; };
 		A88A8EBE1A1196C400A0F417 /* SafeConstructionSite-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SafeConstructionSite-Prefix.pch"; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 		A85A1D761A108D22007AA77D /* resource */ = {
 			isa = PBXGroup;
 			children = (
+				A8828CD01A15F5A10002B1CE /* push_btn_bg@2x.png */,
 			);
 			path = resource;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				A85A1D631A1057EA007AA77D /* LocaleController.xib in Resources */,
 				A85A1D541A104D59007AA77D /* SafetyCheckController.xib in Resources */,
 				A83C15501A159AC20031C5B0 /* MainViewController.xib in Resources */,
+				A8828CD11A15F5A10002B1CE /* push_btn_bg@2x.png in Resources */,
 				A85A1D371A104AED007AA77D /* LaunchScreen.xib in Resources */,
 				A85A1D561A104DC6007AA77D /* Default-568h@2x.png in Resources */,
 				A85A1D681A105F03007AA77D /* SafetyCheckCell.xib in Resources */,

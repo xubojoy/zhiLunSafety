@@ -20,6 +20,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
     LeftViewController *leftVC = [[LeftViewController alloc] init];
     [SliderViewController sharedSliderController].LeftVC = leftVC;
     [SliderViewController sharedSliderController].MainVC = [[MainViewController alloc] init];
@@ -39,6 +40,7 @@
     
     
     UINavigationController *naviC = [[UINavigationController alloc] initWithRootViewController:[SliderViewController sharedSliderController]];
+    
     naviC.navigationBar.hidden = YES;
     self.window.rootViewController = naviC;
     return YES;
