@@ -37,6 +37,7 @@
 //        self.layer.shadowOffset = CGSizeMake(-5, 5);
 //        self.layer.shadowRadius = 5;
 //        self.layer.shadowOpacity = 0.5;
+        self.backgroundColor = [UIColor whiteColor];
         
         table = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, 0)];
         table.delegate = self;
@@ -91,16 +92,15 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         cell.textLabel.font = [UIFont systemFontOfSize:15];
         cell.textLabel.textAlignment = NSTextAlignmentCenter;
+       
     }
     cell.textLabel.text =[list objectAtIndex:indexPath.row];
     cell.textLabel.textColor = [UIColor blackColor];
-    
-    UIView * v = [[UIView alloc] initWithFrame:CGRectMake(0, 44, self.frame.size.width, 0.5)];
-    v.backgroundColor = [UIColor lightGrayColor];
-    [cell.contentView addSubview:v];
 
+    UIView * view = [[UIView alloc] initWithFrame:CGRectMake(0, 39.5, self.frame.size.width, 0.5)];
+    view.backgroundColor = [UIColor lightGrayColor];
+    [cell.contentView addSubview:view];
    
-    
     return cell;
 }
 

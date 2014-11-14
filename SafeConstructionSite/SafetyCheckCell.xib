@@ -14,7 +14,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1BG-4f-hzX">
-                        <rect key="frame" x="0.0" y="0.0" width="185" height="44"/>
+                        <rect key="frame" x="10" y="0.0" width="177" height="44"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
@@ -26,6 +26,9 @@
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
+                        <connections>
+                            <action selector="scoreBtnClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="j3d-pB-4AY"/>
+                        </connections>
                     </button>
                 </subviews>
             </tableViewCellContentView>
@@ -33,7 +36,7 @@
                 <outlet property="label" destination="1BG-4f-hzX" id="VYQ-pv-hpc"/>
                 <outlet property="scoreBtn" destination="Lls-p5-Gcu" id="T09-MZ-gjh"/>
             </connections>
-            <point key="canvasLocation" x="404" y="298"/>
+            <point key="canvasLocation" x="404" y="297"/>
         </tableViewCell>
     </objects>
 </document>

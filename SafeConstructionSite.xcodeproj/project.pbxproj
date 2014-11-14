@@ -7,9 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A83C154B1A15988B0031C5B0 /* SliderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A83C15491A15988B0031C5B0 /* SliderViewController.m */; };
+		A83C154F1A159AC20031C5B0 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A83C154D1A159AC20031C5B0 /* MainViewController.m */; };
+		A83C15501A159AC20031C5B0 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A83C154E1A159AC20031C5B0 /* MainViewController.xib */; };
+		A83C15571A159BE20031C5B0 /* MLTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = A83C15541A159BE20031C5B0 /* MLTransitionAnimation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A83C15581A159BE20031C5B0 /* UIViewController+MLTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = A83C15561A159BE20031C5B0 /* UIViewController+MLTransition.m */; };
 		A85A1D291A104AED007AA77D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A85A1D281A104AED007AA77D /* main.m */; };
 		A85A1D2C1A104AED007AA77D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A85A1D2B1A104AED007AA77D /* AppDelegate.m */; };
-		A85A1D2F1A104AED007AA77D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A85A1D2E1A104AED007AA77D /* ViewController.m */; };
+		A85A1D2F1A104AED007AA77D /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A85A1D2E1A104AED007AA77D /* LeftViewController.m */; };
 		A85A1D321A104AED007AA77D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A85A1D301A104AED007AA77D /* Main.storyboard */; };
 		A85A1D341A104AED007AA77D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A85A1D331A104AED007AA77D /* Images.xcassets */; };
 		A85A1D371A104AED007AA77D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A85A1D351A104AED007AA77D /* LaunchScreen.xib */; };
@@ -29,6 +34,8 @@
 		A85A1D8F1A10ABA8007AA77D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A85A1D8E1A10ABA8007AA77D /* CoreGraphics.framework */; };
 		A88A8EBD1A10C12D00A0F417 /* NIDropDown.m in Sources */ = {isa = PBXBuildFile; fileRef = A88A8EBC1A10C12D00A0F417 /* NIDropDown.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A88A8EC11A11BA3700A0F417 /* SafetyCheck.plist in Resources */ = {isa = PBXBuildFile; fileRef = A88A8EC01A11BA3700A0F417 /* SafetyCheck.plist */; };
+		A88A8F191A12FB7A00A0F417 /* BasicManageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A88A8F171A12FB7A00A0F417 /* BasicManageCell.m */; };
+		A88A8F1A1A12FB7A00A0F417 /* BasicManageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A88A8F181A12FB7A00A0F417 /* BasicManageCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,13 +49,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A83C15481A15988B0031C5B0 /* SliderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SliderViewController.h; sourceTree = "<group>"; };
+		A83C15491A15988B0031C5B0 /* SliderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SliderViewController.m; sourceTree = "<group>"; };
+		A83C154C1A159AC20031C5B0 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		A83C154D1A159AC20031C5B0 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		A83C154E1A159AC20031C5B0 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		A83C15531A159BE20031C5B0 /* MLTransitionAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLTransitionAnimation.h; sourceTree = "<group>"; };
+		A83C15541A159BE20031C5B0 /* MLTransitionAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLTransitionAnimation.m; sourceTree = "<group>"; };
+		A83C15551A159BE20031C5B0 /* UIViewController+MLTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MLTransition.h"; sourceTree = "<group>"; };
+		A83C15561A159BE20031C5B0 /* UIViewController+MLTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MLTransition.m"; sourceTree = "<group>"; };
 		A85A1D231A104AED007AA77D /* SafeConstructionSite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafeConstructionSite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A85A1D271A104AED007AA77D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A85A1D281A104AED007AA77D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A85A1D2A1A104AED007AA77D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A85A1D2B1A104AED007AA77D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		A85A1D2D1A104AED007AA77D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A85A1D2E1A104AED007AA77D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A85A1D2D1A104AED007AA77D /* LeftViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeftViewController.h; sourceTree = "<group>"; };
+		A85A1D2E1A104AED007AA77D /* LeftViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LeftViewController.m; sourceTree = "<group>"; };
 		A85A1D311A104AED007AA77D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A85A1D331A104AED007AA77D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A85A1D361A104AED007AA77D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -77,6 +93,9 @@
 		A88A8EBE1A1196C400A0F417 /* SafeConstructionSite-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SafeConstructionSite-Prefix.pch"; sourceTree = "<group>"; };
 		A88A8EBF1A11A12800A0F417 /* Macro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Macro.h; sourceTree = "<group>"; };
 		A88A8EC01A11BA3700A0F417 /* SafetyCheck.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SafetyCheck.plist; sourceTree = "<group>"; };
+		A88A8F161A12FB7A00A0F417 /* BasicManageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicManageCell.h; sourceTree = "<group>"; };
+		A88A8F171A12FB7A00A0F417 /* BasicManageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicManageCell.m; sourceTree = "<group>"; };
+		A88A8F181A12FB7A00A0F417 /* BasicManageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BasicManageCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,11 +120,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A83C15451A15988B0031C5B0 /* SliderViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A83C15481A15988B0031C5B0 /* SliderViewController.h */,
+				A83C15491A15988B0031C5B0 /* SliderViewController.m */,
+			);
+			path = SliderViewController;
+			sourceTree = "<group>";
+		};
+		A83C15511A159BE20031C5B0 /* third */ = {
+			isa = PBXGroup;
+			children = (
+				A83C15521A159BE20031C5B0 /* MLTransition */,
+			);
+			path = third;
+			sourceTree = "<group>";
+		};
+		A83C15521A159BE20031C5B0 /* MLTransition */ = {
+			isa = PBXGroup;
+			children = (
+				A83C15531A159BE20031C5B0 /* MLTransitionAnimation.h */,
+				A83C15541A159BE20031C5B0 /* MLTransitionAnimation.m */,
+				A83C15551A159BE20031C5B0 /* UIViewController+MLTransition.h */,
+				A83C15561A159BE20031C5B0 /* UIViewController+MLTransition.m */,
+			);
+			path = MLTransition;
+			sourceTree = "<group>";
+		};
 		A85A1D1A1A104AED007AA77D = {
 			isa = PBXGroup;
 			children = (
-				A85A1D8E1A10ABA8007AA77D /* CoreGraphics.framework */,
-				A85A1D8C1A10AB97007AA77D /* UIKit.framework */,
 				A85A1D251A104AED007AA77D /* SafeConstructionSite */,
 				A85A1D3F1A104AED007AA77D /* SafeConstructionSiteTests */,
 				A85A1D241A104AED007AA77D /* Products */,
@@ -124,11 +169,16 @@
 		A85A1D251A104AED007AA77D /* SafeConstructionSite */ = {
 			isa = PBXGroup;
 			children = (
+				A83C15511A159BE20031C5B0 /* third */,
+				A83C15451A15988B0031C5B0 /* SliderViewController */,
 				A88A8EBF1A11A12800A0F417 /* Macro.h */,
 				A85A1D2A1A104AED007AA77D /* AppDelegate.h */,
 				A85A1D2B1A104AED007AA77D /* AppDelegate.m */,
-				A85A1D2D1A104AED007AA77D /* ViewController.h */,
-				A85A1D2E1A104AED007AA77D /* ViewController.m */,
+				A83C154C1A159AC20031C5B0 /* MainViewController.h */,
+				A83C154D1A159AC20031C5B0 /* MainViewController.m */,
+				A83C154E1A159AC20031C5B0 /* MainViewController.xib */,
+				A85A1D2D1A104AED007AA77D /* LeftViewController.h */,
+				A85A1D2E1A104AED007AA77D /* LeftViewController.m */,
 				A85A1D501A104D59007AA77D /* SafetyCheckController.h */,
 				A85A1D511A104D59007AA77D /* SafetyCheckController.m */,
 				A85A1D521A104D59007AA77D /* SafetyCheckController.xib */,
@@ -140,6 +190,9 @@
 				A85A1D5A1A105757007AA77D /* BasicManageController.h */,
 				A85A1D5B1A105757007AA77D /* BasicManageController.m */,
 				A85A1D5C1A105757007AA77D /* BasicManageController.xib */,
+				A88A8F161A12FB7A00A0F417 /* BasicManageCell.h */,
+				A88A8F171A12FB7A00A0F417 /* BasicManageCell.m */,
+				A88A8F181A12FB7A00A0F417 /* BasicManageCell.xib */,
 				A85A1D5F1A1057EA007AA77D /* LocaleController.h */,
 				A85A1D601A1057EA007AA77D /* LocaleController.m */,
 				A85A1D611A1057EA007AA77D /* LocaleController.xib */,
@@ -167,6 +220,8 @@
 		A85A1D3F1A104AED007AA77D /* SafeConstructionSiteTests */ = {
 			isa = PBXGroup;
 			children = (
+				A85A1D8E1A10ABA8007AA77D /* CoreGraphics.framework */,
+				A85A1D8C1A10AB97007AA77D /* UIKit.framework */,
 				A85A1D4E1A104C95007AA77D /* Foundation.framework */,
 				A85A1D4C1A104C8D007AA77D /* CoreFoundation.framework */,
 				A85A1D421A104AED007AA77D /* SafeConstructionSiteTests.m */,
@@ -271,9 +326,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A85A1D321A104AED007AA77D /* Main.storyboard in Resources */,
+				A88A8F1A1A12FB7A00A0F417 /* BasicManageCell.xib in Resources */,
 				A85A1D5E1A105757007AA77D /* BasicManageController.xib in Resources */,
 				A85A1D631A1057EA007AA77D /* LocaleController.xib in Resources */,
 				A85A1D541A104D59007AA77D /* SafetyCheckController.xib in Resources */,
+				A83C15501A159AC20031C5B0 /* MainViewController.xib in Resources */,
 				A85A1D371A104AED007AA77D /* LaunchScreen.xib in Resources */,
 				A85A1D561A104DC6007AA77D /* Default-568h@2x.png in Resources */,
 				A85A1D681A105F03007AA77D /* SafetyCheckCell.xib in Resources */,
@@ -296,14 +353,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A83C154F1A159AC20031C5B0 /* MainViewController.m in Sources */,
 				A85A1D671A105F03007AA77D /* SafetyCheckCell.m in Sources */,
-				A85A1D2F1A104AED007AA77D /* ViewController.m in Sources */,
+				A85A1D2F1A104AED007AA77D /* LeftViewController.m in Sources */,
+				A83C154B1A15988B0031C5B0 /* SliderViewController.m in Sources */,
 				A85A1D5D1A105757007AA77D /* BasicManageController.m in Sources */,
 				A85A1D531A104D59007AA77D /* SafetyCheckController.m in Sources */,
+				A83C15571A159BE20031C5B0 /* MLTransitionAnimation.m in Sources */,
 				A88A8EBD1A10C12D00A0F417 /* NIDropDown.m in Sources */,
 				A85A1D621A1057EA007AA77D /* LocaleController.m in Sources */,
+				A83C15581A159BE20031C5B0 /* UIViewController+MLTransition.m in Sources */,
 				A85A1D2C1A104AED007AA77D /* AppDelegate.m in Sources */,
 				A85A1D291A104AED007AA77D /* main.m in Sources */,
+				A88A8F191A12FB7A00A0F417 /* BasicManageCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,7 +424,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Xin Gong (768NGZ4VP8)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xin Gong (768NGZ4VP8)";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -382,6 +445,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "8b8903e6-450f-4640-8fd8-84a8876130c4";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -403,7 +467,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Xin Gong (768NGZ4VP8)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xin Gong (768NGZ4VP8)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -416,6 +481,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "8b8903e6-450f-4640-8fd8-84a8876130c4";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -425,9 +491,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Xin Gong (768NGZ4VP8)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xin Gong (768NGZ4VP8)";
 				INFOPLIST_FILE = SafeConstructionSite/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "8b8903e6-450f-4640-8fd8-84a8876130c4";
 			};
 			name = Debug;
 		};
@@ -435,9 +505,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Xin Gong (768NGZ4VP8)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xin Gong (768NGZ4VP8)";
 				INFOPLIST_FILE = SafeConstructionSite/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "8b8903e6-450f-4640-8fd8-84a8876130c4";
 			};
 			name = Release;
 		};

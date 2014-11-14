@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface LeftViewController : UIViewController
 
 @property (nonatomic, strong) UILabel *nameLabel;
 @property (nonatomic, strong) UITextField *nameText;

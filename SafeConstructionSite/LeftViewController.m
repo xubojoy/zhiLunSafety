@@ -6,15 +6,15 @@
 //  Copyright (c) 2014年 XB. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "LeftViewController.h"
 #import "SafetyCheckController.h"
 #import "BasicManageController.h"
 #import "LocaleController.h"
-@interface ViewController ()
+@interface LeftViewController ()
 
 @end
 
-@implementation ViewController
+@implementation LeftViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

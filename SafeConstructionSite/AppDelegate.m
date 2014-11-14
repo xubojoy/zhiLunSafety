@@ -7,7 +7,10 @@
 //
 
 #import "AppDelegate.h"
-
+#import "SliderViewController.h"
+#import "LeftViewController.h"
+#import "MainViewController.h"
+#import "UIViewController+MLTransition.h"
 @interface AppDelegate ()
 
 @end
@@ -17,9 +20,31 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    self.viewController=(ViewController *)self.window.rootViewController;
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:self.viewController];
-    self.window.rootViewController = nav;
+    LeftViewController *leftVC = [[LeftViewController alloc] init];
+    [SliderViewController sharedSliderController].LeftVC = leftVC;
+    [SliderViewController sharedSliderController].MainVC = [[MainViewController alloc] init];
+    [SliderViewController sharedSliderController].LeftSContentOffset=270;
+    [SliderViewController sharedSliderController].LeftContentViewSContentOffset = 320;
+    [SliderViewController sharedSliderController].LeftSContentScale=1;
+    [SliderViewController sharedSliderController].LeftSJudgeOffset=160;
+    [SliderViewController sharedSliderController].changeLeftView = ^(CGFloat sca, CGFloat transX)
+    {
+        CGAffineTransform ltransS = CGAffineTransformMakeScale(sca, sca);
+        CGAffineTransform ltransT = CGAffineTransformMakeTranslation(transX, 0);
+        CGAffineTransform lconT = CGAffineTransformConcat(ltransT, ltransS);
+//        leftVC.contentView.transform = lconT;
+    };
+    
+    [UIViewController validatePanPackWithMLTransitionGestureRecognizerType:MLTransitionGestureRecognizerTypePan];
+    
+    
+    UINavigationController *naviC = [[UINavigationController alloc] initWithRootViewController:[SliderViewController sharedSliderController]];
+    naviC.navigationBar.hidden = YES;
+    self.window.rootViewController = naviC;
+    
+//    self.viewController=(ViewController *)self.window.rootViewController;
+//    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:self.viewController];
+//    self.window.rootViewController = nav;
     return YES;
 }
 

@@ -16,7 +16,8 @@
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, strong) NIDropDown *scoreView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-
+@property (nonatomic, strong) NSMutableArray *safetyCheckArr;
+@property (nonatomic, strong) NSMutableArray *introArr;
 -(void)rel;
 -(instancetype)initWithTitle:(NSString *)title;
 @end

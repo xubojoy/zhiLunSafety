@@ -15,5 +15,9 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+    #import "UIView+KGViewExtend.h"
+    #import "MLTransitionAnimation.h"
+    #import "UIView+Custom.h"
+    #import "UIViewController+MLTransition.h"
     #import "Macro.h"
 #endif
