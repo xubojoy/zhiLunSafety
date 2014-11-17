@@ -7,7 +7,8 @@
 //
 
 #import "MainViewController.h"
-
+#import "SliderViewController.h"
+#import "Macro.h"
 @interface MainViewController ()
 
 @end
@@ -17,7 +18,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self initHeaderView];
 }
+-(void)initHeaderView{
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 64)];
+    view.backgroundColor = RGBACOLOR(23, 48, 106, 1);
+    [self.view addSubview:view];
+    
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame = CGRectMake(10, 20, 44, 44);
+    btn.backgroundColor = [UIColor redColor];
+    [btn setTitle:@"开合" forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(showLeft:) forControlEvents:UIControlEventTouchUpInside];
+    [view addSubview:btn];
+}
+
+-(void)showLeft:(UIButton *)sender{
+    [[SliderViewController sharedSliderController] showLeftViewController];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

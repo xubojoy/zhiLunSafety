@@ -28,9 +28,9 @@
     if (self) {
         // Initialization code
         NSLog(@">>>>>>>>>>>>>tag:%ld",tag);
-        CGRect btn = b.superview.superview.frame;
+        CGRect btn = btnSender.superview.superview.frame;
         
-        self.frame = CGRectMake(100, btn.origin.y+40+40*tag, 100, 0);
+        self.frame = CGRectMake(100, btn.origin.y+40+20+40*tag, 100, 0);
         self.list = [NSArray arrayWithArray:arr];
         self.backgroundColor = [UIColor whiteColor];
         
@@ -39,7 +39,7 @@
         table.dataSource = self;
         table.separatorStyle = UITableViewCellSeparatorStyleNone;
         [UIView animateWithDuration:0.5 animations:^{
-            self.frame = CGRectMake(100, btn.origin.y+40+40*tag, 100, *height);
+            self.frame = CGRectMake(100, btn.origin.y+40+20+40*tag, 100, *height);
             table.frame = CGRectMake(0, 0, self.frame.size.width, *height);
         }];
         if (IOS_7) {
@@ -54,9 +54,9 @@
 }
 
 -(void)hideDropDown:(UIButton *)b {
-    CGRect btn = b.superview.superview.frame;
+    CGRect btn = btnSender.superview.superview.frame;
     [UIView animateWithDuration:0.5 animations:^{
-        self.frame = CGRectMake(100, btn.origin.y+40+40*b.tag, 100, 0);
+        self.frame = CGRectMake(100, btn.origin.y+40+20+40*b.tag, 100, 0);
         table.frame = CGRectMake(0, 0, self.frame.size.width, 0);
     }];
 }

@@ -54,17 +54,6 @@
 
 -(void)initTable{
     
-    
-//    self.nameText = [[UITextField alloc] initWithFrame:CGRectMake(100, 200, 150, 30)];
-//    self.nameText.backgroundColor = [UIColor purpleColor];
-//    [self.view addSubview:self.nameText];
-//    
-//    self.loginBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-//    self.loginBtn.frame = CGRectMake(100, 260, 100, 50);
-//    self.loginBtn.backgroundColor = [UIColor redColor];
-//    [self.loginBtn addTarget:self action:@selector(btnClick) forControlEvents:UIControlEventTouchUpInside];
-//    [self.loginBtn setTitle:@"登陆" forState:UIControlStateNormal];
-//    [self.view addSubview:self.loginBtn];
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(20, 120, 238, self.view.frame.size.height-150) style:UITableViewStyleGrouped];
     self.tableView.backgroundColor = [UIColor clearColor];
     self.tableView.delegate = self;
@@ -87,6 +76,9 @@
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 238, 40)];
     view.backgroundColor = [UIColor purpleColor];
     
+    
+    NSLog(@">>>>>>view.frame>>>>>%@",NSStringFromCGRect(view.frame));
+    
     UIButton *titleBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     titleBtn.frame = CGRectMake(0, 0, view.frame.size.width, view.frame.size.height);
     [titleBtn setTitle:[self.projectArray objectAtIndex:section] forState:UIControlStateNormal];
@@ -105,23 +97,6 @@
     
     return view;
 
-}
-
--(void)titleBtnClick:(UIButton *)sender{
-    NSArray * arr = [[NSArray alloc] init];
-    arr = [NSArray arrayWithObjects:@"1分", @"2分", @"3分", @"4分", @"5分",nil];
-    if(dropDown == nil) {
-        CGFloat f = 200;
-        dropDown = [[NIDropDown alloc] showDropDown:sender :&f :arr :sender.tag];
-        dropDown.delegate = self;
-    }
-    else {
-        [dropDown hideDropDown:sender];
-        [self rel];
-    }
-}
--(void)rel{
-    dropDown = nil;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
@@ -144,6 +119,29 @@ void user(){
 
 
 }
+
+#pragma  mark - 可开合的view
+-(void)titleBtnClick:(UIButton *)sender{
+    NSArray * arr = [[NSArray alloc] init];
+    arr = [NSArray arrayWithObjects:@"1分", @"2分", @"3分", @"4分", @"5分",nil];
+    if(dropDown == nil) {
+        CGFloat f = 200;
+        dropDown = [[NIDropDown alloc] showDropDown:sender :&f :arr :sender.tag];
+        dropDown.delegate = self;
+    }
+    else {
+        [dropDown hideDropDown:sender];
+        [self rel];
+    }
+}
+
+-(void)rel{
+    dropDown = nil;
+}
+
+
+
+
 
 -(void)btnClick{
     

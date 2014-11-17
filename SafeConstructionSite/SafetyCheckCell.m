@@ -49,5 +49,10 @@
     dropDown = nil;
 }
 
+-(void)niDropDownDelegateMethod:(NIDropDown *)sender{
+
+
+}
+
 
 @end
