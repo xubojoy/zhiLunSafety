@@ -25,7 +25,6 @@
     [self initData];
     [self initUserInfo];
     [self initTable];
-
 }
 
 -(void)initData{
@@ -157,7 +156,7 @@
     
     
     [[SliderViewController sharedSliderController] closeSideBarWithAnimate:YES complete:^(BOOL finished) {
-        NSLog(@">>>>>>>>>>>>>>>>>走这儿啦！");
+//        NSLog(@">>>>>>>>>>>>>>>>>走这儿啦！");
         [[NSNotificationCenter defaultCenter] postNotificationName:@"走这儿啦" object:[self.projectArray objectAtIndex:indexPath.section]];
     }];
 
