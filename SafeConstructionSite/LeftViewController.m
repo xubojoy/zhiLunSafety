@@ -24,9 +24,29 @@
     // Do any additional setup after loading the view, typically from a nib.
     self.view.backgroundColor = RGBACOLOR(23, 48, 106, 1);
     self.projectArray = [[NSMutableArray alloc] initWithObjects:@"工程项目A",@"工程项目B",@"工程项目C", nil];
+    
+    self.nameArray = [[NSArray alloc] init];
+    self.nameArray = [NSArray arrayWithObjects:@"开工前安全生产条件核查表", @"项目工程考核评价", @"合同段A", @"合同段B", @"合同段C",nil];
+    self.smallArray = [[NSMutableArray alloc] initWithObjects:@"建设单位—-平安工地考核评价表",@"建设单位—-建设单位考核评价表",@"建设单位—-开工前安全生产条件核查表",@"监理单位—-考核评价表",@"施工单位—-基础管理考核评价表",@"施工单位—-施工现场考核评价表",@"施工单位—-安全检查表", nil];
+    
+    
+    
+    
+    
+    
     [self initUserInfo];
     [self initTable];
+    [self loadData];
 }
+
+-(void)loadData{
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"Check.plist" withExtension:nil];
+//    NSArray *tempArray = [NSArray arrayWithContentsOfURL:url];
+    NSDictionary *dic = [NSDictionary dictionaryWithContentsOfURL:url];
+    NSLog(@">>>>>>>>>>>>>%@",dic);
+}
+
+
 
 -(void)initUserInfo{
     self.userImageView = [[UIImageView alloc] initWithFrame:CGRectMake(40, 40, 60, 60)];
@@ -142,11 +162,9 @@ void user(){
 
 #pragma  mark - 可开合的view
 -(void)titleBtnClick:(UIButton *)sender{
-    NSArray * arr = [[NSArray alloc] init];
-    arr = [NSArray arrayWithObjects:@"开工前安全生产条件核查表", @"项目工程考核评价", @"合同段A", @"合同段B", @"合同段C",nil];
     if(dropDown == nil) {
         CGFloat f = 200;
-        dropDown = [[NIDropDown alloc] showDropDown:sender :&f :arr :sender.tag];
+        dropDown = [[NIDropDown alloc] showDropDown:sender :&f :self.nameArray :sender.tag];
         dropDown.delegate = self;
     }
     else {

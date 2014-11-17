@@ -32,6 +32,7 @@
 		A85A1D681A105F03007AA77D /* SafetyCheckCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A85A1D661A105F03007AA77D /* SafetyCheckCell.xib */; };
 		A85A1D8D1A10AB97007AA77D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A85A1D8C1A10AB97007AA77D /* UIKit.framework */; };
 		A85A1D8F1A10ABA8007AA77D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A85A1D8E1A10ABA8007AA77D /* CoreGraphics.framework */; };
+		A865D4051A19CFFF00C488A5 /* Check.plist in Resources */ = {isa = PBXBuildFile; fileRef = A865D4041A19CFFF00C488A5 /* Check.plist */; };
 		A8828CD11A15F5A10002B1CE /* push_btn_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8828CD01A15F5A10002B1CE /* push_btn_bg@2x.png */; };
 		A88A8EBD1A10C12D00A0F417 /* NIDropDown.m in Sources */ = {isa = PBXBuildFile; fileRef = A88A8EBC1A10C12D00A0F417 /* NIDropDown.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A88A8EC11A11BA3700A0F417 /* SafetyCheck.plist in Resources */ = {isa = PBXBuildFile; fileRef = A88A8EC01A11BA3700A0F417 /* SafetyCheck.plist */; };
@@ -89,6 +90,7 @@
 		A85A1D661A105F03007AA77D /* SafetyCheckCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SafetyCheckCell.xib; sourceTree = "<group>"; };
 		A85A1D8C1A10AB97007AA77D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A85A1D8E1A10ABA8007AA77D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A865D4041A19CFFF00C488A5 /* Check.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Check.plist; sourceTree = "<group>"; };
 		A8828CD01A15F5A10002B1CE /* push_btn_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "push_btn_bg@2x.png"; sourceTree = "<group>"; };
 		A88A8EBB1A10C12D00A0F417 /* NIDropDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NIDropDown.h; sourceTree = "<group>"; };
 		A88A8EBC1A10C12D00A0F417 /* NIDropDown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NIDropDown.m; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 		A85A1D261A104AED007AA77D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A865D4041A19CFFF00C488A5 /* Check.plist */,
 				A88A8EC01A11BA3700A0F417 /* SafetyCheck.plist */,
 				A85A1D551A104DC6007AA77D /* Default-568h@2x.png */,
 				A85A1D271A104AED007AA77D /* Info.plist */,
@@ -338,6 +341,7 @@
 				A85A1D371A104AED007AA77D /* LaunchScreen.xib in Resources */,
 				A85A1D561A104DC6007AA77D /* Default-568h@2x.png in Resources */,
 				A85A1D681A105F03007AA77D /* SafetyCheckCell.xib in Resources */,
+				A865D4051A19CFFF00C488A5 /* Check.plist in Resources */,
 				A85A1D341A104AED007AA77D /* Images.xcassets in Resources */,
 				A88A8EC11A11BA3700A0F417 /* SafetyCheck.plist in Resources */,
 			);

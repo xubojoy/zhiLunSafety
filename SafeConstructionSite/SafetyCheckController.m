@@ -33,12 +33,7 @@
     self.safetyCheckArr = [NSMutableArray new];
     self.introArr = [NSMutableArray new];
     [self loadData];
-    
-    
 }
-
-
-
 
 -(void)loadData{
 

@@ -20,6 +20,11 @@
 @property (strong, nonatomic) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *projectArray;
 @property (nonatomic, strong) NIDropDown *scoreView;
+@property (nonatomic, strong) NSArray *nameArray;
+@property (nonatomic, strong) NSMutableArray *smallArray;
+
+
+
 
 @property (nonatomic, strong) UITextField *nameText;
 @property (nonatomic, strong) UIButton *loginBtn;
