@@ -12,6 +12,7 @@
 #import "LocaleController.h"
 #import "Macro.h"
 #import "SafetyCheckCell.h"
+#import "SliderViewController.h"
 @interface LeftViewController ()
 
 @end
@@ -69,7 +70,15 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 0;
+//    if (section == 0) {
+//        return 5;
+//    }else if (section == 1){
+//        return 1;
+//        
+//    }else{
+//        return 2;
+//    }
+    return 2;
 }
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
@@ -113,6 +122,17 @@
     return cell;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    [self backAction];
+
+
+}
+
+- (void)backAction
+{
+    [[SliderViewController sharedSliderController] closeSideBar];
+}
 
 void user(){
 
@@ -123,7 +143,7 @@ void user(){
 #pragma  mark - 可开合的view
 -(void)titleBtnClick:(UIButton *)sender{
     NSArray * arr = [[NSArray alloc] init];
-    arr = [NSArray arrayWithObjects:@"1分", @"2分", @"3分", @"4分", @"5分",nil];
+    arr = [NSArray arrayWithObjects:@"开工前安全生产条件核查表", @"项目工程考核评价", @"合同段A", @"合同段B", @"合同段C",nil];
     if(dropDown == nil) {
         CGFloat f = 200;
         dropDown = [[NIDropDown alloc] showDropDown:sender :&f :arr :sender.tag];
