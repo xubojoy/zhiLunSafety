@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@protocol MainViewControllerDelegate <NSObject>
+- (void) initTitleStr: (NSString *) title;
+@end
 @interface MainViewController : UIViewController
+@property (nonatomic, copy) NSString *projectTitle;
 
+@property (nonatomic, assign) id<MainViewControllerDelegate> delegate;
 @end

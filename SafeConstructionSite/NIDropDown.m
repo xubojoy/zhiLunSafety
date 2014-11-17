@@ -31,7 +31,7 @@
         CGRect btn = b.superview.superview.frame;
         self.backgroundColor = [UIColor redColor];
         
-        self.frame = CGRectMake(60, btn.origin.y+40+(40+20+2*44)*tag, 190, 0);
+        self.frame = CGRectMake(60, btn.origin.y+40+(40+20+self.titleCount*44)*tag, 190, 0);
         self.list = [NSArray arrayWithArray:arr];
         
         table = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, 0)];
@@ -40,7 +40,7 @@
         table.separatorStyle = UITableViewCellSeparatorStyleNone;
         table.backgroundColor = [UIColor clearColor];
         [UIView animateWithDuration:0.5 animations:^{
-            self.frame = CGRectMake(60, btn.origin.y+40+(40+20+2*44)*tag, 190, *height);
+            self.frame = CGRectMake(60, btn.origin.y+40+(40+20+self.titleCount*44)*tag, 190, *height);
             table.frame = CGRectMake(0, 0, self.frame.size.width, *height);
         }];
         if (IOS_7) {
@@ -57,7 +57,7 @@
 -(void)hideDropDown:(UIButton *)b {
     CGRect btn = b.superview.superview.frame;
     [UIView animateWithDuration:0.5 animations:^{
-        self.frame = CGRectMake(60, btn.origin.y+40+(40+20+2*44)*b.tag, 190, 0);
+        self.frame = CGRectMake(60, btn.origin.y+40+(40+20+self.titleCount*44)*b.tag, 190, 0);
         table.frame = CGRectMake(0, 0, self.frame.size.width, 0);
     }];
 }

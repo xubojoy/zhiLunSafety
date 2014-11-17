@@ -7,12 +7,10 @@
 //
 
 #import "LeftViewController.h"
-#import "SafetyCheckController.h"
-#import "BasicManageController.h"
-#import "LocaleController.h"
 #import "Macro.h"
 #import "SafetyCheckCell.h"
 #import "SliderViewController.h"
+#import "MainViewController.h"
 @interface LeftViewController ()
 
 @end
@@ -23,28 +21,42 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.view.backgroundColor = RGBACOLOR(23, 48, 106, 1);
+
+    [self initData];
+    [self initUserInfo];
+    [self initTable];
+
+}
+
+-(void)initData{
     self.projectArray = [[NSMutableArray alloc] initWithObjects:@"工程项目A",@"工程项目B",@"工程项目C", nil];
     
     self.nameArray = [[NSArray alloc] init];
     self.nameArray = [NSArray arrayWithObjects:@"开工前安全生产条件核查表", @"项目工程考核评价", @"合同段A", @"合同段B", @"合同段C",nil];
-    self.smallArray = [[NSMutableArray alloc] initWithObjects:@"建设单位—-平安工地考核评价表",@"建设单位—-建设单位考核评价表",@"建设单位—-开工前安全生产条件核查表",@"监理单位—-考核评价表",@"施工单位—-基础管理考核评价表",@"施工单位—-施工现场考核评价表",@"施工单位—-安全检查表", nil];
+    //    self.smallArray = [[NSMutableArray alloc] initWithObjects:@"建设单位—-平安工地考核评价表",@"建设单位—-建设单位考核评价表",@"建设单位—-开工前安全生产条件核查表",@"监理单位—-考核评价表",@"施工单位—-基础管理考核评价表",@"施工单位—-施工现场考核评价表",@"施工单位—-安全检查表", nil];
     
     
+    NSMutableDictionary *nameAndStateDic1 = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"建设单位—-\"平安工地\"考核评价表",@"title",nil];
+    NSMutableDictionary *nameAndStateDic2 = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"建设单位—-建设单位考核评价表",@"title",nil];
+    NSMutableDictionary *nameAndStateDic3 = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"建设单位—-开工前安全生产条件核查表",@"title",nil];
+    NSMutableDictionary *nameAndStateDic4 = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"监理单位—-考核评价表",@"title",nil];
+    NSMutableDictionary *nameAndStateDic5 = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"施工单位—-基础管理考核评价表",@"title",nil];
+    NSMutableDictionary *nameAndStateDic6 = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"施工单位—-施工现场考核评价表",@"title",nil];
+    NSMutableDictionary *nameAndStateDic7 = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"施工单位—-安全检查表",@"title",nil];
     
+    self.grouparr0 = [[NSMutableArray alloc] initWithObjects:nameAndStateDic1,nameAndStateDic2,nameAndStateDic3,nameAndStateDic4,nameAndStateDic5,nameAndStateDic6,nameAndStateDic7, nil];
+    self.dic = [NSMutableDictionary new];
     
-    
-    
-    [self initUserInfo];
-    [self initTable];
-    [self loadData];
+    [self.dic setValue:self.grouparr0 forKey:@"0"];
+
 }
 
--(void)loadData{
-    NSURL *url = [[NSBundle mainBundle] URLForResource:@"Check.plist" withExtension:nil];
-//    NSArray *tempArray = [NSArray arrayWithContentsOfURL:url];
-    NSDictionary *dic = [NSDictionary dictionaryWithContentsOfURL:url];
-    NSLog(@">>>>>>>>>>>>>%@",dic);
-}
+//-(void)loadData{
+//    NSURL *url = [[NSBundle mainBundle] URLForResource:@"Check.plist" withExtension:nil];
+////    NSArray *tempArray = [NSArray arrayWithContentsOfURL:url];
+//    NSDictionary *dic = [NSDictionary dictionaryWithContentsOfURL:url];
+//    NSLog(@">>>>>>>>>>>>>%@",dic);
+//}
 
 
 
@@ -70,7 +82,6 @@
     self.nameLabel.textColor = [UIColor whiteColor];
     self.nameLabel.font = [UIFont systemFontOfSize:15];
     [self.view addSubview:self.nameLabel];
-    
 }
 
 -(void)initTable{
@@ -79,10 +90,8 @@
     self.tableView.backgroundColor = [UIColor clearColor];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     [self.view addSubview:self.tableView];
-
-
 }
 
 -(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView{
@@ -90,15 +99,15 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-//    if (section == 0) {
-//        return 5;
-//    }else if (section == 1){
-//        return 1;
-//        
-//    }else{
-//        return 2;
-//    }
-    return 2;
+    if (section == 0) {
+        return self.grouparr0.count;
+    }else if (section == 1){
+        return 0;
+        
+    }else{
+        return 0;
+    }
+    
 }
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
@@ -133,26 +142,33 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSString *indexStr = [NSString stringWithFormat:@"%ld",indexPath.section];
     static NSString *identifier = @"Cell";
     SafetyCheckCell *cell = [[SafetyCheckCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
-    
-//    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-//    cell.label.text = [self.introArr objectAtIndex:indexPath.row];
-    
+    if (indexPath.section == 0) {
+        cell.label.text = self.dic[indexStr][indexPath.row][@"title"];
+        cell.label.font = [UIFont systemFontOfSize:12];
+    }
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+   
+    
+    
+    [[SliderViewController sharedSliderController] closeSideBarWithAnimate:YES complete:^(BOOL finished) {
+        NSLog(@">>>>>>>>>>>>>>>>>走这儿啦！");
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"走这儿啦" object:[self.projectArray objectAtIndex:indexPath.section]];
+    }];
 
-    [self backAction];
-
-
+//    [self backAction];
 }
-
-- (void)backAction
-{
-    [[SliderViewController sharedSliderController] closeSideBar];
-}
+//- (void)backAction
+//{
+//    [[SliderViewController sharedSliderController] closeSideBarWithAnimate:YES complete:^(BOOL finished) {
+//        
+//    }];
+//}
 
 void user(){
 
@@ -165,6 +181,7 @@ void user(){
     if(dropDown == nil) {
         CGFloat f = 200;
         dropDown = [[NIDropDown alloc] showDropDown:sender :&f :self.nameArray :sender.tag];
+        dropDown.titleCount = self.grouparr0.count;
         dropDown.delegate = self;
     }
     else {
@@ -177,27 +194,23 @@ void user(){
     dropDown = nil;
 }
 
-
-
-
-
 -(void)btnClick{
-    
-    if([self.nameText.text isEqualToString:@""]){
-    
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"请输入用户名" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
-        [alert show];
-        return;
-    }else if(![self.nameText.text isEqualToString:@""] && [self.nameText.text containsString:@"经理"]){
-        SafetyCheckController *vc = [[SafetyCheckController alloc] initWithTitle:@"安全生产条件核查表"];
-        [self.navigationController pushViewController:vc animated:YES];
-    }else if(![self.nameText.text isEqualToString:@""] && [self.nameText.text containsString:@"基础"]){
-        BasicManageController *vc = [[BasicManageController alloc] initWithTitle:@"基础管理考核评价表"];
-        [self.navigationController pushViewController:vc animated:YES];
-    }else if(![self.nameText.text isEqualToString:@""] && [self.nameText.text containsString:@"现场"]){
-        LocaleController *vc = [[LocaleController alloc] initWithTitle:@"施工现场考核评价表"];
-        [self.navigationController pushViewController:vc animated:YES];
-    }
+//    
+//    if([self.nameText.text isEqualToString:@""]){
+//    
+//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"请输入用户名" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
+//        [alert show];
+//        return;
+//    }else if(![self.nameText.text isEqualToString:@""] && [self.nameText.text containsString:@"经理"]){
+//        SafetyCheckController *vc = [[SafetyCheckController alloc] initWithTitle:@"安全生产条件核查表"];
+//        [self.navigationController pushViewController:vc animated:YES];
+//    }else if(![self.nameText.text isEqualToString:@""] && [self.nameText.text containsString:@"基础"]){
+//        BasicManageController *vc = [[BasicManageController alloc] initWithTitle:@"基础管理考核评价表"];
+//        [self.navigationController pushViewController:vc animated:YES];
+//    }else if(![self.nameText.text isEqualToString:@""] && [self.nameText.text containsString:@"现场"]){
+//        LocaleController *vc = [[LocaleController alloc] initWithTitle:@"施工现场考核评价表"];
+//        [self.navigationController pushViewController:vc animated:YES];
+//    }
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{

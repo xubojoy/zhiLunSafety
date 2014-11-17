@@ -28,13 +28,13 @@
     [SliderViewController sharedSliderController].LeftContentViewSContentOffset = 320;
     [SliderViewController sharedSliderController].LeftSContentScale=1;
     [SliderViewController sharedSliderController].LeftSJudgeOffset=160;
-    [SliderViewController sharedSliderController].changeLeftView = ^(CGFloat sca, CGFloat transX)
-    {
-        CGAffineTransform ltransS = CGAffineTransformMakeScale(sca, sca);
-        CGAffineTransform ltransT = CGAffineTransformMakeTranslation(transX, 0);
-        CGAffineTransform lconT = CGAffineTransformConcat(ltransT, ltransS);
-//        leftVC.contentView.transform = lconT;
-    };
+//    [SliderViewController sharedSliderController].changeLeftView = ^(CGFloat sca, CGFloat transX)
+//    {
+//        CGAffineTransform ltransS = CGAffineTransformMakeScale(sca, sca);
+//        CGAffineTransform ltransT = CGAffineTransformMakeTranslation(transX, 0);
+//        CGAffineTransform lconT = CGAffineTransformConcat(ltransT, ltransS);
+////        leftVC.contentView.transform = lconT;
+//    };
     
     [UIViewController validatePanPackWithMLTransitionGestureRecognizerType:MLTransitionGestureRecognizerTypePan];
     

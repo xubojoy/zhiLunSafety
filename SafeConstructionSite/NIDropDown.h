@@ -16,6 +16,7 @@
 @interface NIDropDown : UIView <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, assign) id <NIDropDownDelegate> delegate;
+@property (nonatomic, assign) NSInteger titleCount;
 
 -(void)hideDropDown:(UIButton *)b;
 - (id)showDropDown:(UIButton *)b:(CGFloat *)height:(NSArray *)arr:(NSInteger)tag;

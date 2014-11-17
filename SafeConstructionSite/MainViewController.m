@@ -15,9 +15,20 @@
 
 @implementation MainViewController
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    NSLog(@">>>>>>>self project title :%@",self.projectTitle);
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notification:) name:@"走这儿啦" object:nil];
+}
+
+-(void)notification:(NSNotification *)notification{
+    
+    NSLog(@">>>>>>>>>%@",notification.object);
+
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
     [self initHeaderView];
 }
 -(void)initHeaderView{
@@ -31,6 +42,12 @@
     [btn setTitle:@"开合" forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(showLeft:) forControlEvents:UIControlEventTouchUpInside];
     [view addSubview:btn];
+    
+    UILabel *titleLab = [[UILabel alloc] initWithFrame:CGRectMake(60, 20, 300, 44)];
+    titleLab.backgroundColor = [UIColor cyanColor];
+    titleLab.text = self.projectTitle;
+    [view addSubview:titleLab];
+    
 }
 
 -(void)showLeft:(UIButton *)sender{
