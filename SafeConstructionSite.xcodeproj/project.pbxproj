@@ -28,6 +28,11 @@
 		A85A1D8F1A10ABA8007AA77D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A85A1D8E1A10ABA8007AA77D /* CoreGraphics.framework */; };
 		A865D4091A1A03E100C488A5 /* PullDownCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A865D4071A1A03E100C488A5 /* PullDownCell.m */; };
 		A865D40A1A1A03E100C488A5 /* PullDownCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A865D4081A1A03E100C488A5 /* PullDownCell.xib */; };
+		A865D4401A1B208900C488A5 /* BasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A865D43E1A1B208900C488A5 /* BasicViewController.m */; };
+		A865D4411A1B208900C488A5 /* BasicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A865D43F1A1B208900C488A5 /* BasicViewController.xib */; };
+		A865D4451A1B20EE00C488A5 /* SafetyCheckViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A865D4431A1B20EE00C488A5 /* SafetyCheckViewController.m */; };
+		A865D4461A1B20EE00C488A5 /* SafetyCheckViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A865D4441A1B20EE00C488A5 /* SafetyCheckViewController.xib */; };
+		A865D4491A1B233B00C488A5 /* HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A865D4481A1B233B00C488A5 /* HeaderView.m */; };
 		A8828CD11A15F5A10002B1CE /* push_btn_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8828CD01A15F5A10002B1CE /* push_btn_bg@2x.png */; };
 		A88A8EBD1A10C12D00A0F417 /* NIDropDown.m in Sources */ = {isa = PBXBuildFile; fileRef = A88A8EBC1A10C12D00A0F417 /* NIDropDown.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A88A8EC11A11BA3700A0F417 /* SafetyCheck.plist in Resources */ = {isa = PBXBuildFile; fileRef = A88A8EC01A11BA3700A0F417 /* SafetyCheck.plist */; };
@@ -77,6 +82,14 @@
 		A865D4061A1A03E100C488A5 /* PullDownCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullDownCell.h; sourceTree = "<group>"; };
 		A865D4071A1A03E100C488A5 /* PullDownCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullDownCell.m; sourceTree = "<group>"; };
 		A865D4081A1A03E100C488A5 /* PullDownCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PullDownCell.xib; sourceTree = "<group>"; };
+		A865D43D1A1B208900C488A5 /* BasicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicViewController.h; sourceTree = "<group>"; };
+		A865D43E1A1B208900C488A5 /* BasicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicViewController.m; sourceTree = "<group>"; };
+		A865D43F1A1B208900C488A5 /* BasicViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BasicViewController.xib; sourceTree = "<group>"; };
+		A865D4421A1B20EE00C488A5 /* SafetyCheckViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SafetyCheckViewController.h; sourceTree = "<group>"; };
+		A865D4431A1B20EE00C488A5 /* SafetyCheckViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SafetyCheckViewController.m; sourceTree = "<group>"; };
+		A865D4441A1B20EE00C488A5 /* SafetyCheckViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SafetyCheckViewController.xib; sourceTree = "<group>"; };
+		A865D4471A1B233B00C488A5 /* HeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderView.h; sourceTree = "<group>"; };
+		A865D4481A1B233B00C488A5 /* HeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderView.m; sourceTree = "<group>"; };
 		A8828CD01A15F5A10002B1CE /* push_btn_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "push_btn_bg@2x.png"; sourceTree = "<group>"; };
 		A88A8EBB1A10C12D00A0F417 /* NIDropDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NIDropDown.h; sourceTree = "<group>"; };
 		A88A8EBC1A10C12D00A0F417 /* NIDropDown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NIDropDown.m; sourceTree = "<group>"; };
@@ -166,9 +179,17 @@
 				A83C154E1A159AC20031C5B0 /* MainViewController.xib */,
 				A85A1D2D1A104AED007AA77D /* LeftViewController.h */,
 				A85A1D2E1A104AED007AA77D /* LeftViewController.m */,
+				A865D43D1A1B208900C488A5 /* BasicViewController.h */,
+				A865D43E1A1B208900C488A5 /* BasicViewController.m */,
+				A865D43F1A1B208900C488A5 /* BasicViewController.xib */,
+				A865D4421A1B20EE00C488A5 /* SafetyCheckViewController.h */,
+				A865D4431A1B20EE00C488A5 /* SafetyCheckViewController.m */,
+				A865D4441A1B20EE00C488A5 /* SafetyCheckViewController.xib */,
 				A85A1D641A105F03007AA77D /* SafetyCheckCell.h */,
 				A85A1D651A105F03007AA77D /* SafetyCheckCell.m */,
 				A85A1D661A105F03007AA77D /* SafetyCheckCell.xib */,
+				A865D4471A1B233B00C488A5 /* HeaderView.h */,
+				A865D4481A1B233B00C488A5 /* HeaderView.m */,
 				A88A8EBB1A10C12D00A0F417 /* NIDropDown.h */,
 				A88A8EBC1A10C12D00A0F417 /* NIDropDown.m */,
 				A865D4061A1A03E100C488A5 /* PullDownCell.h */,
@@ -315,6 +336,8 @@
 				A85A1D681A105F03007AA77D /* SafetyCheckCell.xib in Resources */,
 				A85A1D341A104AED007AA77D /* Images.xcassets in Resources */,
 				A88A8EC11A11BA3700A0F417 /* SafetyCheck.plist in Resources */,
+				A865D4411A1B208900C488A5 /* BasicViewController.xib in Resources */,
+				A865D4461A1B20EE00C488A5 /* SafetyCheckViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,15 +355,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A865D4491A1B233B00C488A5 /* HeaderView.m in Sources */,
 				A83C154F1A159AC20031C5B0 /* MainViewController.m in Sources */,
 				A85A1D671A105F03007AA77D /* SafetyCheckCell.m in Sources */,
 				A865D4091A1A03E100C488A5 /* PullDownCell.m in Sources */,
+				A865D4451A1B20EE00C488A5 /* SafetyCheckViewController.m in Sources */,
 				A85A1D2F1A104AED007AA77D /* LeftViewController.m in Sources */,
 				A83C154B1A15988B0031C5B0 /* SliderViewController.m in Sources */,
 				A83C15571A159BE20031C5B0 /* MLTransitionAnimation.m in Sources */,
 				A88A8EBD1A10C12D00A0F417 /* NIDropDown.m in Sources */,
 				A83C15581A159BE20031C5B0 /* UIViewController+MLTransition.m in Sources */,
 				A85A1D2C1A104AED007AA77D /* AppDelegate.m in Sources */,
+				A865D4401A1B208900C488A5 /* BasicViewController.m in Sources */,
 				A85A1D291A104AED007AA77D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

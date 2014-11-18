@@ -7,12 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HeaderView.h"
 @protocol MainViewControllerDelegate <NSObject>
 - (void) initTitleStr: (NSString *) title;
 @end
-@interface MainViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UIPickerViewDataSource,UIPickerViewDelegate,UIGestureRecognizerDelegate>{
-
-}
+@interface MainViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UIPickerViewDataSource,UIPickerViewDelegate,UIGestureRecognizerDelegate>
 @property (nonatomic, assign) int i;
 @property (nonatomic, copy) NSString *projectTitle;
 @property (nonatomic, strong) UILabel *titleLab;
@@ -22,6 +21,7 @@
 @property (nonatomic, strong) NSString *dateStr;
 @property (nonatomic, strong) UILabel *choseTime;
 @property (nonatomic, assign) NSInteger index;
+@property (nonatomic, strong) HeaderView *header;
 
 
 @property (strong, nonatomic) IBOutlet UIView *chooseTimeModalView;

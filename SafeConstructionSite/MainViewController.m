@@ -10,6 +10,7 @@
 #import "SliderViewController.h"
 #import "Macro.h"
 #import "PullDownCell.h"
+
 @interface MainViewController ()
 
 @end
@@ -19,13 +20,6 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
    
-}
-
--(void)notification:(NSNotification *)notification{
-//    NSLog(@">>>>notification.object>>>>>%@",notification.object);
-    NSString *titleStr = notification.object;
-    self.titleLab.text = titleStr;
-
 }
 
 - (void)viewDidLoad {
@@ -38,6 +32,16 @@
     self.titleArray = [[NSMutableArray alloc] initWithObjects:@"建设单位—-\"平安工地\"考核评价表",@"项   目   名   称 :",@"设   计   单   位 :",@"建   设   里   程 :",@"工   程   概   算 :",@"桥   隧   比   例 :",@"批准工期(年月):",@"实际开工日期(年月):",@"计划交工日期(年月):", nil];
 
      [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notification:) name:@"走这儿啦" object:nil];
+}
+-(void)notification:(NSNotification *)notification{
+    //    NSLog(@">>>>notification.object>>>>>%@",notification.object);
+    NSString *titleStr = notification.object;
+    self.header.titleLab.text = titleStr;
+}
+
+-(void)initHeaderView{
+    self.header = [[HeaderView alloc] initWithFrame:CGRectMake(0, 0, 320, 64)];
+    [self.view addSubview:self.header];
 }
 
 -(void) initMaskView
@@ -387,32 +391,6 @@
         [pickerView reloadComponent:1];
     }
 }
-
-
-
--(void)initHeaderView{
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 64)];
-    view.backgroundColor = RGBACOLOR(23, 48, 106, 1);
-    [self.view addSubview:view];
-    
-    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn.frame = CGRectMake(10, 20, 44, 44);
-    btn.backgroundColor = [UIColor redColor];
-    [btn setTitle:@"开合" forState:UIControlStateNormal];
-    [btn addTarget:self action:@selector(showLeft:) forControlEvents:UIControlEventTouchUpInside];
-    [view addSubview:btn];
-    
-    self.titleLab = [[UILabel alloc] initWithFrame:CGRectMake(60, 20, 200, 44)];
-    self.titleLab.textAlignment = NSTextAlignmentCenter;
-    self.titleLab.textColor = [UIColor whiteColor];
-    [view addSubview:self.titleLab];
-    
-}
-
--(void)showLeft:(UIButton *)sender{
-    [[SliderViewController sharedSliderController] showLeftViewController];
-}
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

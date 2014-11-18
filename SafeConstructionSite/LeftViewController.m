@@ -11,6 +11,7 @@
 #import "SafetyCheckCell.h"
 #import "SliderViewController.h"
 #import "MainViewController.h"
+#import "SafetyCheckViewController.h"
 @interface LeftViewController ()
 
 @end
@@ -160,18 +161,18 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [[SliderViewController sharedSliderController] closeSideBarWithAnimate:YES complete:^(BOOL finished) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"走这儿啦" object:[self.projectArray objectAtIndex:indexPath.section]];
-    }];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (indexPath.row == 6) {
+        SafetyCheckViewController *scvc = [[SafetyCheckViewController alloc] init];
+        [self.navigationController pushViewController:scvc animated:YES];
 
-//    [self backAction];
+    }else{
+        [[SliderViewController sharedSliderController] closeSideBarWithAnimate:YES complete:^(BOOL finished) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"走这儿啦" object:[self.projectArray objectAtIndex:indexPath.section]];
+        }];
+
+    }
 }
-//- (void)backAction
-//{
-//    [[SliderViewController sharedSliderController] closeSideBarWithAnimate:YES complete:^(BOOL finished) {
-//        
-//    }];
-//}
 
 #pragma  mark - 可开合的view
 -(void)titleBtnClick:(UIButton *)sender{
