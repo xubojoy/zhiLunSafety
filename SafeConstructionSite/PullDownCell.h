@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "NIDropDown.h"
 @interface PullDownCell : UITableViewCell
+{
+    NIDropDown *dropDown;
+}
+- (IBAction)pullDownClick:(UIButton *)sender;
 
 @end

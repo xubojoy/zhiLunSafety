@@ -27,21 +27,36 @@
     [self initHeaderView];
     [self initTableView];
     [self initMaskView];
-//    [self initScheduleTimeView];
     
     self.titleArray = [[NSMutableArray alloc] initWithObjects:@"建设单位—-\"平安工地\"考核评价表",@"项   目   名   称 :",@"设   计   单   位 :",@"建   设   里   程 :",@"工   程   概   算 :",@"桥   隧   比   例 :",@"批准工期(年月):",@"实际开工日期(年月):",@"计划交工日期(年月):", nil];
 
      [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notification:) name:@"走这儿啦" object:nil];
 }
 -(void)notification:(NSNotification *)notification{
-    //    NSLog(@">>>>notification.object>>>>>%@",notification.object);
     NSString *titleStr = notification.object;
-    self.header.titleLab.text = titleStr;
+    self.titleLab.text = titleStr;
 }
 
 -(void)initHeaderView{
-    self.header = [[HeaderView alloc] initWithFrame:CGRectMake(0, 0, 320, 64)];
-    [self.view addSubview:self.header];
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 64)];
+    view.backgroundColor = RGBACOLOR(43, 61, 126, 1);
+    [self.view addSubview:view];
+    
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame = CGRectMake(10, 20, 44, 44);
+    btn.backgroundColor = [UIColor redColor];
+    [btn setTitle:@"开合" forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(showLeft:) forControlEvents:UIControlEventTouchUpInside];
+    [view addSubview:btn];
+    
+    self.titleLab = [[UILabel alloc] initWithFrame:CGRectMake(60, 20, 200, 44)];
+    self.titleLab.textAlignment = NSTextAlignmentCenter;
+    self.titleLab.textColor = [UIColor whiteColor];
+    [view addSubview:self.titleLab];
+}
+
+-(void)showLeft:(UIButton *)sender{
+    [[SliderViewController sharedSliderController] showLeftViewController];
 }
 
 -(void) initMaskView
@@ -96,7 +111,7 @@
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, VIEW_WEIGHT, 20)];
-    view.backgroundColor = RGBACOLOR(52, 80, 138, 1);
+    view.backgroundColor = RGBACOLOR(76, 97, 157, 1);
     
     
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, VIEW_WEIGHT, 20)];
@@ -157,15 +172,15 @@
         }
         
     }else if (indexPath.section == 2){
+        UITableViewCell *cell = [[UITableViewCell alloc] init];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         if (indexPath.row == 0) {
-            UITableViewCell *cell = [[UITableViewCell alloc] init];
             cell.textLabel.text = @"监 理 合 同 段 :";
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             cell.textLabel.font = [UIFont systemFontOfSize:12];
             return cell;
         }
        else if (indexPath.row == 1) {
-            UITableViewCell *cell = [[UITableViewCell alloc] init];
             cell.textLabel.text = @"监 理 单 位 名 称 :";
            cell.selectionStyle = UITableViewCellSelectionStyleNone;
            cell.textLabel.font = [UIFont systemFontOfSize:12];
@@ -176,8 +191,6 @@
            cell.selectionStyle = UITableViewCellSelectionStyleNone;
            return cell;
        }else if (indexPath.row == 3){
-           UITableViewCell *cell = [[UITableViewCell alloc] init];
-           
            UILabel *label1 = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 80, 30)];
            label1.backgroundColor = [UIColor purpleColor];
            label1.font = [UIFont systemFontOfSize:12];
@@ -188,6 +201,7 @@
            UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
            btn.backgroundColor = [UIColor redColor];
            btn.frame = CGRectMake(100, 10, 210, 30);
+           [btn addTarget:self action:@selector(pullDownBtnClick:) forControlEvents:UIControlEventTouchUpInside];
            [cell.contentView addSubview:btn];
            
            UILabel *label2 = [[UILabel alloc] initWithFrame:CGRectMake(10, 50, 80, 30)];
@@ -200,12 +214,11 @@
            UIButton *btn2 = [UIButton buttonWithType:UIButtonTypeCustom];
            btn2.backgroundColor = [UIColor redColor];
            btn2.frame = CGRectMake(100, 50, 210, 30);
+           [btn2 addTarget:self action:@selector(pullDownBtnClick:) forControlEvents:UIControlEventTouchUpInside];
            [cell.contentView addSubview:btn2];
            
            return cell;
-
        }else if (indexPath.row == 4){
-           UITableViewCell *cell = [[UITableViewCell alloc] init];
            UILabel *label1 = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 80, 30)];
            label1.backgroundColor = [UIColor purpleColor];
            label1.font = [UIFont systemFontOfSize:12];
@@ -213,10 +226,11 @@
            label1.text = @"工程项目综合得分:";
            [cell.contentView addSubview:label1];
            
-           UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-           btn.backgroundColor = [UIColor redColor];
-           btn.frame = CGRectMake(100, 10, 210, 30);
-           [cell.contentView addSubview:btn];
+           UIButton *btn3 = [UIButton buttonWithType:UIButtonTypeCustom];
+           btn3.backgroundColor = [UIColor redColor];
+           btn3.frame = CGRectMake(100, 10, 210, 30);
+           [btn3 addTarget:self action:@selector(pullDownBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+           [cell.contentView addSubview:btn3];
            
            UILabel *label2 = [[UILabel alloc] initWithFrame:CGRectMake(10, 50, 80, 30)];
            label2.backgroundColor = [UIColor purpleColor];
@@ -225,28 +239,30 @@
            label2.text = @"达标等级:";
            [cell.contentView addSubview:label2];
            
-           UIButton *btn2 = [UIButton buttonWithType:UIButtonTypeCustom];
-           btn2.backgroundColor = [UIColor redColor];
-           btn2.frame = CGRectMake(100, 50, 210, 30);
-           [cell.contentView addSubview:btn2];
-
-           
+           UIButton *btn4 = [UIButton buttonWithType:UIButtonTypeCustom];
+           btn4.backgroundColor = [UIColor redColor];
+           btn4.frame = CGRectMake(100, 50, 210, 30);
+           [btn4 addTarget:self action:@selector(pullDownBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+           [cell.contentView addSubview:btn4];
            return cell;
            
        }else if (indexPath.row == 5){
-           UITableViewCell *cell = [[UITableViewCell alloc] init];
            cell.textLabel.text = @"注：水运工程项目不必提携桥隧比例和建设里程";
            cell.textLabel.font = [UIFont systemFontOfSize:12];
            return cell;
            
        }else if (indexPath.row == 6){
-           UITableViewCell *cell = [[UITableViewCell alloc] init];
            cell.textLabel.text = @"省份：";
            cell.textLabel.font = [UIFont systemFontOfSize:12];
-           return cell;
            
+           UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+           btn.frame = CGRectMake(60, 0, 250, 40);
+           btn.backgroundColor = [UIColor purpleColor];
+           [btn addTarget:self action:@selector(pullDownBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+           [cell.contentView addSubview:btn];
+
+           return cell;
        }else if (indexPath.row == 7){
-           UITableViewCell *cell = [[UITableViewCell alloc] init];
            UILabel *label1 = [[UILabel alloc] initWithFrame:CGRectMake(10, 30, 70, 30)];
            label1.backgroundColor = [UIColor purpleColor];
            label1.font = [UIFont systemFontOfSize:12];
@@ -270,12 +286,12 @@
 
            return cell;
        }else if (indexPath.row == 8){
-           UITableViewCell *cell = [[UITableViewCell alloc] init];
            cell.textLabel.text = @"填表日期：";
            cell.textLabel.font = [UIFont systemFontOfSize:12];
+            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(presentChooseTimeModalView:)];
+           [cell.contentView addGestureRecognizer:tap];
            return cell;
        }else if (indexPath.row == 9){
-           UITableViewCell *cell = [[UITableViewCell alloc] init];
            UIButton *confirmBtn = [UIButton buttonWithType:UIButtonTypeCustom];
            confirmBtn.backgroundColor = RGBACOLOR(53, 80, 137, 1);
            [confirmBtn setTitle:@"确认提交" forState:UIControlStateNormal];
@@ -288,6 +304,24 @@
     }
     return nil;
 }
+#pragma mark - button方法
+-(void)pullDownBtnClick:(UIButton *)sender{
+    NSArray * arr = [[NSArray alloc] init];
+    arr = [NSArray arrayWithObjects:@"北京市", @"上海市", @"广东省", @"深圳市", @"河南省",@"河北省",nil];
+    if(dropDown == nil) {
+        CGFloat f = 200;
+        dropDown = [[NIDropDown alloc] showDropDown:sender :&f :arr :sender.tag];
+    }
+    else {
+        [dropDown hideDropDown:sender];
+        [self rel];
+    }
+}
+
+-(void)rel{
+    dropDown = nil;
+}
+
 -(void)keyboard:(UITapGestureRecognizer *)sender{
     NSLog(@">>>>>>>>>>>>>>>>>>>>>>点击了！！！！！！！！！！:%ld",sender.view.tag);
     NSLog(@">>>>>>>>>>>>>>>>>>>>>>点击了！！！！！！！！！！:%ld",sender.view.tag);

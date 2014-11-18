@@ -8,10 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "HeaderView.h"
+#import "NIDropDown.h"
 @protocol MainViewControllerDelegate <NSObject>
 - (void) initTitleStr: (NSString *) title;
 @end
 @interface MainViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UIPickerViewDataSource,UIPickerViewDelegate,UIGestureRecognizerDelegate>
+{
+    NIDropDown *dropDown;
+}
 @property (nonatomic, assign) int i;
 @property (nonatomic, copy) NSString *projectTitle;
 @property (nonatomic, strong) UILabel *titleLab;

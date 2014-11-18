@@ -34,17 +34,17 @@
 
 - (IBAction)editBtnClick:(UIButton *)sender {
     NSLog(@">>>>>>>>>点击了");
-    NSArray * arr = [[NSArray alloc] init];
-    arr = [NSArray arrayWithObjects:@"1分", @"2分", @"3分", @"4分", @"5分",nil];
-    if(dropDown == nil) {
-        CGFloat f = 200;
-        dropDown = [[NIDropDown alloc] showDropDown:sender :&f :arr :sender.tag];
-        dropDown.delegate = self;
-    }
-    else {
-        [dropDown hideDropDown:sender];
-        [self rel];
-    }
+//    NSArray * arr = [[NSArray alloc] init];
+//    arr = [NSArray arrayWithObjects:@"1分", @"2分", @"3分", @"4分", @"5分",nil];
+//    if(dropDown == nil) {
+//        CGFloat f = 200;
+//        dropDown = [[NIDropDown alloc] showDropDown:sender :&f :arr :sender.tag];
+//        dropDown.delegate = self;
+//    }
+//    else {
+//        [dropDown hideDropDown:sender];
+//        [self rel];
+//    }
 }
 
 -(void)rel{

@@ -15,7 +15,7 @@
 -(instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = RGBACOLOR(23, 48, 106, 1);
+        self.backgroundColor = RGBACOLOR(43, 61, 126, 1);
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
         btn.frame = CGRectMake(10, 20, 44, 44);
         btn.backgroundColor = [UIColor redColor];
@@ -33,7 +33,8 @@
 }
 
 -(void)showLeft:(UIButton *)sender{
-    [[SliderViewController sharedSliderController] showLeftViewController];
+//    [[SliderViewController sharedSliderController] showLeftViewController];
+    [[SliderViewController sharedSliderController].navigationController popToRootViewControllerAnimated:YES];
 }
 
 @end

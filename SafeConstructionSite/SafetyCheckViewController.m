@@ -16,12 +16,18 @@
 
 @implementation SafetyCheckViewController
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+   
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notification:) name:@"走这儿啦" object:nil];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self initTableView];
     [self initHeaderView];
     [self initData];
+    
 }
 
 -(void)initData{
@@ -29,28 +35,9 @@
 }
 
 -(void)initHeaderView{
-//    self.header = [[HeaderView alloc] initWithFrame:CGRectMake(0, 0, 320, 64)];
-//    [self.view addSubview:self.header];
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 64)];
-    view.backgroundColor = RGBACOLOR(23, 48, 106, 1);
-    [self.view addSubview:view];
-    
-    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn.frame = CGRectMake(10, 20, 44, 44);
-    btn.backgroundColor = [UIColor redColor];
-    [btn setTitle:@"开合" forState:UIControlStateNormal];
-    [btn addTarget:self action:@selector(backAction:) forControlEvents:UIControlEventTouchUpInside];
-    [view addSubview:btn];
-    
-    self.titleLab = [[UILabel alloc] initWithFrame:CGRectMake(60, 20, 200, 44)];
-    self.titleLab.textAlignment = NSTextAlignmentCenter;
-    self.titleLab.textColor = [UIColor whiteColor];
-    [view addSubview:self.titleLab];
-}
-//TODO:返回的方法
-- (void)backAction:(UIButton *)btn
-{
-    [[SliderViewController sharedSliderController].navigationController popToRootViewControllerAnimated:YES];
+    self.header = [[HeaderView alloc] initWithFrame:CGRectMake(0, 0, 320, 64)];
+    self.header.titleLab.text = self.titleStr;
+    [self.view addSubview:self.header];
 }
 
 #pragma mark - 初始化tableView
@@ -95,8 +82,6 @@
     if (indexPath.row == 0) {
         cell.textLabel.font = [UIFont systemFontOfSize:14];
     }
-    
-    
     return cell;
 }
 

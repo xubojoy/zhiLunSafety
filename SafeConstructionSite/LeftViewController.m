@@ -12,6 +12,7 @@
 #import "SliderViewController.h"
 #import "MainViewController.h"
 #import "SafetyCheckViewController.h"
+#import "BasicViewController.h"
 @interface LeftViewController ()
 
 @end
@@ -21,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.view.backgroundColor = RGBACOLOR(23, 48, 106, 1);
+    self.view.backgroundColor = RGBACOLOR(43, 61, 126, 1);
 
     [self initData];
     [self initUserInfo];
@@ -87,7 +88,7 @@
 -(void)initTable{
     
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(20, 120, 238, self.view.frame.size.height-150) style:UITableViewStyleGrouped];
-    self.tableView.backgroundColor = RGBACOLOR(26, 61, 134, 1);
+    self.tableView.backgroundColor = RGBACOLOR(51, 75, 153, 1);
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
@@ -112,26 +113,27 @@
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 238, 40)];
-    view.backgroundColor = RGBACOLOR(26, 61, 134, 1);
-    
-    
-    NSLog(@">>>>>>view.frame>>>>>%@",NSStringFromCGRect(view.frame));
+    view.backgroundColor = RGBACOLOR(51, 75, 153, 1);
     
     UIButton *titleBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    titleBtn.frame = CGRectMake(0, 0, view.frame.size.width, view.frame.size.height);
+    titleBtn.frame = CGRectMake(0, 0, view.frame.size.width-50, view.frame.size.height);
     [titleBtn setTitle:[self.projectArray objectAtIndex:section] forState:UIControlStateNormal];
-    [titleBtn setImage:[UIImage imageNamed:@"push_btn_bg"] forState:UIControlStateNormal];
-    // 设置btn中的imageview不拉伸
-    titleBtn.imageView.contentMode = UIViewContentModeCenter;
-    
-    // 设置btn中的imageview超出部分不剪切
-    titleBtn.imageView.clipsToBounds = NO;
-    titleBtn.imageView.transform = CGAffineTransformMakeRotation(M_PI_2);
-    titleBtn.tag = section;
-    titleBtn.titleEdgeInsets = UIEdgeInsetsMake(0, -5, 0, 130);
-    titleBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 200, 0, 10);
-    [titleBtn addTarget:self action:@selector(titleBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+    titleBtn.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 90);
     [view addSubview:titleBtn];
+
+    UIButton *pullBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    pullBtn.frame = CGRectMake(view.frame.size.width-50, 0, 50, view.frame.size.height);
+    [pullBtn setImage:[UIImage imageNamed:@"push_btn_bg"] forState:UIControlStateNormal];
+    // 设置btn中的imageview不拉伸
+    pullBtn.imageView.contentMode = UIViewContentModeCenter;
+    // 设置btn中的imageview超出部分不剪切
+    pullBtn.imageView.clipsToBounds = NO;
+    pullBtn.imageView.transform = CGAffineTransformMakeRotation(M_PI_2);
+    pullBtn.tag = section;
+//    pullBtn.titleEdgeInsets = UIEdgeInsetsMake(0, -5, 0, 130);
+//    pullBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 200, 0, 10);
+    [pullBtn addTarget:self action:@selector(pullBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [view addSubview:pullBtn];
     
     return view;
 }
@@ -162,24 +164,30 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    if (indexPath.row == 6) {
+    if (indexPath.row == 4) {
+        BasicViewController *bvc = [[BasicViewController alloc] init];
+        bvc.titleStr = [self.projectArray objectAtIndex:indexPath.section];
+        [self.navigationController pushViewController:bvc animated:YES];
+    }
+   else if (indexPath.row == 6) {
         SafetyCheckViewController *scvc = [[SafetyCheckViewController alloc] init];
+       scvc.titleStr = [self.projectArray objectAtIndex:indexPath.section];
         [self.navigationController pushViewController:scvc animated:YES];
 
     }else{
         [[SliderViewController sharedSliderController] closeSideBarWithAnimate:YES complete:^(BOOL finished) {
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"走这儿啦" object:[self.projectArray objectAtIndex:indexPath.section]];
+             [[NSNotificationCenter defaultCenter] postNotificationName:@"走这儿啦" object:[self.projectArray objectAtIndex:indexPath.section]];
         }];
     }
+   
 }
 
 #pragma  mark - 可开合的view
--(void)titleBtnClick:(UIButton *)sender{
+-(void)pullBtnClick:(UIButton *)sender{
     if(dropDown == nil) {
         CGFloat f = 200;
         dropDown = [[NIDropDown alloc] showDropDown:sender :&f :self.nameArray :sender.tag];
         dropDown.titleCount = self.grouparr0.count;
-        dropDown.delegate = self;
     }
     else {
         [dropDown hideDropDown:sender];
