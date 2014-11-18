@@ -8,7 +8,7 @@
             <connections>
                 <outlet property="chooseTimeModalView" destination="89j-cb-YbY" id="WIa-9d-CUC"/>
                 <outlet property="maskView" destination="bh6-4R-bhf" id="5SN-AB-TeF"/>
-                <outlet property="scheduleTimePicker" destination="6Jm-tB-INQ" id="Wj8-3x-n1q"/>
+                <outlet property="scheduleTimePicker" destination="OIz-iP-Ssx" id="efv-gB-rh9"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -29,14 +29,34 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="245"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <pickerView contentMode="scaleToFill" id="6Jm-tB-INQ">
-                    <rect key="frame" x="0.0" y="23" width="320" height="162"/>
+                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" id="OIz-iP-Ssx">
+                    <rect key="frame" x="0.0" y="30" width="320" height="215"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                </pickerView>
+                    <date key="date" timeIntervalSinceReferenceDate="437971460.80845797">
+                        <!--2014-11-18 02:44:20 +0000-->
+                    </date>
+                </datePicker>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="gha-A3-oFl">
+                    <rect key="frame" x="0.0" y="-9" width="320" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <items>
+                        <barButtonItem title="取消" width="46" id="NRl-dn-Kvs">
+                            <connections>
+                                <action selector="cancelChooseTime:" destination="-1" id="2iq-kR-84v"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Hsu-MV-53J"/>
+                        <barButtonItem title="确定" width="45" id="AK6-nP-AV7">
+                            <connections>
+                                <action selector="confirmChooseTime:" destination="-1" id="saF-jK-8tP"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="824" y="0.5"/>
+            <point key="canvasLocation" x="667" y="-6.5"/>
         </view>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

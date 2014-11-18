@@ -133,7 +133,6 @@
     [view addSubview:titleBtn];
     
     return view;
-
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
@@ -173,12 +172,6 @@
 //        
 //    }];
 //}
-
-void user(){
-
-
-
-}
 
 #pragma  mark - 可开合的view
 -(void)titleBtnClick:(UIButton *)sender{
