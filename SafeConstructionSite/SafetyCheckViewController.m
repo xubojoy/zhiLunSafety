@@ -21,6 +21,11 @@
     // Do any additional setup after loading the view from its nib.
     [self initTableView];
     [self initHeaderView];
+    [self initData];
+}
+
+-(void)initData{
+    self.titleArray = [[NSMutableArray alloc] initWithObjects:@"施工单位----安全检查记录",@"检查时间：2014.11.18",@"项目：工程项目A",@"受检单位：首汽集团",@"检查情况：\n       在欢乐的音乐声中在欢乐的音乐声中在欢乐的音乐声中在欢乐的音乐声中在欢乐的音乐声中在欢乐的音乐声中在欢乐的音乐声中在欢乐的音乐声中在欢乐的音乐声中在欢乐的音乐声中在欢乐的音乐声中在欢乐的音乐声中在欢乐的音乐声中在欢乐的音乐声中在欢乐的音乐声中在欢乐的音乐声中在欢乐的音乐声中在欢乐的音乐声中在欢乐的音乐声中在欢乐的音乐声中在欢乐的音乐声中在欢乐的音乐声中在欢乐的音乐声中在欢乐的音乐声中在欢乐的音乐声中在欢乐的音乐声中在欢乐的音乐声中",@"检查人：张三",@"受检单位签字：首汽集团",@"整改要求：\n       来自各种检测，地方两局，质量协会等不同部门来自各种检测，地方两局，质量协会等不同部门来自各种检测，地方两局，质量协会等不同部门来自各种检测，地方两局，质量协会等不同部门来自各种检测，地方两局，质量协会等不同部门来自各种检测，地方两局，质量协会等不同部门来自各种检测，地方两局，质量协会等不同部门来自各种检测，地方两局，质量协会等不同部门来自各种检测，地方两局，质量协会等不同部门来自各种检测，地方两局，质量协会等不同部门来自各种检测，地方两局，质量协会等不同部门来自各种检测，地方两局，质量协会等不同部门来自各种检测，地方两局，质量协会等不同部门来自各种检测，地方两局，质量协会等不同部门", nil];
 }
 
 -(void)initHeaderView{
@@ -42,10 +47,7 @@
     self.titleLab.textColor = [UIColor whiteColor];
     [view addSubview:self.titleLab];
 }
-
-//-(void)showLeft:(UIButton *)sender{
-//    [[SliderViewController sharedSliderController].navigationController popToViewController:[SliderViewController sharedSliderController].LeftVC animated:YES];
-//}
+//TODO:返回的方法
 - (void)backAction:(UIButton *)btn
 {
     [[SliderViewController sharedSliderController].navigationController popToRootViewControllerAnimated:YES];
@@ -53,7 +55,14 @@
 
 #pragma mark - 初始化tableView
 -(void)initTableView{
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, VIEW_WEIGHT, VIEW_HEIGHT-64) style:UITableViewStylePlain];
+    
+    CGRect frame = self.tableView.frame;
+    if (IOS_7) {
+        frame = CGRectMake(0, 44, VIEW_WEIGHT, VIEW_HEIGHT-44);
+    }else{
+        frame = CGRectMake(0, 64, VIEW_WEIGHT, VIEW_HEIGHT-64);
+    }
+    self.tableView = [[UITableView alloc] initWithFrame:frame style:UITableViewStylePlain];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.view addSubview:self.tableView];
@@ -61,37 +70,17 @@
 
 #pragma mark - UITableViewDelegate
 
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 3;
-}
-
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    if (section == 0) {
-        return 9;
-    }else if (section == 1){
-        return 2;
-    }
-    return 10;
+    return 8;
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    if (section == 0) {
-        return 0;
-    }
-    return 20;
-}
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section == 2) {
-        if (indexPath.row == 3 || indexPath.row == 4) {
-            return 100;
-        }else if (indexPath.row == 7){
-            return 150;
-        }else if (indexPath.row == 9){
-            return 150;
-        }
+    if (indexPath.row == 4) {
+        return 150;
+    }else if (indexPath.row == 7){
+        return 220;
     }
     return 40;
-    
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -100,6 +89,14 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
+    cell.textLabel.text = [self.titleArray objectAtIndex:indexPath.row];
+    cell.textLabel.numberOfLines = 0;
+    cell.textLabel.font = [UIFont systemFontOfSize:12];
+    if (indexPath.row == 0) {
+        cell.textLabel.font = [UIFont systemFontOfSize:14];
+    }
+    
+    
     return cell;
 }
 

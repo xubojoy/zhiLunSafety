@@ -13,4 +13,5 @@
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) HeaderView *header;
 @property (nonatomic, strong) UILabel *titleLab;
+@property (nonatomic, strong) NSMutableArray *titleArray;
 @end

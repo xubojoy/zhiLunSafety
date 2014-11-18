@@ -383,13 +383,13 @@
 }
 
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
-    if (pickerView == self.scheduleTimePicker && component == 0) {
-        NSDate *date = [NSDate date];
-//        self.hoursCanOrder = [self.stylist hoursCanDate:date];
-//        self.hoursCanOrder = [self filteHoursCanOrder:self.hoursCanOrder dayDate:date];
-        [pickerView selectRow:0 inComponent:1 animated:YES];
-        [pickerView reloadComponent:1];
-    }
+//    if (pickerView == self.scheduleTimePicker && component == 0) {
+//        NSDate *date = [NSDate date];
+////        self.hoursCanOrder = [self.stylist hoursCanDate:date];
+////        self.hoursCanOrder = [self filteHoursCanOrder:self.hoursCanOrder dayDate:date];
+//        [pickerView selectRow:0 inComponent:1 animated:YES];
+//        [pickerView reloadComponent:1];
+//    }
 }
 
 - (void)didReceiveMemoryWarning {

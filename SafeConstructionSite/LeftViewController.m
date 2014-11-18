@@ -170,7 +170,6 @@
         [[SliderViewController sharedSliderController] closeSideBarWithAnimate:YES complete:^(BOOL finished) {
             [[NSNotificationCenter defaultCenter] postNotificationName:@"走这儿啦" object:[self.projectArray objectAtIndex:indexPath.section]];
         }];
-
     }
 }
 
