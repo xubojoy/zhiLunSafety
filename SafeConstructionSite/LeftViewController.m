@@ -37,7 +37,7 @@
     
     NSMutableDictionary *nameAndStateDic1 = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"建设单位—-\"平安工地\"考核评价表",@"title",nil];
     NSMutableDictionary *nameAndStateDic2 = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"建设单位—-建设单位考核评价表",@"title",nil];
-    NSMutableDictionary *nameAndStateDic3 = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"建设单位—-开工前安全生产条件核查表",@"title",nil];
+    NSMutableDictionary *nameAndStateDic3 = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"建设单位—-开工前安全生产条件核\n                  查表",@"title",nil];
     NSMutableDictionary *nameAndStateDic4 = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"监理单位—-考核评价表",@"title",nil];
     NSMutableDictionary *nameAndStateDic5 = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"施工单位—-基础管理考核评价表",@"title",nil];
     NSMutableDictionary *nameAndStateDic6 = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"施工单位—-施工现场考核评价表",@"title",nil];
@@ -86,7 +86,7 @@
 -(void)initTable{
     
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(20, 120, 238, self.view.frame.size.height-150) style:UITableViewStyleGrouped];
-    self.tableView.backgroundColor = [UIColor clearColor];
+    self.tableView.backgroundColor = RGBACOLOR(26, 61, 134, 1);
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
@@ -101,7 +101,7 @@
     if (section == 0) {
         return self.grouparr0.count;
     }else if (section == 1){
-        return 0;
+        return 1;
         
     }else{
         return 0;
@@ -111,7 +111,7 @@
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 238, 40)];
-    view.backgroundColor = [UIColor purpleColor];
+    view.backgroundColor = RGBACOLOR(26, 61, 134, 1);
     
     
     NSLog(@">>>>>>view.frame>>>>>%@",NSStringFromCGRect(view.frame));
@@ -142,21 +142,26 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSString *indexStr = [NSString stringWithFormat:@"%ld",indexPath.section];
-    static NSString *identifier = @"Cell";
-    SafetyCheckCell *cell = [[SafetyCheckCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+//    static NSString *identifier = @"Cell";
+    SafetyCheckCell *cell = [[SafetyCheckCell alloc] init];
+    cell.backgroundColor = [UIColor clearColor];
     if (indexPath.section == 0) {
         cell.label.text = self.dic[indexStr][indexPath.row][@"title"];
+        cell.label.textColor = [UIColor whiteColor];
         cell.label.font = [UIFont systemFontOfSize:12];
+        NSRange range = [cell.label.text rangeOfString:@"建设单位"];
+        
+        if ([self.departmentLabel.text isEqualToString:@"建设单位"] && range.location != NSNotFound) {
+            cell.editBtn.hidden = NO;
+        }else{
+            cell.editBtn.hidden = YES;
+        }
     }
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-   
-    
-    
     [[SliderViewController sharedSliderController] closeSideBarWithAnimate:YES complete:^(BOOL finished) {
-//        NSLog(@">>>>>>>>>>>>>>>>>走这儿啦！");
         [[NSNotificationCenter defaultCenter] postNotificationName:@"走这儿啦" object:[self.projectArray objectAtIndex:indexPath.section]];
     }];
 

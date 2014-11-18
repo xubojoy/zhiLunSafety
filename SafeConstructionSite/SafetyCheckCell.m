@@ -16,12 +16,14 @@
           self = [[[NSBundle mainBundle]loadNibNamed:@"SafetyCheckCell" owner:self options:nil] objectAtIndex:0];
 //        self.label.backgroundColor = [UIColor redColor];
 //        self.label.text = @"项目检查";
+        
     }
     return self;
 }
 
 - (void)awakeFromNib {
     // Initialization code
+    self.editBtn.backgroundColor = [UIColor purpleColor];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -30,7 +32,7 @@
     // Configure the view for the selected state
 }
 
-- (IBAction)scoreBtnClick:(UIButton *)sender {
+- (IBAction)editBtnClick:(UIButton *)sender {
     NSLog(@">>>>>>>>>点击了");
     NSArray * arr = [[NSArray alloc] init];
     arr = [NSArray arrayWithObjects:@"1分", @"2分", @"3分", @"4分", @"5分",nil];
