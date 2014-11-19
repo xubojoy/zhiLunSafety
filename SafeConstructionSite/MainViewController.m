@@ -141,17 +141,6 @@
         if (indexPath.row == 0) {
             self.choseTime.font = [UIFont systemFontOfSize:14];
         }
-//        NSLog(@">>>>>__________________%ld",self.index );
-        if (self.index == 6 || self.index == 7 || self.index ==8) {
-//            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(presentChooseTimeModalView:)];
-//            tap.view.tag = self.index;
-//            [self.choseTime addGestureRecognizer:tap];
-        }else{
-//            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(keyboard:)];
-//            tap.view.tag = self.index;
-//            [self.choseTime addGestureRecognizer:tap];
-        
-        }
         [cell.contentView addSubview:self.choseTime];
         return cell;
     }
@@ -165,7 +154,8 @@
             cell.textLabel.font = [UIFont systemFontOfSize:12];
             return cell;
         }else if (indexPath.row == 1){
-            PullDownCell *cell = [[PullDownCell alloc] init];
+            static NSString *identifier  = @"cell";
+            PullDownCell *cell = [[PullDownCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             return cell;
         }
@@ -186,12 +176,13 @@
             return cell;
         }
        else if (indexPath.row == 2) {
-           PullDownCell *cell = [[PullDownCell alloc] init];
+           static NSString *identifier  = @"cell";
+           PullDownCell *cell = [[PullDownCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
            cell.selectionStyle = UITableViewCellSelectionStyleNone;
            return cell;
        }else if (indexPath.row == 3){
            UILabel *label1 = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 80, 30)];
-           label1.backgroundColor = [UIColor greenColor];
+//           label1.backgroundColor = [UIColor greenColor];
            label1.font = [UIFont systemFontOfSize:12];
            label1.textAlignment = NSTextAlignmentRight;
            label1.text = @"工程项目得分:";
@@ -204,7 +195,7 @@
            [cell.contentView addSubview:btn];
            
            UILabel *label2 = [[UILabel alloc] initWithFrame:CGRectMake(10, 50, 80, 30)];
-           label2.backgroundColor = [UIColor greenColor];
+//           label2.backgroundColor = [UIColor greenColor];
            label2.font = [UIFont systemFontOfSize:12];
            label2.textAlignment = NSTextAlignmentRight;
            label2.text = @"达标等级:";
@@ -219,7 +210,7 @@
            return cell;
        }else if (indexPath.row == 4){
            UILabel *label1 = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 80, 30)];
-           label1.backgroundColor = [UIColor greenColor];
+//           label1.backgroundColor = [UIColor greenColor];
            label1.font = [UIFont systemFontOfSize:12];
            label1.textAlignment = NSTextAlignmentRight;
            label1.text = @"工程项目综合得分:";
@@ -232,7 +223,7 @@
            [cell.contentView addSubview:btn3];
            
            UILabel *label2 = [[UILabel alloc] initWithFrame:CGRectMake(10, 50, 80, 30)];
-           label2.backgroundColor = [UIColor greenColor];
+//           label2.backgroundColor = [UIColor greenColor];
            label2.font = [UIFont systemFontOfSize:12];
            label2.textAlignment = NSTextAlignmentRight;
            label2.text = @"达标等级:";
@@ -263,7 +254,7 @@
            return cell;
        }else if (indexPath.row == 7){
            UILabel *label1 = [[UILabel alloc] initWithFrame:CGRectMake(10, 30, 70, 30)];
-           label1.backgroundColor = [UIColor greenColor];
+//           label1.backgroundColor = [UIColor greenColor];
            label1.font = [UIFont systemFontOfSize:12];
            label1.numberOfLines = 0;
            label1.textAlignment = NSTextAlignmentRight;
@@ -276,7 +267,7 @@
            [cell.contentView addSubview:btn2];
            
            UILabel *label3 = [[UILabel alloc] initWithFrame:CGRectMake(10, 110, 300, 30)];
-           label3.backgroundColor = [UIColor greenColor];
+//           label3.backgroundColor = [UIColor greenColor];
            label3.font = [UIFont systemFontOfSize:12];
            label3.numberOfLines = 0;
            label3.textAlignment = NSTextAlignmentLeft;

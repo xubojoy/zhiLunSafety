@@ -34,7 +34,7 @@
         NSLog(@">>>>>>>>>>>>>btnSender.superview.superview.frame>>>>%@",NSStringFromCGRect(btnSender.superview.superview.frame));
         NSLog(@">>>>>>>>>>>btnSender.superview.superview.superview.frame>>>>>>%@",NSStringFromCGRect(btnSender.superview.superview.superview.frame));
         
-        self.frame = CGRectMake(30+(40+30)*tag, btn.origin.y+btn.size.height, 240, 0);
+        self.frame = CGRectMake(30+(40+50)*tag, btn.origin.y+btn.size.height, 100, 0);
         self.list = [NSArray arrayWithArray:arr];
         
         table = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, 0)];
@@ -43,7 +43,7 @@
         table.separatorStyle = UITableViewCellSeparatorStyleNone;
         table.backgroundColor = [UIColor clearColor];
         [UIView animateWithDuration:0.5 animations:^{
-            self.frame = CGRectMake(30+(40+30)*tag, btn.origin.y+btn.size.height, 240, *height);
+            self.frame = CGRectMake(30+(40+50)*tag, btn.origin.y+btn.size.height, 100, *height);
             table.frame = CGRectMake(0, 0, self.frame.size.width, *height);
         }];
         if (IOS_7) {
@@ -67,7 +67,7 @@
 -(void)hideDropDown:(UIButton *)b {
     CGRect btn = b.superview.superview.superview.frame;
     [UIView animateWithDuration:0.5 animations:^{
-        self.frame = CGRectMake(30+(40+30)*b.tag, btn.origin.y+btn.size.height, 240, 0);
+        self.frame = CGRectMake(30+(40+50)*b.tag, btn.origin.y+btn.size.height, 100, 0);
         table.frame = CGRectMake(0, 0, self.frame.size.width, 0);
     }];
 }
@@ -86,11 +86,11 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier = @"Cell";
+//    static NSString *CellIdentifier = @"Cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:nil];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
         cell.textLabel.font = [UIFont systemFontOfSize:15];
         cell.textLabel.textAlignment = NSTextAlignmentCenter;
         
@@ -114,8 +114,8 @@
 }
 
 - (void) myDelegate {
-    if ([self.delegate respondsToSelector:@selector(ComboBoxViewDelegateMethod:)]) {
-        [self.delegate ComboBoxViewDelegateMethod:self];
+    if ([self.delegate respondsToSelector:@selector(EvaluatDownVIewDelegateMethod:)]) {
+        [self.delegate EvaluatDownVIewDelegateMethod:self];
     }
     
 }
