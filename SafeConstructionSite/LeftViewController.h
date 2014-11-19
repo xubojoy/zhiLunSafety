@@ -22,9 +22,12 @@
 @property (nonatomic, strong) NSArray *nameArray;
 @property (nonatomic, strong) NSMutableArray *smallArray;
 @property (nonatomic, strong) NSMutableArray *grouparr0;
+@property (nonatomic, strong) NSMutableArray *grouparr1;
+@property (nonatomic, strong) NSMutableArray *grouparr2;
 @property (nonatomic, strong) NSMutableDictionary *dic;
 @property (nonatomic, strong) MainViewController *mvc;
 @property (nonatomic, assign) NSInteger sectionIndex;
+@property (nonatomic, assign) int selectRow;
 
 
 

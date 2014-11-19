@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "HeaderView.h"
-#import "NIDropDown.h"
+#import "ComboBoxView.h"
 @interface BasicViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 {
-    NIDropDown *dropDown;
+    ComboBoxView *dropDown;
 }
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) HeaderView *header;

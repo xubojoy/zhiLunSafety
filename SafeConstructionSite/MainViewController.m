@@ -11,6 +11,7 @@
 #import "Macro.h"
 #import "PullDownCell.h"
 
+
 @interface MainViewController ()
 
 @end
@@ -26,9 +27,8 @@
     [super viewDidLoad];
     [self initHeaderView];
     [self initTableView];
-    [self initMaskView];
-    
-    self.titleArray = [[NSMutableArray alloc] initWithObjects:@"建设单位—-\"平安工地\"考核评价表",@"项   目   名   称 :",@"设   计   单   位 :",@"建   设   里   程 :",@"工   程   概   算 :",@"桥   隧   比   例 :",@"批准工期(年月):",@"实际开工日期(年月):",@"计划交工日期(年月):", nil];
+//    [self initMaskView];
+    self.titleArray = [[NSMutableArray alloc] initWithObjects:@"建设单位—-\"平安工地\"考核评价表",@"项   目   名   称 : 八达岭",@"设   计   单   位 : 北京设计院",@"建   设   里   程 : A551",@"工   程   概   算 : 5亿",@"桥   隧   比   例 : 5：2",@"批准工期(年月): 2014.5.1",@"实际开工日期(年月): 2015.2.1",@"计划交工日期(年月): 2015.10.1", nil];
 
      [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notification:) name:@"走这儿啦" object:nil];
 }
@@ -59,12 +59,12 @@
     [[SliderViewController sharedSliderController] showLeftViewController];
 }
 
--(void) initMaskView
-{
-    self.maskView.frame = self.view.frame;
-    self.maskView.backgroundColor = RGBACOLOR(232, 233, 232, 0.4);
-    [self initPickerView];
-}
+//-(void) initMaskView
+//{
+//    self.maskView.frame = self.view.frame;
+//    self.maskView.backgroundColor = RGBACOLOR(232, 233, 232, 0.4);
+////    [self initPickerView];
+//}
 
 -(void)initTableView{
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, VIEW_WEIGHT, VIEW_HEIGHT-64) style:UITableViewStylePlain];
@@ -141,16 +141,15 @@
         if (indexPath.row == 0) {
             self.choseTime.font = [UIFont systemFontOfSize:14];
         }
-        self.index = indexPath.row;
-        NSLog(@">>>>>__________________%ld",self.index );
+//        NSLog(@">>>>>__________________%ld",self.index );
         if (self.index == 6 || self.index == 7 || self.index ==8) {
-            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(presentChooseTimeModalView:)];
-            tap.view.tag = self.index;
-            [self.choseTime addGestureRecognizer:tap];
+//            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(presentChooseTimeModalView:)];
+//            tap.view.tag = self.index;
+//            [self.choseTime addGestureRecognizer:tap];
         }else{
-            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(keyboard:)];
-            tap.view.tag = self.index;
-            [self.choseTime addGestureRecognizer:tap];
+//            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(keyboard:)];
+//            tap.view.tag = self.index;
+//            [self.choseTime addGestureRecognizer:tap];
         
         }
         [cell.contentView addSubview:self.choseTime];
@@ -201,7 +200,7 @@
            UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
            btn.backgroundColor = [UIColor redColor];
            btn.frame = CGRectMake(100, 10, 210, 30);
-           [btn addTarget:self action:@selector(pullDownBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+           [btn addTarget:self action:@selector(scoreBtnClick:) forControlEvents:UIControlEventTouchUpInside];
            [cell.contentView addSubview:btn];
            
            UILabel *label2 = [[UILabel alloc] initWithFrame:CGRectMake(10, 50, 80, 30)];
@@ -214,7 +213,7 @@
            UIButton *btn2 = [UIButton buttonWithType:UIButtonTypeCustom];
            btn2.backgroundColor = [UIColor redColor];
            btn2.frame = CGRectMake(100, 50, 210, 30);
-           [btn2 addTarget:self action:@selector(pullDownBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+           [btn2 addTarget:self action:@selector(rankBtnClick:) forControlEvents:UIControlEventTouchUpInside];
            [cell.contentView addSubview:btn2];
            
            return cell;
@@ -229,7 +228,7 @@
            UIButton *btn3 = [UIButton buttonWithType:UIButtonTypeCustom];
            btn3.backgroundColor = [UIColor redColor];
            btn3.frame = CGRectMake(100, 10, 210, 30);
-           [btn3 addTarget:self action:@selector(pullDownBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+           [btn3 addTarget:self action:@selector(scoreBtnClick:) forControlEvents:UIControlEventTouchUpInside];
            [cell.contentView addSubview:btn3];
            
            UILabel *label2 = [[UILabel alloc] initWithFrame:CGRectMake(10, 50, 80, 30)];
@@ -242,7 +241,7 @@
            UIButton *btn4 = [UIButton buttonWithType:UIButtonTypeCustom];
            btn4.backgroundColor = [UIColor redColor];
            btn4.frame = CGRectMake(100, 50, 210, 30);
-           [btn4 addTarget:self action:@selector(pullDownBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+           [btn4 addTarget:self action:@selector(rankBtnClick:) forControlEvents:UIControlEventTouchUpInside];
            [cell.contentView addSubview:btn4];
            return cell;
            
@@ -281,22 +280,21 @@
            label3.font = [UIFont systemFontOfSize:12];
            label3.numberOfLines = 0;
            label3.textAlignment = NSTextAlignmentLeft;
-           label3.text = @"填表人:";
+           label3.text = @"填表人: 张先生";
            [cell.contentView addSubview:label3];
 
            return cell;
        }else if (indexPath.row == 8){
-           cell.textLabel.text = @"填表日期：";
+           cell.textLabel.text = @"填表日期：2014.5.1";
            cell.textLabel.font = [UIFont systemFontOfSize:12];
-            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(presentChooseTimeModalView:)];
-           [cell.contentView addGestureRecognizer:tap];
            return cell;
        }else if (indexPath.row == 9){
            UIButton *confirmBtn = [UIButton buttonWithType:UIButtonTypeCustom];
            confirmBtn.backgroundColor = RGBACOLOR(53, 80, 137, 1);
            [confirmBtn setTitle:@"确认提交" forState:UIControlStateNormal];
            confirmBtn.titleLabel.font = [UIFont systemFontOfSize:12];
-           confirmBtn.frame = CGRectMake(60, 50, 200, 30);
+           confirmBtn.frame = CGRectMake(60, 50, 200, 50);
+           [confirmBtn addTarget:self action:@selector(confirmBtnClick) forControlEvents:UIControlEventTouchUpInside];
            [cell.contentView addSubview:confirmBtn];
 
            return cell;
@@ -305,41 +303,81 @@
     return nil;
 }
 #pragma mark - button方法
+-(void)confirmBtnClick{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"提交成功！" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
+    [alert show];
+}
+
 -(void)pullDownBtnClick:(UIButton *)sender{
+      NSLog(@">>>>>>>>点一点>>>>>>>>");
     NSArray * arr = [[NSArray alloc] init];
     arr = [NSArray arrayWithObjects:@"北京市", @"上海市", @"广东省", @"深圳市", @"河南省",@"河北省",nil];
-    if(dropDown == nil) {
+    if(self.pullDown == nil) {
         CGFloat f = 200;
-        dropDown = [[NIDropDown alloc] showDropDown:sender :&f :arr :sender.tag];
+        self.pullDown = [[ComboBoxView alloc] showDropDown:sender :&f :arr :sender.tag :nil];
     }
     else {
-        [dropDown hideDropDown:sender];
+        [self.pullDown hideDropDown:sender];
+        [self real];
+    }
+}
+
+-(void)real{
+    self.pullDown = nil;
+}
+
+-(void)scoreBtnClick:(UIButton *)sender{
+    NSArray * arr = [[NSArray alloc] init];
+    arr = [NSArray arrayWithObjects:@"1分", @"2分", @"3分", @"4分", @"5分",@"6分",nil];
+    if(self.pullDownView == nil) {
+        CGFloat f = 200;
+        self.pullDownView = [[PullDownView alloc] showDropDown:sender :&f :arr :sender.tag:nil];
+    }
+    else {
+        [self.pullDownView hideDropDown:sender];
+        [self release1];
+    }
+}
+
+-(void)release1{
+    self.pullDownView = nil;
+}
+
+-(void)rankBtnClick:(UIButton *)sender{
+    NSArray * arr = [[NSArray alloc] init];
+    arr = [NSArray arrayWithObjects:@"A", @"B", @"C", @"D",nil];
+    if(self.pullDownView == nil) {
+        CGFloat f = 200;
+        self.pullDownView = [[PullDownView alloc] showDropDown:sender :&f :arr :sender.tag:nil];
+    }
+    else {
+        [self.pullDownView hideDropDown:sender];
         [self rel];
     }
 }
 
 -(void)rel{
-    dropDown = nil;
+    self.pullDownView = nil;
 }
 
--(void)keyboard:(UITapGestureRecognizer *)sender{
-    NSLog(@">>>>>>>>>>>>>>>>>>>>>>点击了！！！！！！！！！！:%ld",sender.view.tag);
-    NSLog(@">>>>>>>>>>>>>>>>>>>>>>点击了！！！！！！！！！！:%ld",sender.view.tag);
-}
+//-(void)keyboard:(UITapGestureRecognizer *)sender{
+////    NSLog(@">>>>>>>>>>>>>>>>>>>>>>点击了！！！！！！！！！！:%ld",sender.view.tag);
+////    NSLog(@">>>>>>>>>>>>>>>>>>>>>>点击了！！！！！！！！！！:%ld",sender.view.tag);
+//}
 
--(void)presentChooseTimeModalView:(UITapGestureRecognizer *)sender{
-    [self.view addSubview:self.maskView];
-    CGRect frame = self.chooseTimeModalView.frame;
-    frame.origin.y = self.view.frame.size.height;
-    self.chooseTimeModalView.frame = frame;
-    [self.view addSubview:self.chooseTimeModalView];
-    
-    [UIView animateWithDuration:0.3 animations:^{
-        CGRect frame = self.chooseTimeModalView.frame;
-        frame.origin.y = self.view.frame.size.height - frame.size.height;
-        self.chooseTimeModalView.frame = frame;
-    }];
-}
+//-(void)presentChooseTimeModalView:(UITapGestureRecognizer *)sender{
+//    [self.view addSubview:self.maskView];
+//    CGRect frame = self.chooseTimeModalView.frame;
+//    frame.origin.y = self.view.frame.size.height;
+//    self.chooseTimeModalView.frame = frame;
+//    [self.view addSubview:self.chooseTimeModalView];
+//    
+//    [UIView animateWithDuration:0.3 animations:^{
+//        CGRect frame = self.chooseTimeModalView.frame;
+//        frame.origin.y = self.view.frame.size.height - frame.size.height;
+//        self.chooseTimeModalView.frame = frame;
+//    }];
+//}
 - (IBAction)cancelChooseTime:(id)sender {
     [UIView animateWithDuration:0.3 animations:^{
         CGRect frame = self.chooseTimeModalView.frame;
@@ -359,72 +397,72 @@
 }
 
 
--(void)initPickerView{
-    self.scheduleTimePicker.datePickerMode = UIDatePickerModeDate;//设置时间选择器格式
-    self.scheduleTimePicker.timeZone = [NSTimeZone timeZoneWithName:@"GMT"];//设置时间选择器时区
-    self.scheduleTimePicker.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"zh-Hans"];//以中国描述方式显示
-    [self.scheduleTimePicker addTarget:self action:@selector(dateChanged:) forControlEvents:UIControlEventValueChanged];//有选择操作时，响应dateChanged:函数
-}
+//-(void)initPickerView{
+//    self.scheduleTimePicker.datePickerMode = UIDatePickerModeDate;//设置时间选择器格式
+//    self.scheduleTimePicker.timeZone = [NSTimeZone timeZoneWithName:@"GMT"];//设置时间选择器时区
+//    self.scheduleTimePicker.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"zh-Hans"];//以中国描述方式显示
+//    [self.scheduleTimePicker addTarget:self action:@selector(dateChanged:) forControlEvents:UIControlEventValueChanged];//有选择操作时，响应dateChanged:函数
+//}
+//
+////显示用火日期
+//-(void)dateChanged:(id)sender {
+//    UIDatePicker *dp = (UIDatePicker*)sender;
+//    NSDate *selected = [dp date];
+//    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+//    [df setDateFormat:@"yyyy年MM月dd日"];//此处可以根据需要，更改时间格式，获得更详细的时间
+//    self.dateStr = [df stringFromDate:selected];
+//    NSLog(@">>>>>>>self.dateStr>>>>>ß>>%@",self.dateStr);
+//}
 
-//显示用火日期
--(void)dateChanged:(id)sender {
-    UIDatePicker *dp = (UIDatePicker*)sender;
-    NSDate *selected = [dp date];
-    NSDateFormatter *df = [[NSDateFormatter alloc] init];
-    [df setDateFormat:@"yyyy年MM月dd日"];//此处可以根据需要，更改时间格式，获得更详细的时间
-    self.dateStr = [df stringFromDate:selected];
-    NSLog(@">>>>>>>self.dateStr>>>>>>>%@",self.dateStr);
-}
-
-# pragma mark- ----PickerView datasource-----
--(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
-    
-    return 2;
-}
-
-- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-        if (component == 0) {
-            return 12;
-        }
-        
-        return 24;
-    
-}
-
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-           //日期选择器部分
-        if(component == 1){
-            NSDate *date = [NSDate date];
-            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-            [dateFormatter setDateFormat:@"M月d日"];
-            NSLog(@">>>>>>>[dateFormatter stringFromDate:date]>>>>>>%@",[dateFormatter stringFromDate:date]);
-            
-            return [dateFormatter stringFromDate:date];
-        }
-        else{
-        
-            NSDate *date = [NSDate date];
-            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-            [dateFormatter setDateFormat:@"yyyy年"];
-            
-            return [dateFormatter stringFromDate:date];
-        }
-}
-
--(CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component
-{
-    return 33;
-}
-
--(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
-//    if (pickerView == self.scheduleTimePicker && component == 0) {
-//        NSDate *date = [NSDate date];
-////        self.hoursCanOrder = [self.stylist hoursCanDate:date];
-////        self.hoursCanOrder = [self filteHoursCanOrder:self.hoursCanOrder dayDate:date];
-//        [pickerView selectRow:0 inComponent:1 animated:YES];
-//        [pickerView reloadComponent:1];
-//    }
-}
+//# pragma mark- ----PickerView datasource-----
+//-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
+//    
+//    return 2;
+//}
+//
+//- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+//        if (component == 0) {
+//            return 12;
+//        }
+//        
+//        return 24;
+//    
+//}
+//
+//- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+//           //日期选择器部分
+//        if(component == 1){
+//            NSDate *date = [NSDate date];
+//            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+//            [dateFormatter setDateFormat:@"M月d日"];
+//            NSLog(@">>>>>>>[dateFormatter stringFromDate:date]>>>>>>%@",[dateFormatter stringFromDate:date]);
+//            
+//            return [dateFormatter stringFromDate:date];
+//        }
+//        else{
+//        
+//            NSDate *date = [NSDate date];
+//            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+//            [dateFormatter setDateFormat:@"yyyy年"];
+//            
+//            return [dateFormatter stringFromDate:date];
+//        }
+//}
+//
+//-(CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component
+//{
+//    return 33;
+//}
+//
+//-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+////    if (pickerView == self.scheduleTimePicker && component == 0) {
+////        NSDate *date = [NSDate date];
+//////        self.hoursCanOrder = [self.stylist hoursCanDate:date];
+//////        self.hoursCanOrder = [self filteHoursCanOrder:self.hoursCanOrder dayDate:date];
+////        [pickerView selectRow:0 inComponent:1 animated:YES];
+////        [pickerView reloadComponent:1];
+////    }
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

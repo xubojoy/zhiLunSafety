@@ -33,17 +33,19 @@
 - (IBAction)pullDownClick:(UIButton *)sender {
     NSLog(@">>>>>>>>>点击了");
     NSArray * arr = [[NSArray alloc] init];
-    arr = [NSArray arrayWithObjects:@"1分", @"2分", @"3分", @"4分", @"5分",nil];
-    if(dropDown == nil) {
+    arr = [NSArray arrayWithObjects:@"1分", @"2分", @"3分", @"4分", @"5分",@"6分",nil];
+    if(self.evaluatDownView == nil) {
         CGFloat f = 200;
-        dropDown = [[NIDropDown alloc] showDropDown:sender :&f :arr :sender.tag];
+        self.evaluatDownView = [[EvaluatDownVIew alloc] showDropDown:sender :&f :arr :sender.tag:nil];
     }
     else {
-        [dropDown hideDropDown:sender];
-        [self rel];
+        [self.evaluatDownView hideDropDown:sender];
+        [self release2];
     }
 }
--(void)rel{
-    dropDown = nil;
+
+-(void)release2{
+    self.evaluatDownView = nil;
 }
+
 @end

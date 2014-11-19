@@ -27,6 +27,14 @@
     [self initData];
     [self initUserInfo];
     [self initTable];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadTableView:) name:@"dianjile" object:nil];
+}
+
+-(void)reloadTableView:(NSNotification *)notification{
+   
+    self.selectRow = [notification.object intValue];
+    [self.tableView reloadData];
+     NSLog(@"___________self.selectRow_____________%d",self.selectRow);
 }
 
 -(void)initData{
@@ -46,9 +54,24 @@
     NSMutableDictionary *nameAndStateDic7 = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"施工单位—-安全检查表",@"title",nil];
     
     self.grouparr0 = [[NSMutableArray alloc] initWithObjects:nameAndStateDic1,nameAndStateDic2,nameAndStateDic3,nameAndStateDic4,nameAndStateDic5,nameAndStateDic6,nameAndStateDic7, nil];
+    
+   
+    NSMutableDictionary *nameAndStateDic8 = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"监理单位—-考核评价表",@"title",nil];
+    self.grouparr1 = [[NSMutableArray alloc] initWithObjects:nameAndStateDic8, nil];
+    
+    NSMutableDictionary *nameAndStateDic9 = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"建设单位—-\"平安工地\"考核评价表",@"title",nil];
+    NSMutableDictionary *nameAndStateDic10 = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"建设单位—-建设单位考核评价表",@"title",nil];
+    NSMutableDictionary *nameAndStateDic11 = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"建设单位—-开工前安全生产条件核\n                  查表",@"title",nil];
+    NSMutableDictionary *nameAndStateDic12 = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"监理单位—-考核评价表",@"title",nil];
+    self.grouparr2 = [[NSMutableArray alloc] initWithObjects:nameAndStateDic9,nameAndStateDic10,nameAndStateDic11,nameAndStateDic12, nil];
+    
+    
     self.dic = [NSMutableDictionary new];
     
-    [self.dic setValue:self.grouparr0 forKey:@"0"];
+    [self.dic setValue:self.grouparr0 forKey:@"开工前安全生产条件核查表"];
+    [self.dic setValue:self.grouparr1 forKey:@"项目工程考核评价"];
+    [self.dic setValue:self.grouparr2 forKey:@"合同段A"];
+    
 
 }
 
@@ -101,9 +124,9 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if (section == 0) {
-        return self.grouparr0.count;
+        return [[self.dic objectForKey:[self.nameArray objectAtIndex:self.selectRow]] count];
     }else if (section == 1){
-        return 1;
+        return 0;
         
     }else{
         return 0;
@@ -143,12 +166,13 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSString *indexStr = [NSString stringWithFormat:@"%ld",indexPath.section];
+//    NSString *indexStr = [NSString stringWithFormat:@"%d",indexPath.section];
+//    NSString *indexStr = [self.nameArray objectAtIndex:indexPath.row];
 //    static NSString *identifier = @"Cell";
     SafetyCheckCell *cell = [[SafetyCheckCell alloc] init];
     cell.backgroundColor = [UIColor clearColor];
     if (indexPath.section == 0) {
-        cell.label.text = self.dic[indexStr][indexPath.row][@"title"];
+        cell.label.text = [self.dic objectForKey:[self.nameArray objectAtIndex:self.selectRow]][indexPath.row][@"title"];
         cell.label.textColor = [UIColor whiteColor];
         cell.label.font = [UIFont systemFontOfSize:12];
         NSRange range = [cell.label.text rangeOfString:@"建设单位"];
@@ -184,15 +208,17 @@
 
 #pragma  mark - 可开合的view
 -(void)pullBtnClick:(UIButton *)sender{
-    if(dropDown == nil) {
-        CGFloat f = 200;
-        dropDown = [[NIDropDown alloc] showDropDown:sender :&f :self.nameArray :sender.tag];
-        dropDown.titleCount = self.grouparr0.count;
+    if (sender.tag == 0) {
+        if(dropDown == nil) {
+            CGFloat f = 200;
+            dropDown = [[NIDropDown alloc] showDropDown:sender :&f :self.nameArray :sender.tag :self.dic];
+        }
+        else {
+            [dropDown hideDropDown:sender];
+            [self rel];
+        }
     }
-    else {
-        [dropDown hideDropDown:sender];
-        [self rel];
-    }
+    return;
 }
 
 -(void)rel{

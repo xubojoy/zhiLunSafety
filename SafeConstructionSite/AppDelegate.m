@@ -24,6 +24,7 @@
     LeftViewController *leftVC = [[LeftViewController alloc] init];
     [SliderViewController sharedSliderController].LeftVC = leftVC;
     [SliderViewController sharedSliderController].MainVC = [[MainViewController alloc] init];
+//    [SliderViewController sharedSliderController].MainVC = leftVC;
     [SliderViewController sharedSliderController].LeftSContentOffset=270;
     [SliderViewController sharedSliderController].LeftContentViewSContentOffset = 320;
     [SliderViewController sharedSliderController].LeftSContentScale=1;
@@ -35,6 +36,8 @@
 //        CGAffineTransform lconT = CGAffineTransformConcat(ltransT, ltransS);
 //        leftVC.contentView.transform = lconT;
     };
+    
+    
     
     [UIViewController validatePanPackWithMLTransitionGestureRecognizerType:MLTransitionGestureRecognizerTypePan];
     

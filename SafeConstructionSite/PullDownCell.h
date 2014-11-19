@@ -7,11 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "NIDropDown.h"
+#import "EvaluatDownVIew.h"
 @interface PullDownCell : UITableViewCell
-{
-    NIDropDown *dropDown;
-}
+@property (nonatomic, strong) EvaluatDownVIew *evaluatDownView;
 - (IBAction)pullDownClick:(UIButton *)sender;
 
 @end

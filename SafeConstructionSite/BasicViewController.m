@@ -97,7 +97,7 @@
     arr = [NSArray arrayWithObjects:@"1分", @"2分", @"3分", @"4分", @"5分",nil];
     if(dropDown == nil) {
         CGFloat f = 200;
-        dropDown = [[NIDropDown alloc] showDropDown:sender :&f :arr :sender.tag];
+        dropDown = [[ComboBoxView alloc] showDropDown:sender :&f :arr :sender.tag :nil];
     }
     else {
         [dropDown hideDropDown:sender];

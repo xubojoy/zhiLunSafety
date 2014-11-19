@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A8001C221A1C7F1A001C3EDC /* ComboBoxView.m in Sources */ = {isa = PBXBuildFile; fileRef = A8001C211A1C7F1A001C3EDC /* ComboBoxView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A8001C251A1C9E98001C3EDC /* PullDownView.m in Sources */ = {isa = PBXBuildFile; fileRef = A8001C241A1C9E98001C3EDC /* PullDownView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A8001C281A1CA2E3001C3EDC /* EvaluatDownVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = A8001C271A1CA2E3001C3EDC /* EvaluatDownVIew.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A83C154B1A15988B0031C5B0 /* SliderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A83C15491A15988B0031C5B0 /* SliderViewController.m */; };
 		A83C154F1A159AC20031C5B0 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A83C154D1A159AC20031C5B0 /* MainViewController.m */; };
 		A83C15501A159AC20031C5B0 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A83C154E1A159AC20031C5B0 /* MainViewController.xib */; };
@@ -49,6 +52,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A8001C201A1C7F1A001C3EDC /* ComboBoxView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComboBoxView.h; sourceTree = "<group>"; };
+		A8001C211A1C7F1A001C3EDC /* ComboBoxView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComboBoxView.m; sourceTree = "<group>"; };
+		A8001C231A1C9E98001C3EDC /* PullDownView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullDownView.h; sourceTree = "<group>"; };
+		A8001C241A1C9E98001C3EDC /* PullDownView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullDownView.m; sourceTree = "<group>"; };
+		A8001C261A1CA2E3001C3EDC /* EvaluatDownVIew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EvaluatDownVIew.h; sourceTree = "<group>"; };
+		A8001C271A1CA2E3001C3EDC /* EvaluatDownVIew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EvaluatDownVIew.m; sourceTree = "<group>"; };
 		A83C15481A15988B0031C5B0 /* SliderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SliderViewController.h; sourceTree = "<group>"; };
 		A83C15491A15988B0031C5B0 /* SliderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SliderViewController.m; sourceTree = "<group>"; };
 		A83C154C1A159AC20031C5B0 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
@@ -192,6 +201,12 @@
 				A865D4481A1B233B00C488A5 /* HeaderView.m */,
 				A88A8EBB1A10C12D00A0F417 /* NIDropDown.h */,
 				A88A8EBC1A10C12D00A0F417 /* NIDropDown.m */,
+				A8001C201A1C7F1A001C3EDC /* ComboBoxView.h */,
+				A8001C211A1C7F1A001C3EDC /* ComboBoxView.m */,
+				A8001C231A1C9E98001C3EDC /* PullDownView.h */,
+				A8001C241A1C9E98001C3EDC /* PullDownView.m */,
+				A8001C261A1CA2E3001C3EDC /* EvaluatDownVIew.h */,
+				A8001C271A1CA2E3001C3EDC /* EvaluatDownVIew.m */,
 				A865D4061A1A03E100C488A5 /* PullDownCell.h */,
 				A865D4071A1A03E100C488A5 /* PullDownCell.m */,
 				A865D4081A1A03E100C488A5 /* PullDownCell.xib */,
@@ -295,7 +310,7 @@
 				TargetAttributes = {
 					A85A1D221A104AED007AA77D = {
 						CreatedOnToolsVersion = 6.0;
-						DevelopmentTeam = V3Y4QA5T8Q;
+						DevelopmentTeam = 7GTVU55XYK;
 					};
 					A85A1D3B1A104AED007AA77D = {
 						CreatedOnToolsVersion = 6.0;
@@ -373,12 +388,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				A865D4491A1B233B00C488A5 /* HeaderView.m in Sources */,
+				A8001C281A1CA2E3001C3EDC /* EvaluatDownVIew.m in Sources */,
 				A83C154F1A159AC20031C5B0 /* MainViewController.m in Sources */,
 				A85A1D671A105F03007AA77D /* SafetyCheckCell.m in Sources */,
 				A865D4091A1A03E100C488A5 /* PullDownCell.m in Sources */,
 				A865D4451A1B20EE00C488A5 /* SafetyCheckViewController.m in Sources */,
 				A85A1D2F1A104AED007AA77D /* LeftViewController.m in Sources */,
 				A83C154B1A15988B0031C5B0 /* SliderViewController.m in Sources */,
+				A8001C251A1C9E98001C3EDC /* PullDownView.m in Sources */,
+				A8001C221A1C7F1A001C3EDC /* ComboBoxView.m in Sources */,
 				A83C15571A159BE20031C5B0 /* MLTransitionAnimation.m in Sources */,
 				A88A8EBD1A10C12D00A0F417 /* NIDropDown.m in Sources */,
 				A83C15581A159BE20031C5B0 /* UIViewController+MLTransition.m in Sources */,
@@ -443,8 +461,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Xin Gong (768NGZ4VP8)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xin Gong (768NGZ4VP8)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Fei Wang (7GTVU55XYK)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Fei Wang (7GTVU55XYK)";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -464,7 +482,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "be784c7a-1e33-4443-95ff-efed64fb9168";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -486,8 +504,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Xin Gong (768NGZ4VP8)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xin Gong (768NGZ4VP8)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Fei Wang (7GTVU55XYK)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Fei Wang (7GTVU55XYK)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -500,7 +518,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "be784c7a-1e33-4443-95ff-efed64fb9168";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -511,12 +529,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Xin Gong (768NGZ4VP8)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xin Gong (768NGZ4VP8)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Fei Wang (J22PKTDNLR)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Fei Wang (J22PKTDNLR)";
 				INFOPLIST_FILE = SafeConstructionSite/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "1a1a8a1a-e547-4d1c-986c-5a744ca4a1ec";
 			};
 			name = Debug;
 		};
@@ -525,12 +544,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Xin Gong (768NGZ4VP8)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xin Gong (768NGZ4VP8)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Fei Wang (J22PKTDNLR)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Fei Wang (J22PKTDNLR)";
 				INFOPLIST_FILE = SafeConstructionSite/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "1a1a8a1a-e547-4d1c-986c-5a744ca4a1ec";
 			};
 			name = Release;
 		};

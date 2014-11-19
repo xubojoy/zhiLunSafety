@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "HeaderView.h"
 #import "NIDropDown.h"
+#import "ComboBoxView.h"
+#import "PullDownView.h"
+#import "EvaluatDownVIew.h"
 @protocol MainViewControllerDelegate <NSObject>
 - (void) initTitleStr: (NSString *) title;
 @end
@@ -26,6 +29,8 @@
 @property (nonatomic, strong) UILabel *choseTime;
 @property (nonatomic, assign) NSInteger index;
 @property (nonatomic, strong) HeaderView *header;
+@property (nonatomic, strong) ComboBoxView *pullDown;
+@property (nonatomic, strong) PullDownView *pullDownView;
 
 
 @property (strong, nonatomic) IBOutlet UIView *chooseTimeModalView;
