@@ -86,7 +86,7 @@
     if (indexPath.row == 5) {
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
         btn.frame = CGRectMake(60, 0, 250, 40);
-        btn.backgroundColor = [UIColor purpleColor];
+        btn.backgroundColor = [UIColor greenColor];
         [btn addTarget:self action:@selector(pullDownBtnClick:) forControlEvents:UIControlEventTouchUpInside];
         [cell.contentView addSubview:btn];
     }

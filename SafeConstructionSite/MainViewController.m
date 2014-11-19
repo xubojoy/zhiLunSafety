@@ -192,7 +192,7 @@
            return cell;
        }else if (indexPath.row == 3){
            UILabel *label1 = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 80, 30)];
-           label1.backgroundColor = [UIColor purpleColor];
+           label1.backgroundColor = [UIColor greenColor];
            label1.font = [UIFont systemFontOfSize:12];
            label1.textAlignment = NSTextAlignmentRight;
            label1.text = @"工程项目得分:";
@@ -205,7 +205,7 @@
            [cell.contentView addSubview:btn];
            
            UILabel *label2 = [[UILabel alloc] initWithFrame:CGRectMake(10, 50, 80, 30)];
-           label2.backgroundColor = [UIColor purpleColor];
+           label2.backgroundColor = [UIColor greenColor];
            label2.font = [UIFont systemFontOfSize:12];
            label2.textAlignment = NSTextAlignmentRight;
            label2.text = @"达标等级:";
@@ -220,7 +220,7 @@
            return cell;
        }else if (indexPath.row == 4){
            UILabel *label1 = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 80, 30)];
-           label1.backgroundColor = [UIColor purpleColor];
+           label1.backgroundColor = [UIColor greenColor];
            label1.font = [UIFont systemFontOfSize:12];
            label1.textAlignment = NSTextAlignmentRight;
            label1.text = @"工程项目综合得分:";
@@ -233,7 +233,7 @@
            [cell.contentView addSubview:btn3];
            
            UILabel *label2 = [[UILabel alloc] initWithFrame:CGRectMake(10, 50, 80, 30)];
-           label2.backgroundColor = [UIColor purpleColor];
+           label2.backgroundColor = [UIColor greenColor];
            label2.font = [UIFont systemFontOfSize:12];
            label2.textAlignment = NSTextAlignmentRight;
            label2.text = @"达标等级:";
@@ -257,14 +257,14 @@
            
            UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
            btn.frame = CGRectMake(60, 0, 250, 40);
-           btn.backgroundColor = [UIColor purpleColor];
+           btn.backgroundColor = [UIColor greenColor];
            [btn addTarget:self action:@selector(pullDownBtnClick:) forControlEvents:UIControlEventTouchUpInside];
            [cell.contentView addSubview:btn];
 
            return cell;
        }else if (indexPath.row == 7){
            UILabel *label1 = [[UILabel alloc] initWithFrame:CGRectMake(10, 30, 70, 30)];
-           label1.backgroundColor = [UIColor purpleColor];
+           label1.backgroundColor = [UIColor greenColor];
            label1.font = [UIFont systemFontOfSize:12];
            label1.numberOfLines = 0;
            label1.textAlignment = NSTextAlignmentRight;
@@ -277,7 +277,7 @@
            [cell.contentView addSubview:btn2];
            
            UILabel *label3 = [[UILabel alloc] initWithFrame:CGRectMake(10, 110, 300, 30)];
-           label3.backgroundColor = [UIColor purpleColor];
+           label3.backgroundColor = [UIColor greenColor];
            label3.font = [UIFont systemFontOfSize:12];
            label3.numberOfLines = 0;
            label3.textAlignment = NSTextAlignmentLeft;

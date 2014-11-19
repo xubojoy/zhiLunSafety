@@ -23,7 +23,7 @@
 
 - (void)awakeFromNib {
     // Initialization code
-    self.editBtn.backgroundColor = [UIColor purpleColor];
+    self.editBtn.backgroundColor = [UIColor greenColor];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
