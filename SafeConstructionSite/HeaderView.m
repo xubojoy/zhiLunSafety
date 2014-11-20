@@ -34,7 +34,7 @@
 
 -(void)showLeft:(UIButton *)sender{
 //    [[SliderViewController sharedSliderController] showLeftViewController];
-    [[SliderViewController sharedSliderController].navigationController popToRootViewControllerAnimated:YES];
+    [[SliderViewController sharedSliderController].navigationController popViewControllerAnimated:YES];
 }
 
 @end

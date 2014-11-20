@@ -86,15 +86,21 @@
     if (indexPath.row == 5) {
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
         btn.frame = CGRectMake(60, 0, 250, 40);
-        btn.backgroundColor = [UIColor greenColor];
         [btn addTarget:self action:@selector(pullDownBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+        [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [btn setTitle:@"1分" forState:UIControlStateNormal];
+        btn.titleLabel.font = [UIFont systemFontOfSize:13];
+        CALayer *layer = btn.layer;
+        [layer setBorderWidth:1.0f];
+        [layer setBorderColor:[UIColor grayColor].CGColor];
+
         [cell.contentView addSubview:btn];
     }
     return cell;
 }
 -(void)pullDownBtnClick:(UIButton *)sender{
     NSArray * arr = [[NSArray alloc] init];
-    arr = [NSArray arrayWithObjects:@"1分", @"2分", @"3分", @"4分", @"5分",nil];
+    arr = [NSArray arrayWithObjects:@"1分", @"2分", @"3分", @"4分", @"5分",@"6分",nil];
     if(dropDown == nil) {
         CGFloat f = 200;
         dropDown = [[ComboBoxView alloc] showDropDown:sender :&f :arr :sender.tag :nil];

@@ -10,6 +10,10 @@
 		A8001C221A1C7F1A001C3EDC /* ComboBoxView.m in Sources */ = {isa = PBXBuildFile; fileRef = A8001C211A1C7F1A001C3EDC /* ComboBoxView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A8001C251A1C9E98001C3EDC /* PullDownView.m in Sources */ = {isa = PBXBuildFile; fileRef = A8001C241A1C9E98001C3EDC /* PullDownView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A8001C281A1CA2E3001C3EDC /* EvaluatDownVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = A8001C271A1CA2E3001C3EDC /* EvaluatDownVIew.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A80EE0211A1D805A00A19B7E /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A80EE01F1A1D805A00A19B7E /* LoginViewController.m */; };
+		A80EE0221A1D805A00A19B7E /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A80EE0201A1D805A00A19B7E /* LoginViewController.xib */; };
+		A80EE0241A1D8C3800A19B7E /* yinzhang@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A80EE0231A1D8C3800A19B7E /* yinzhang@2x.png */; };
+		A80EE0261A1D8DB600A19B7E /* user_img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A80EE0251A1D8DB600A19B7E /* user_img@2x.png */; };
 		A83C154B1A15988B0031C5B0 /* SliderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A83C15491A15988B0031C5B0 /* SliderViewController.m */; };
 		A83C154F1A159AC20031C5B0 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A83C154D1A159AC20031C5B0 /* MainViewController.m */; };
 		A83C15501A159AC20031C5B0 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A83C154E1A159AC20031C5B0 /* MainViewController.xib */; };
@@ -58,6 +62,11 @@
 		A8001C241A1C9E98001C3EDC /* PullDownView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullDownView.m; sourceTree = "<group>"; };
 		A8001C261A1CA2E3001C3EDC /* EvaluatDownVIew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EvaluatDownVIew.h; sourceTree = "<group>"; };
 		A8001C271A1CA2E3001C3EDC /* EvaluatDownVIew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EvaluatDownVIew.m; sourceTree = "<group>"; };
+		A80EE01E1A1D805A00A19B7E /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		A80EE01F1A1D805A00A19B7E /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		A80EE0201A1D805A00A19B7E /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		A80EE0231A1D8C3800A19B7E /* yinzhang@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yinzhang@2x.png"; sourceTree = "<group>"; };
+		A80EE0251A1D8DB600A19B7E /* user_img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user_img@2x.png"; sourceTree = "<group>"; };
 		A83C15481A15988B0031C5B0 /* SliderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SliderViewController.h; sourceTree = "<group>"; };
 		A83C15491A15988B0031C5B0 /* SliderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SliderViewController.m; sourceTree = "<group>"; };
 		A83C154C1A159AC20031C5B0 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
@@ -183,6 +192,9 @@
 				A88A8EBF1A11A12800A0F417 /* Macro.h */,
 				A85A1D2A1A104AED007AA77D /* AppDelegate.h */,
 				A85A1D2B1A104AED007AA77D /* AppDelegate.m */,
+				A80EE01E1A1D805A00A19B7E /* LoginViewController.h */,
+				A80EE01F1A1D805A00A19B7E /* LoginViewController.m */,
+				A80EE0201A1D805A00A19B7E /* LoginViewController.xib */,
 				A83C154C1A159AC20031C5B0 /* MainViewController.h */,
 				A83C154D1A159AC20031C5B0 /* MainViewController.m */,
 				A83C154E1A159AC20031C5B0 /* MainViewController.xib */,
@@ -255,6 +267,8 @@
 		A85A1D761A108D22007AA77D /* resource */ = {
 			isa = PBXGroup;
 			children = (
+				A80EE0251A1D8DB600A19B7E /* user_img@2x.png */,
+				A80EE0231A1D8C3800A19B7E /* yinzhang@2x.png */,
 				A8828CD01A15F5A10002B1CE /* push_btn_bg@2x.png */,
 			);
 			path = resource;
@@ -343,6 +357,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A80EE0241A1D8C3800A19B7E /* yinzhang@2x.png in Resources */,
 				A85A1D321A104AED007AA77D /* Main.storyboard in Resources */,
 				A83C15501A159AC20031C5B0 /* MainViewController.xib in Resources */,
 				A8828CD11A15F5A10002B1CE /* push_btn_bg@2x.png in Resources */,
@@ -351,7 +366,9 @@
 				A85A1D561A104DC6007AA77D /* Default-568h@2x.png in Resources */,
 				A85A1D681A105F03007AA77D /* SafetyCheckCell.xib in Resources */,
 				A85A1D341A104AED007AA77D /* Images.xcassets in Resources */,
+				A80EE0221A1D805A00A19B7E /* LoginViewController.xib in Resources */,
 				A88A8EC11A11BA3700A0F417 /* SafetyCheck.plist in Resources */,
+				A80EE0261A1D8DB600A19B7E /* user_img@2x.png in Resources */,
 				A865D4411A1B208900C488A5 /* BasicViewController.xib in Resources */,
 				A865D4461A1B20EE00C488A5 /* SafetyCheckViewController.xib in Resources */,
 			);
@@ -394,6 +411,7 @@
 				A865D4091A1A03E100C488A5 /* PullDownCell.m in Sources */,
 				A865D4451A1B20EE00C488A5 /* SafetyCheckViewController.m in Sources */,
 				A85A1D2F1A104AED007AA77D /* LeftViewController.m in Sources */,
+				A80EE0211A1D805A00A19B7E /* LoginViewController.m in Sources */,
 				A83C154B1A15988B0031C5B0 /* SliderViewController.m in Sources */,
 				A8001C251A1C9E98001C3EDC /* PullDownView.m in Sources */,
 				A8001C221A1C7F1A001C3EDC /* ComboBoxView.m in Sources */,

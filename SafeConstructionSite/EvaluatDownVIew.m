@@ -27,14 +27,14 @@
     self = [super init];
     if (self) {
         
-        CGRect btn = btnSender.superview.superview.superview.frame;
+        CGRect btn;
+        if (IOS_7_8) {
+            btn = btnSender.superview.superview.superview.frame;
+        }else if ([[UIDevice currentDevice] systemVersion].floatValue > 8){
+            btn = btnSender.superview.superview.frame;
+        }
         self.backgroundColor = [UIColor redColor];
-        NSLog(@">>>>>>>>>>btnSender.frame>>>>>>>%@",NSStringFromCGRect(btnSender.frame));
-        NSLog(@">>>>>>>>>>btnSender.superview.frame>>>>>>>%@",NSStringFromCGRect(btnSender.superview.frame));
-        NSLog(@">>>>>>>>>>>>>btnSender.superview.superview.frame>>>>%@",NSStringFromCGRect(btnSender.superview.superview.frame));
-        NSLog(@">>>>>>>>>>>btnSender.superview.superview.superview.frame>>>>>>%@",NSStringFromCGRect(btnSender.superview.superview.superview.frame));
-        
-        self.frame = CGRectMake(30+(40+50)*tag, btn.origin.y+btn.size.height, 100, 0);
+        self.frame = CGRectMake(btnSender.frame.origin.x-50, btn.origin.y+btn.size.height, 100, 0);
         self.list = [NSArray arrayWithArray:arr];
         
         table = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, 0)];
@@ -43,31 +43,33 @@
         table.separatorStyle = UITableViewCellSeparatorStyleNone;
         table.backgroundColor = [UIColor clearColor];
         [UIView animateWithDuration:0.5 animations:^{
-            self.frame = CGRectMake(30+(40+50)*tag, btn.origin.y+btn.size.height, 100, *height);
+            self.frame = CGRectMake(btnSender.frame.origin.x-50, btn.origin.y+btn.size.height, 100, *height);
             table.frame = CGRectMake(0, 0, self.frame.size.width, *height);
         }];
-        if (IOS_7) {
+        if (IOS_7_8) {
+            NSLog(@">>>>>>>>>>来这儿了");
             [btnSender.superview.superview.superview.superview.superview addSubview:self];
             [btnSender.superview.superview.superview.superview.superview bringSubviewToFront:self];
             
-            NSLog(@">>>>>>>>>>btnSender.superview>>>>>>>%@",NSStringFromClass([btnSender.superview class]));
-            NSLog(@">>>>>>>>>>>>>btnSender.superview.superview>>>>%@",NSStringFromClass([btnSender.superview.superview class]));
-            NSLog(@">>>>>>>>>>>>>btnSender.superview.superview.superview.superview.superview>>>>%@",NSStringFromClass([btnSender.superview.superview.superview.superview.superview class]));
-            
-            
-        }else if (IOS_8){
-            [btnSender.superview addSubview:self];
+        }else if ([[UIDevice currentDevice] systemVersion].floatValue > 8){
+            NSLog(@">>>>>>>>>>来没");
+            [btnSender.superview.superview.superview.superview addSubview:self];
+            [btnSender.superview.superview.superview.superview bringSubviewToFront:self];
         }
-        
         [self addSubview:table];
     }
     return self;
 }
 
 -(void)hideDropDown:(UIButton *)b {
-    CGRect btn = b.superview.superview.superview.frame;
+    CGRect btn;
+    if (IOS_7_8) {
+        btn = btnSender.superview.superview.superview.frame;
+    }else{
+        btn = btnSender.superview.superview.frame;
+    }
     [UIView animateWithDuration:0.5 animations:^{
-        self.frame = CGRectMake(30+(40+50)*b.tag, btn.origin.y+btn.size.height, 100, 0);
+        self.frame = CGRectMake(btnSender.frame.origin.x-50, btn.origin.y+btn.size.height, 100, 0);
         table.frame = CGRectMake(0, 0, self.frame.size.width, 0);
     }];
 }

@@ -20,7 +20,7 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-   
+    NSLog(@">>>>>>>>>>>>>>>>>>>>>>>>>");
 }
 
 - (void)viewDidLoad {
@@ -28,13 +28,19 @@
     [self initHeaderView];
     [self initTableView];
 //    [self initMaskView];
-    self.titleArray = [[NSMutableArray alloc] initWithObjects:@"建设单位—-\"平安工地\"考核评价表",@"项   目   名   称 : 八达岭",@"设   计   单   位 : 北京设计院",@"建   设   里   程 : A551",@"工   程   概   算 : 5亿",@"桥   隧   比   例 : 5：2",@"批准工期(年月): 2014.5.1",@"实际开工日期(年月): 2015.2.1",@"计划交工日期(年月): 2015.10.1", nil];
+    self.titleArray = [[NSMutableArray alloc] initWithObjects:@"建设单位—-\"平安工地\"考核评价表",@"项   目   名   称 : 八达岭",@"设   计   单   位 : 北京设计院",@"建   设   里   程 : A551",@"工   程   概   算 : 5亿",@"桥   隧   比   例 : 5 ：2",@"批准工期(年月): 2014.5.1",@"实际开工日期(年月): 2015.2.1",@"计划交工日期(年月): 2015.10.1", nil];
 
      [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notification:) name:@"走这儿啦" object:nil];
+    
+    [self performSelector:@selector(showLeftVC) withObject:self afterDelay:0.01];
 }
 -(void)notification:(NSNotification *)notification{
     NSString *titleStr = notification.object;
     self.titleLab.text = titleStr;
+}
+
+-(void)showLeftVC{
+    [[SliderViewController sharedSliderController] showLeftViewController];
 }
 
 -(void)initHeaderView{
@@ -182,57 +188,78 @@
            return cell;
        }else if (indexPath.row == 3){
            UILabel *label1 = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 80, 30)];
-//           label1.backgroundColor = [UIColor greenColor];
            label1.font = [UIFont systemFontOfSize:12];
            label1.textAlignment = NSTextAlignmentRight;
            label1.text = @"工程项目得分:";
            [cell.contentView addSubview:label1];
            
            UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-           btn.backgroundColor = [UIColor redColor];
            btn.frame = CGRectMake(100, 10, 210, 30);
            [btn addTarget:self action:@selector(scoreBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+           [btn setTitle:@"1分" forState:UIControlStateNormal];
+           [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+           btn.titleLabel.font = [UIFont systemFontOfSize:13];
+           btn.tag = 1000;
+           CALayer *layer = btn.layer;
+           [layer setBorderWidth:1.0f];
+           [layer setBorderColor:[UIColor grayColor].CGColor];
+        
            [cell.contentView addSubview:btn];
            
            UILabel *label2 = [[UILabel alloc] initWithFrame:CGRectMake(10, 50, 80, 30)];
-//           label2.backgroundColor = [UIColor greenColor];
            label2.font = [UIFont systemFontOfSize:12];
            label2.textAlignment = NSTextAlignmentRight;
            label2.text = @"达标等级:";
            [cell.contentView addSubview:label2];
            
            UIButton *btn2 = [UIButton buttonWithType:UIButtonTypeCustom];
-           btn2.backgroundColor = [UIColor redColor];
            btn2.frame = CGRectMake(100, 50, 210, 30);
            [btn2 addTarget:self action:@selector(rankBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+           [btn2 setTitle:@"A" forState:UIControlStateNormal];
+           btn2.titleLabel.font = [UIFont systemFontOfSize:13];
+           btn2.tag = 1001;
+           [btn2 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+           layer = btn2.layer;
+           [layer setBorderWidth:1.0f];
+           [layer setBorderColor:[UIColor grayColor].CGColor];
            [cell.contentView addSubview:btn2];
            
            return cell;
        }else if (indexPath.row == 4){
            UILabel *label1 = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 80, 30)];
-//           label1.backgroundColor = [UIColor greenColor];
            label1.font = [UIFont systemFontOfSize:12];
            label1.textAlignment = NSTextAlignmentRight;
            label1.text = @"工程项目综合得分:";
            [cell.contentView addSubview:label1];
            
            UIButton *btn3 = [UIButton buttonWithType:UIButtonTypeCustom];
-           btn3.backgroundColor = [UIColor redColor];
            btn3.frame = CGRectMake(100, 10, 210, 30);
            [btn3 addTarget:self action:@selector(scoreBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+           [btn3 setTitle:@"1分" forState:UIControlStateNormal];
+           btn3.titleLabel.font = [UIFont systemFontOfSize:13];
+           btn3.tag = 1002;
+           [btn3 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+           CALayer *layer = btn3.layer;
+           [layer setBorderWidth:1.0f];
+           [layer setBorderColor:[UIColor grayColor].CGColor];
            [cell.contentView addSubview:btn3];
            
            UILabel *label2 = [[UILabel alloc] initWithFrame:CGRectMake(10, 50, 80, 30)];
-//           label2.backgroundColor = [UIColor greenColor];
            label2.font = [UIFont systemFontOfSize:12];
            label2.textAlignment = NSTextAlignmentRight;
            label2.text = @"达标等级:";
            [cell.contentView addSubview:label2];
            
            UIButton *btn4 = [UIButton buttonWithType:UIButtonTypeCustom];
-           btn4.backgroundColor = [UIColor redColor];
            btn4.frame = CGRectMake(100, 50, 210, 30);
            [btn4 addTarget:self action:@selector(rankBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+           [btn4 setTitle:@"A" forState:UIControlStateNormal];
+           btn4.titleLabel.font = [UIFont systemFontOfSize:13];
+           btn4.tag = 1003;
+           [btn4 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+           layer = btn4.layer;
+           [layer setBorderWidth:1.0f];
+           [layer setBorderColor:[UIColor grayColor].CGColor];
            [cell.contentView addSubview:btn4];
            return cell;
            
@@ -247,14 +274,17 @@
            
            UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
            btn.frame = CGRectMake(60, 0, 250, 40);
-           btn.backgroundColor = [UIColor greenColor];
            [btn addTarget:self action:@selector(pullDownBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+           [btn setTitle:@"北京市" forState:UIControlStateNormal];
+           btn.titleLabel.font = [UIFont systemFontOfSize:13];
+           [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+           CALayer *layer = btn.layer;
+           [layer setBorderWidth:1.0f];
+           [layer setBorderColor:[UIColor grayColor].CGColor];
            [cell.contentView addSubview:btn];
-
            return cell;
        }else if (indexPath.row == 7){
            UILabel *label1 = [[UILabel alloc] initWithFrame:CGRectMake(10, 30, 70, 30)];
-//           label1.backgroundColor = [UIColor greenColor];
            label1.font = [UIFont systemFontOfSize:12];
            label1.numberOfLines = 0;
            label1.textAlignment = NSTextAlignmentRight;
@@ -262,12 +292,11 @@
            [cell.contentView addSubview:label1];
            
            UIButton *btn2 = [UIButton buttonWithType:UIButtonTypeCustom];
-           btn2.backgroundColor = [UIColor redColor];
-           btn2.frame = CGRectMake(100, 20, 60, 60);
+           btn2.frame = CGRectMake(100, 20, 80, 80);
+           [btn2 setImage:[UIImage imageNamed:@"yinzhang"] forState:UIControlStateNormal];
            [cell.contentView addSubview:btn2];
            
            UILabel *label3 = [[UILabel alloc] initWithFrame:CGRectMake(10, 110, 300, 30)];
-//           label3.backgroundColor = [UIColor greenColor];
            label3.font = [UIFont systemFontOfSize:12];
            label3.numberOfLines = 0;
            label3.textAlignment = NSTextAlignmentLeft;
@@ -319,7 +348,10 @@
 
 -(void)scoreBtnClick:(UIButton *)sender{
     NSArray * arr = [[NSArray alloc] init];
-    arr = [NSArray arrayWithObjects:@"1分", @"2分", @"3分", @"4分", @"5分",@"6分",nil];
+    
+    if (sender.tag == 1000 || sender.tag == 1002) {
+         arr = [NSArray arrayWithObjects:@"1分", @"2分", @"3分", @"4分", @"5分",@"6分",nil];
+    }
     if(self.pullDownView == nil) {
         CGFloat f = 200;
         self.pullDownView = [[PullDownView alloc] showDropDown:sender :&f :arr :sender.tag:nil];
@@ -336,10 +368,12 @@
 
 -(void)rankBtnClick:(UIButton *)sender{
     NSArray * arr = [[NSArray alloc] init];
-    arr = [NSArray arrayWithObjects:@"A", @"B", @"C", @"D",nil];
+    if (sender.tag == 1001 || sender.tag == 1003){
+        arr = [NSArray arrayWithObjects:@"A", @"B", @"C", @"D",nil];
+    }
     if(self.pullDownView == nil) {
-        CGFloat f = 200;
-        self.pullDownView = [[PullDownView alloc] showDropDown:sender :&f :arr :sender.tag:nil];
+    CGFloat f = 150;
+    self.pullDownView = [[PullDownView alloc] showDropDown:sender :&f :arr :sender.tag:nil];
     }
     else {
         [self.pullDownView hideDropDown:sender];

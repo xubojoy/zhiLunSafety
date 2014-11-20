@@ -21,31 +21,39 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    LeftViewController *leftVC = [[LeftViewController alloc] init];
-    [SliderViewController sharedSliderController].LeftVC = leftVC;
-    [SliderViewController sharedSliderController].MainVC = [[MainViewController alloc] init];
-//    [SliderViewController sharedSliderController].MainVC = leftVC;
-    [SliderViewController sharedSliderController].LeftSContentOffset=270;
-    [SliderViewController sharedSliderController].LeftContentViewSContentOffset = 320;
-    [SliderViewController sharedSliderController].LeftSContentScale=1;
-    [SliderViewController sharedSliderController].LeftSJudgeOffset=160;
-    [SliderViewController sharedSliderController].changeLeftView = ^(CGFloat sca, CGFloat transX)
-    {
-//        CGAffineTransform ltransS = CGAffineTransformMakeScale(sca, sca);
-//        CGAffineTransform ltransT = CGAffineTransformMakeTranslation(transX, 0);
-//        CGAffineTransform lconT = CGAffineTransformConcat(ltransT, ltransS);
-//        leftVC.contentView.transform = lconT;
-    };
+    
+    self.loginVC = [[LoginViewController alloc] init];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:self.loginVC];
+    nav.navigationBar.hidden = YES;
+    self.window.rootViewController = nav;
     
     
     
-    [UIViewController validatePanPackWithMLTransitionGestureRecognizerType:MLTransitionGestureRecognizerTypePan];
-    
-    
-    UINavigationController *naviC = [[UINavigationController alloc] initWithRootViewController:[SliderViewController sharedSliderController]];
-    
-    naviC.navigationBar.hidden = YES;
-    self.window.rootViewController = naviC;
+//    
+//    LeftViewController *leftVC = [[LeftViewController alloc] init];
+//    [SliderViewController sharedSliderController].LeftVC = leftVC;
+//    [SliderViewController sharedSliderController].MainVC = [[MainViewController alloc] init];
+//    [SliderViewController sharedSliderController].LeftSContentOffset=270;
+//    [SliderViewController sharedSliderController].LeftContentViewSContentOffset = 320;
+//    [SliderViewController sharedSliderController].LeftSContentScale=1;
+//    [SliderViewController sharedSliderController].LeftSJudgeOffset=160;
+//    [SliderViewController sharedSliderController].changeLeftView = ^(CGFloat sca, CGFloat transX)
+//    {
+////        CGAffineTransform ltransS = CGAffineTransformMakeScale(sca, sca);
+////        CGAffineTransform ltransT = CGAffineTransformMakeTranslation(transX, 0);
+////        CGAffineTransform lconT = CGAffineTransformConcat(ltransT, ltransS);
+////        leftVC.contentView.transform = lconT;
+//    };
+//    
+//    
+//    
+//    [UIViewController validatePanPackWithMLTransitionGestureRecognizerType:MLTransitionGestureRecognizerTypePan];
+//    
+//    
+//    UINavigationController *naviC = [[UINavigationController alloc] initWithRootViewController:[SliderViewController sharedSliderController]];
+//    
+//    naviC.navigationBar.hidden = YES;
+//    self.window.rootViewController = naviC;
     return YES;
 }
 

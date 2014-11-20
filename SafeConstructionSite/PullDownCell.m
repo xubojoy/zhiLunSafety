@@ -17,6 +17,20 @@
         self = [[[NSBundle mainBundle]loadNibNamed:@"PullDownCell" owner:self options:nil] objectAtIndex:0];
         //        self.label.backgroundColor = [UIColor redColor];
         //        self.label.text = @"项目检查";
+        
+        CALayer *layer = self.scoreBtn.layer;
+        [layer setBorderWidth:1.0f];
+        [layer setBorderColor:[UIColor grayColor].CGColor];
+        
+        layer = self.numBtn.layer;
+        [layer setBorderWidth:1.0f];
+        [layer setBorderColor:[UIColor grayColor].CGColor];
+        
+        layer = self.rankBtn.layer;
+        [layer setBorderWidth:1.0f];
+        [layer setBorderColor:[UIColor grayColor].CGColor];
+        
+        
     }
     return self;
 }
@@ -33,7 +47,14 @@
 - (IBAction)pullDownClick:(UIButton *)sender {
     NSLog(@">>>>>>>>>点击了");
     NSArray * arr = [[NSArray alloc] init];
-    arr = [NSArray arrayWithObjects:@"1分", @"2分", @"3分", @"4分", @"5分",@"6分",nil];
+    if (sender.tag == 100) {
+         arr = [NSArray arrayWithObjects:@"1分", @"2分", @"3分", @"4分", @"5分",@"6分",nil];
+    }else if (sender.tag == 101){
+        arr = [NSArray arrayWithObjects:@"1次", @"2次", @"3次", @"4次", @"5次",@"6次",nil];
+    }else if (sender.tag == 102){
+        arr = [NSArray arrayWithObjects:@"A", @"B", @"C", @"D", @"E",@"F",nil];
+    }
+   
     if(self.evaluatDownView == nil) {
         CGFloat f = 200;
         self.evaluatDownView = [[EvaluatDownVIew alloc] showDropDown:sender :&f :arr :sender.tag:nil];
