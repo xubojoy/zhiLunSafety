@@ -13,9 +13,8 @@
     NIDropDown *dropDown;
 }
 @property (weak, nonatomic) IBOutlet UILabel *label;
-@property (weak, nonatomic) IBOutlet UILabel *scoreLab;
-@property (weak, nonatomic) IBOutlet UIButton *scoreBtn;
+@property (weak, nonatomic) IBOutlet UIButton *editBtn;
 @property (nonatomic, strong) NIDropDown *scoreView;
-- (IBAction)scoreBtnClick:(UIButton *)sender;
+- (IBAction)editBtnClick:(UIButton *)sender;
 -(void)rel;
 @end
