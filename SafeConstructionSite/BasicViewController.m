@@ -9,6 +9,7 @@
 #import "BasicViewController.h"
 #import "SliderViewController.h"
 #import "Macro.h"
+#import "CityCell.h"
 @interface BasicViewController ()
 
 @end
@@ -67,66 +68,41 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *identifier = @"cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
-    }
-    cell.textLabel.text = [self.titleArray objectAtIndex:indexPath.row];
-    cell.textLabel.numberOfLines = 0;
-    cell.textLabel.font = [UIFont systemFontOfSize:12];
-    if (indexPath.row == 0) {
-        cell.textLabel.font = [UIFont systemFontOfSize:14];
-    }
-    
-    if (indexPath.row == 3) {
-        cell.contentView.backgroundColor = RGBACOLOR(76, 97, 157, 1);
-        cell.textLabel.textColor = [UIColor whiteColor];
-    }
     if (indexPath.row == 5) {
-        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-        btn.frame = CGRectMake(60, 0, 250, 40);
-        [btn addTarget:self action:@selector(pullDownBtnClick:) forControlEvents:UIControlEventTouchUpInside];
-        [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        [btn setTitle:@"1分" forState:UIControlStateNormal];
-        btn.titleLabel.font = [UIFont systemFontOfSize:13];
-        CALayer *layer = btn.layer;
-        [layer setBorderWidth:1.0f];
-        [layer setBorderColor:[UIColor grayColor].CGColor];
+        static NSString *cityCell = @"cityCell";
+        CityCell *cell = [tableView dequeueReusableCellWithIdentifier:cityCell];
+        if (!cell) {
+            cell = [[CityCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cityCell];
+        }
+        cell.commonBtn.tag = 900;
+        [cell.commonBtn setTitle:@"80分" forState:UIControlStateNormal];
+        cell.nameLab.text = @"得  分：";
+        return cell;
 
-        [cell.contentView addSubview:btn];
+    }else{
+        UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+        
+        cell.textLabel.text = [self.titleArray objectAtIndex:indexPath.row];
+        cell.textLabel.numberOfLines = 0;
+        cell.textLabel.font = [UIFont systemFontOfSize:12];
+        if (indexPath.row == 0) {
+            cell.textLabel.font = [UIFont systemFontOfSize:14];
+        }
+        
+        if (indexPath.row == 3) {
+            cell.contentView.backgroundColor = RGBACOLOR(76, 97, 157, 1);
+            cell.textLabel.textColor = [UIColor whiteColor];
+            
+        }
+        return cell;
     }
-    return cell;
-}
--(void)pullDownBtnClick:(UIButton *)sender{
-    NSArray * arr = [[NSArray alloc] init];
-    arr = [NSArray arrayWithObjects:@"1分", @"2分", @"3分", @"4分", @"5分",@"6分",nil];
-    if(dropDown == nil) {
-        CGFloat f = 200;
-        dropDown = [[ComboBoxView alloc] showDropDown:sender :&f :arr :sender.tag :nil];
-    }
-    else {
-        [dropDown hideDropDown:sender];
-        [self rel];
-    }
+    return nil;
 }
 
--(void)rel{
-    dropDown = nil;
-}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

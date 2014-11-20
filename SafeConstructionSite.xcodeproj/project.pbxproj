@@ -17,6 +17,8 @@
 		A80EE0301A1DBEBF00A19B7E /* nav_menu_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A80EE02F1A1DBEBF00A19B7E /* nav_menu_icon@2x.png */; };
 		A80EE0341A1DC44F00A19B7E /* ScoreAndRankCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A80EE0321A1DC44F00A19B7E /* ScoreAndRankCell.m */; };
 		A80EE0351A1DC44F00A19B7E /* ScoreAndRankCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A80EE0331A1DC44F00A19B7E /* ScoreAndRankCell.xib */; };
+		A80EE0391A1DCBBD00A19B7E /* CityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A80EE0371A1DCBBD00A19B7E /* CityCell.m */; };
+		A80EE03A1A1DCBBD00A19B7E /* CityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A80EE0381A1DCBBD00A19B7E /* CityCell.xib */; };
 		A83C154B1A15988B0031C5B0 /* SliderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A83C15491A15988B0031C5B0 /* SliderViewController.m */; };
 		A83C154F1A159AC20031C5B0 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A83C154D1A159AC20031C5B0 /* MainViewController.m */; };
 		A83C15501A159AC20031C5B0 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A83C154E1A159AC20031C5B0 /* MainViewController.xib */; };
@@ -74,6 +76,9 @@
 		A80EE0311A1DC44F00A19B7E /* ScoreAndRankCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreAndRankCell.h; sourceTree = "<group>"; };
 		A80EE0321A1DC44F00A19B7E /* ScoreAndRankCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreAndRankCell.m; sourceTree = "<group>"; };
 		A80EE0331A1DC44F00A19B7E /* ScoreAndRankCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScoreAndRankCell.xib; sourceTree = "<group>"; };
+		A80EE0361A1DCBBD00A19B7E /* CityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityCell.h; sourceTree = "<group>"; };
+		A80EE0371A1DCBBD00A19B7E /* CityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityCell.m; sourceTree = "<group>"; };
+		A80EE0381A1DCBBD00A19B7E /* CityCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CityCell.xib; sourceTree = "<group>"; };
 		A83C15481A15988B0031C5B0 /* SliderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SliderViewController.h; sourceTree = "<group>"; };
 		A83C15491A15988B0031C5B0 /* SliderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SliderViewController.m; sourceTree = "<group>"; };
 		A83C154C1A159AC20031C5B0 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
@@ -219,6 +224,9 @@
 				A80EE0311A1DC44F00A19B7E /* ScoreAndRankCell.h */,
 				A80EE0321A1DC44F00A19B7E /* ScoreAndRankCell.m */,
 				A80EE0331A1DC44F00A19B7E /* ScoreAndRankCell.xib */,
+				A80EE0361A1DCBBD00A19B7E /* CityCell.h */,
+				A80EE0371A1DCBBD00A19B7E /* CityCell.m */,
+				A80EE0381A1DCBBD00A19B7E /* CityCell.xib */,
 				A865D4471A1B233B00C488A5 /* HeaderView.h */,
 				A865D4481A1B233B00C488A5 /* HeaderView.m */,
 				A88A8EBB1A10C12D00A0F417 /* NIDropDown.h */,
@@ -380,6 +388,7 @@
 				A85A1D681A105F03007AA77D /* SafetyCheckCell.xib in Resources */,
 				A85A1D341A104AED007AA77D /* Images.xcassets in Resources */,
 				A80EE0221A1D805A00A19B7E /* LoginViewController.xib in Resources */,
+				A80EE03A1A1DCBBD00A19B7E /* CityCell.xib in Resources */,
 				A80EE02C1A1DBC1200A19B7E /* tou_xiang.jpg in Resources */,
 				A88A8EC11A11BA3700A0F417 /* SafetyCheck.plist in Resources */,
 				A865D4411A1B208900C488A5 /* BasicViewController.xib in Resources */,
@@ -417,6 +426,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A80EE0391A1DCBBD00A19B7E /* CityCell.m in Sources */,
 				A865D4491A1B233B00C488A5 /* HeaderView.m in Sources */,
 				A8001C281A1CA2E3001C3EDC /* EvaluatDownVIew.m in Sources */,
 				A83C154F1A159AC20031C5B0 /* MainViewController.m in Sources */,

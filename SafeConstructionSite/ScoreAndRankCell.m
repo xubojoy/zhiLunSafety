@@ -23,8 +23,7 @@
         layer = self.rankBtn.layer;
         [layer setBorderWidth:1.0f];
         [layer setBorderColor:[UIColor grayColor].CGColor];
-        
-        
+  
     }
     return self;
 }
@@ -34,7 +33,7 @@
     NSArray * arr = [[NSArray alloc] init];
     
     if (sender.tag == 200) {
-        arr = [NSArray arrayWithObjects:@"1分", @"2分", @"3分", @"4分", @"5分",@"6分",nil];
+        arr = [NSArray arrayWithObjects:@"50分", @"60分", @"70分", @"80分", @"90分",@"100分",nil];
     }else if (sender.tag == 201){
         arr = [NSArray arrayWithObjects:@"A", @"B", @"C", @"D",nil];
     }

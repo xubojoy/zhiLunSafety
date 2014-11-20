@@ -22,7 +22,7 @@
                     </label>
                     <button opaque="NO" tag="100" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="caA-6t-nPO">
                         <rect key="frame" x="88" y="7" width="41" height="30"/>
-                        <state key="normal" title="1分">
+                        <state key="normal" title="80分">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                         <connections>

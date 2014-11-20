@@ -11,6 +11,7 @@
 #import "Macro.h"
 #import "PullDownCell.h"
 #import "ScoreAndRankCell.h"
+#import "CityCell.h"
 
 
 @interface MainViewController ()
@@ -202,46 +203,6 @@
            }
            return cell;
        }else if (indexPath.row == 4){
-//           static NSString *cellIdentifier = @"cellIdentifier";
-//           UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-//           if (!cell) {
-//               cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-//           }
-//           UILabel *label1 = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 80, 30)];
-//           label1.font = [UIFont systemFontOfSize:12];
-//           label1.textAlignment = NSTextAlignmentRight;
-//           label1.text = @"工程项目综合得分:";
-//           [cell.contentView addSubview:label1];
-//           
-//           UIButton *btn3 = [UIButton buttonWithType:UIButtonTypeCustom];
-//           btn3.frame = CGRectMake(100, 10, 210, 30);
-//           [btn3 addTarget:self action:@selector(scoreBtnClick:) forControlEvents:UIControlEventTouchUpInside];
-//           [btn3 setTitle:@"1分" forState:UIControlStateNormal];
-//           btn3.titleLabel.font = [UIFont systemFontOfSize:13];
-//           btn3.tag = 1002;
-//           [btn3 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-//           CALayer *layer = btn3.layer;
-//           [layer setBorderWidth:1.0f];
-//           [layer setBorderColor:[UIColor grayColor].CGColor];
-//           [cell.contentView addSubview:btn3];
-//           
-//           UILabel *label2 = [[UILabel alloc] initWithFrame:CGRectMake(10, 50, 80, 30)];
-//           label2.font = [UIFont systemFontOfSize:12];
-//           label2.textAlignment = NSTextAlignmentRight;
-//           label2.text = @"达标等级:";
-//           [cell.contentView addSubview:label2];
-//           
-//           UIButton *btn4 = [UIButton buttonWithType:UIButtonTypeCustom];
-//           btn4.frame = CGRectMake(100, 50, 210, 30);
-//           [btn4 addTarget:self action:@selector(rankBtnClick:) forControlEvents:UIControlEventTouchUpInside];
-//           [btn4 setTitle:@"A" forState:UIControlStateNormal];
-//           btn4.titleLabel.font = [UIFont systemFontOfSize:13];
-//           btn4.tag = 1003;
-//           [btn4 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-//           layer = btn4.layer;
-//           [layer setBorderWidth:1.0f];
-//           [layer setBorderColor:[UIColor grayColor].CGColor];
-//           [cell.contentView addSubview:btn4];
            static NSString *cellIden = @"cellIden";
            ScoreAndRankCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIden];
            if (!cell) {
@@ -258,19 +219,12 @@
            return cell;
            
        }else if (indexPath.row == 6){
-           cell.textLabel.text = @"省份：";
-           cell.textLabel.font = [UIFont systemFontOfSize:12];
-           
-           UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-           btn.frame = CGRectMake(60, 0, 250, 40);
-           [btn addTarget:self action:@selector(pullDownBtnClick:) forControlEvents:UIControlEventTouchUpInside];
-           [btn setTitle:@"北京市" forState:UIControlStateNormal];
-           btn.titleLabel.font = [UIFont systemFontOfSize:13];
-           [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-           CALayer *layer = btn.layer;
-           [layer setBorderWidth:1.0f];
-           [layer setBorderColor:[UIColor grayColor].CGColor];
-           [cell.contentView addSubview:btn];
+
+           static NSString *cityCell = @"cityCell";
+           CityCell *cell = [tableView dequeueReusableCellWithIdentifier:cityCell];
+           if (!cell) {
+               cell = [[CityCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cityCell];
+           }
            return cell;
        }else if (indexPath.row == 7){
            UILabel *label1 = [[UILabel alloc] initWithFrame:CGRectMake(10, 30, 70, 30)];
@@ -289,7 +243,7 @@
            label3.font = [UIFont systemFontOfSize:12];
            label3.numberOfLines = 0;
            label3.textAlignment = NSTextAlignmentLeft;
-           label3.text = @"填表人: 张先生";
+           label3.text = @"  填表人: 张先生";
            [cell.contentView addSubview:label3];
 
            return cell;
@@ -316,68 +270,6 @@
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"提交成功！" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
     [alert show];
 }
-
--(void)pullDownBtnClick:(UIButton *)sender{
-      NSLog(@">>>>>>>>点一点>>>>>>>>");
-    NSArray * arr = [[NSArray alloc] init];
-    arr = [NSArray arrayWithObjects:@"北京市", @"上海市", @"广东省", @"深圳市", @"河南省",@"河北省",nil];
-    if(self.pullDown == nil) {
-        CGFloat f = 200;
-        self.pullDown = [[ComboBoxView alloc] showDropDown:sender :&f :arr :sender.tag :nil];
-    }
-    else {
-        [self.pullDown hideDropDown:sender];
-        [self real];
-    }
-}
-
--(void)real{
-    self.pullDown = nil;
-}
-
--(void)scoreBtnClick:(UIButton *)sender{
-    NSArray * arr = [[NSArray alloc] init];
-    
-    if (sender.tag == 1002) {
-         arr = [NSArray arrayWithObjects:@"1分", @"2分", @"3分", @"4分", @"5分",@"6分",nil];
-    }
-    if(self.pullDownView == nil) {
-        CGFloat f = 200;
-        self.pullDownView = [[PullDownView alloc] showDropDown:sender :&f :arr :sender.tag:nil];
-    }
-    else {
-        [self.pullDownView hideDropDown:sender];
-        [self release1];
-    }
-}
-
--(void)release1{
-    self.pullDownView = nil;
-}
-
--(void)rankBtnClick:(UIButton *)sender{
-    NSArray * arr = [[NSArray alloc] init];
-    if (sender.tag == 1003){
-        arr = [NSArray arrayWithObjects:@"A", @"B", @"C", @"D",nil];
-    }
-    if(self.pullDownView == nil) {
-    CGFloat f = 150;
-    self.pullDownView = [[PullDownView alloc] showDropDown:sender :&f :arr :sender.tag:nil];
-    }
-    else {
-        [self.pullDownView hideDropDown:sender];
-        [self rel];
-    }
-}
-
--(void)rel{
-    self.pullDownView = nil;
-}
-
-//-(void)keyboard:(UITapGestureRecognizer *)sender{
-////    NSLog(@">>>>>>>>>>>>>>>>>>>>>>点击了！！！！！！！！！！:%ld",sender.view.tag);
-////    NSLog(@">>>>>>>>>>>>>>>>>>>>>>点击了！！！！！！！！！！:%ld",sender.view.tag);
-//}
 
 //-(void)presentChooseTimeModalView:(UITapGestureRecognizer *)sender{
 //    [self.view addSubview:self.maskView];

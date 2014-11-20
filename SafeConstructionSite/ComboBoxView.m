@@ -97,7 +97,7 @@
         cell.textLabel.textAlignment = NSTextAlignmentCenter;
         
     }
-    cell.textLabel.text =[list objectAtIndex:indexPath.row];
+    cell.textLabel.text =[self.list objectAtIndex:indexPath.row];
     cell.textLabel.font = [UIFont systemFontOfSize:12];
     cell.textLabel.textColor = [UIColor blackColor];
     
@@ -110,8 +110,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self hideDropDown:btnSender];
-    UITableViewCell *c = [tableView cellForRowAtIndexPath:indexPath];
-    [btnSender setTitle:c.textLabel.text forState:UIControlStateNormal];
+    [btnSender setTitle:[self.list objectAtIndex:indexPath.row] forState:UIControlStateNormal];
     [self myDelegate];
 }
 

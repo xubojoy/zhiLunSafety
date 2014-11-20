@@ -48,7 +48,7 @@
     NSLog(@">>>>>>>>>点击了");
     NSArray * arr = [[NSArray alloc] init];
     if (sender.tag == 100) {
-         arr = [NSArray arrayWithObjects:@"1分", @"2分", @"3分", @"4分", @"5分",@"6分",nil];
+         arr = [NSArray arrayWithObjects:@"50分", @"60分", @"70分", @"80分", @"90分",@"100分",nil];
     }else if (sender.tag == 101){
         arr = [NSArray arrayWithObjects:@"1次", @"2次", @"3次", @"4次", @"5次",@"6次",nil];
     }else if (sender.tag == 102){
