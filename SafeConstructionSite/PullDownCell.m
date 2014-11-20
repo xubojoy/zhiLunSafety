@@ -15,9 +15,6 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         self = [[[NSBundle mainBundle]loadNibNamed:@"PullDownCell" owner:self options:nil] objectAtIndex:0];
-        //        self.label.backgroundColor = [UIColor redColor];
-        //        self.label.text = @"项目检查";
-        
         CALayer *layer = self.scoreBtn.layer;
         [layer setBorderWidth:1.0f];
         [layer setBorderColor:[UIColor grayColor].CGColor];
@@ -29,8 +26,6 @@
         layer = self.rankBtn.layer;
         [layer setBorderWidth:1.0f];
         [layer setBorderColor:[UIColor grayColor].CGColor];
-        
-        
     }
     return self;
 }
