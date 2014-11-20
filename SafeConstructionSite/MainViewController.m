@@ -10,6 +10,7 @@
 #import "SliderViewController.h"
 #import "Macro.h"
 #import "PullDownCell.h"
+#import "ScoreAndRankCell.h"
 
 
 @interface MainViewController ()
@@ -50,8 +51,8 @@
     
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     btn.frame = CGRectMake(10, 20, 44, 44);
-    btn.backgroundColor = [UIColor redColor];
-    [btn setTitle:@"开合" forState:UIControlStateNormal];
+    btn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 20);
+    [btn setImage:[UIImage imageNamed:@"nav_menu_icon"] forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(showLeft:) forControlEvents:UIControlEventTouchUpInside];
     [view addSubview:btn];
     
@@ -161,13 +162,17 @@
             return cell;
         }else if (indexPath.row == 1){
             static NSString *identifier  = @"cell";
-            PullDownCell *cell = [[PullDownCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+            PullDownCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+            if (!cell) {
+                cell = [[PullDownCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+            }
+            
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             return cell;
         }
         
     }else if (indexPath.section == 2){
-        UITableViewCell *cell = [[UITableViewCell alloc] init];
+        UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         if (indexPath.row == 0) {
             cell.textLabel.text = @"监 理 合 同 段 :";
@@ -183,85 +188,69 @@
         }
        else if (indexPath.row == 2) {
            static NSString *identifier  = @"cell";
-           PullDownCell *cell = [[PullDownCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+           PullDownCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+           if (!cell) {
+               cell = [[PullDownCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+           }
            cell.selectionStyle = UITableViewCellSelectionStyleNone;
            return cell;
        }else if (indexPath.row == 3){
-           UILabel *label1 = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 80, 30)];
-           label1.font = [UIFont systemFontOfSize:12];
-           label1.textAlignment = NSTextAlignmentRight;
-           label1.text = @"工程项目得分:";
-           [cell.contentView addSubview:label1];
-           
-           UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-           btn.frame = CGRectMake(100, 10, 210, 30);
-           [btn addTarget:self action:@selector(scoreBtnClick:) forControlEvents:UIControlEventTouchUpInside];
-           [btn setTitle:@"1分" forState:UIControlStateNormal];
-           [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-           btn.titleLabel.font = [UIFont systemFontOfSize:13];
-           btn.tag = 1000;
-           CALayer *layer = btn.layer;
-           [layer setBorderWidth:1.0f];
-           [layer setBorderColor:[UIColor grayColor].CGColor];
-        
-           [cell.contentView addSubview:btn];
-           
-           UILabel *label2 = [[UILabel alloc] initWithFrame:CGRectMake(10, 50, 80, 30)];
-           label2.font = [UIFont systemFontOfSize:12];
-           label2.textAlignment = NSTextAlignmentRight;
-           label2.text = @"达标等级:";
-           [cell.contentView addSubview:label2];
-           
-           UIButton *btn2 = [UIButton buttonWithType:UIButtonTypeCustom];
-           btn2.frame = CGRectMake(100, 50, 210, 30);
-           [btn2 addTarget:self action:@selector(rankBtnClick:) forControlEvents:UIControlEventTouchUpInside];
-           [btn2 setTitle:@"A" forState:UIControlStateNormal];
-           btn2.titleLabel.font = [UIFont systemFontOfSize:13];
-           btn2.tag = 1001;
-           [btn2 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-           layer = btn2.layer;
-           [layer setBorderWidth:1.0f];
-           [layer setBorderColor:[UIColor grayColor].CGColor];
-           [cell.contentView addSubview:btn2];
-           
+           static NSString *cellIden = @"cellIden";
+           ScoreAndRankCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIden];
+           if (!cell) {
+               cell = [[ScoreAndRankCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIden];
+           }
            return cell;
        }else if (indexPath.row == 4){
-           UILabel *label1 = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 80, 30)];
-           label1.font = [UIFont systemFontOfSize:12];
-           label1.textAlignment = NSTextAlignmentRight;
-           label1.text = @"工程项目综合得分:";
-           [cell.contentView addSubview:label1];
+//           static NSString *cellIdentifier = @"cellIdentifier";
+//           UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+//           if (!cell) {
+//               cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+//           }
+//           UILabel *label1 = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 80, 30)];
+//           label1.font = [UIFont systemFontOfSize:12];
+//           label1.textAlignment = NSTextAlignmentRight;
+//           label1.text = @"工程项目综合得分:";
+//           [cell.contentView addSubview:label1];
+//           
+//           UIButton *btn3 = [UIButton buttonWithType:UIButtonTypeCustom];
+//           btn3.frame = CGRectMake(100, 10, 210, 30);
+//           [btn3 addTarget:self action:@selector(scoreBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+//           [btn3 setTitle:@"1分" forState:UIControlStateNormal];
+//           btn3.titleLabel.font = [UIFont systemFontOfSize:13];
+//           btn3.tag = 1002;
+//           [btn3 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+//           CALayer *layer = btn3.layer;
+//           [layer setBorderWidth:1.0f];
+//           [layer setBorderColor:[UIColor grayColor].CGColor];
+//           [cell.contentView addSubview:btn3];
+//           
+//           UILabel *label2 = [[UILabel alloc] initWithFrame:CGRectMake(10, 50, 80, 30)];
+//           label2.font = [UIFont systemFontOfSize:12];
+//           label2.textAlignment = NSTextAlignmentRight;
+//           label2.text = @"达标等级:";
+//           [cell.contentView addSubview:label2];
+//           
+//           UIButton *btn4 = [UIButton buttonWithType:UIButtonTypeCustom];
+//           btn4.frame = CGRectMake(100, 50, 210, 30);
+//           [btn4 addTarget:self action:@selector(rankBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+//           [btn4 setTitle:@"A" forState:UIControlStateNormal];
+//           btn4.titleLabel.font = [UIFont systemFontOfSize:13];
+//           btn4.tag = 1003;
+//           [btn4 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+//           layer = btn4.layer;
+//           [layer setBorderWidth:1.0f];
+//           [layer setBorderColor:[UIColor grayColor].CGColor];
+//           [cell.contentView addSubview:btn4];
+           static NSString *cellIden = @"cellIden";
+           ScoreAndRankCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIden];
+           if (!cell) {
+               cell = [[ScoreAndRankCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIden];
+           }
+           cell.nameLab.text = @"工程项目综合得分:";
+           cell.selectionStyle = UITableViewCellSelectionStyleNone;
            
-           UIButton *btn3 = [UIButton buttonWithType:UIButtonTypeCustom];
-           btn3.frame = CGRectMake(100, 10, 210, 30);
-           [btn3 addTarget:self action:@selector(scoreBtnClick:) forControlEvents:UIControlEventTouchUpInside];
-           [btn3 setTitle:@"1分" forState:UIControlStateNormal];
-           btn3.titleLabel.font = [UIFont systemFontOfSize:13];
-           btn3.tag = 1002;
-           [btn3 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-           CALayer *layer = btn3.layer;
-           [layer setBorderWidth:1.0f];
-           [layer setBorderColor:[UIColor grayColor].CGColor];
-           [cell.contentView addSubview:btn3];
-           
-           UILabel *label2 = [[UILabel alloc] initWithFrame:CGRectMake(10, 50, 80, 30)];
-           label2.font = [UIFont systemFontOfSize:12];
-           label2.textAlignment = NSTextAlignmentRight;
-           label2.text = @"达标等级:";
-           [cell.contentView addSubview:label2];
-           
-           UIButton *btn4 = [UIButton buttonWithType:UIButtonTypeCustom];
-           btn4.frame = CGRectMake(100, 50, 210, 30);
-           [btn4 addTarget:self action:@selector(rankBtnClick:) forControlEvents:UIControlEventTouchUpInside];
-           [btn4 setTitle:@"A" forState:UIControlStateNormal];
-           btn4.titleLabel.font = [UIFont systemFontOfSize:13];
-           btn4.tag = 1003;
-           [btn4 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-           layer = btn4.layer;
-           [layer setBorderWidth:1.0f];
-           [layer setBorderColor:[UIColor grayColor].CGColor];
-           [cell.contentView addSubview:btn4];
-           return cell;
+            return cell;
            
        }else if (indexPath.row == 5){
            cell.textLabel.text = @"注：水运工程项目不必提携桥隧比例和建设里程";
@@ -293,7 +282,7 @@
            
            UIButton *btn2 = [UIButton buttonWithType:UIButtonTypeCustom];
            btn2.frame = CGRectMake(100, 20, 80, 80);
-           [btn2 setImage:[UIImage imageNamed:@"yinzhang"] forState:UIControlStateNormal];
+           [btn2 setImage:[UIImage imageNamed:@"yin_zhang.jpg"] forState:UIControlStateNormal];
            [cell.contentView addSubview:btn2];
            
            UILabel *label3 = [[UILabel alloc] initWithFrame:CGRectMake(10, 110, 300, 30)];
@@ -349,7 +338,7 @@
 -(void)scoreBtnClick:(UIButton *)sender{
     NSArray * arr = [[NSArray alloc] init];
     
-    if (sender.tag == 1000 || sender.tag == 1002) {
+    if (sender.tag == 1002) {
          arr = [NSArray arrayWithObjects:@"1分", @"2分", @"3分", @"4分", @"5分",@"6分",nil];
     }
     if(self.pullDownView == nil) {
@@ -368,7 +357,7 @@
 
 -(void)rankBtnClick:(UIButton *)sender{
     NSArray * arr = [[NSArray alloc] init];
-    if (sender.tag == 1001 || sender.tag == 1003){
+    if (sender.tag == 1003){
         arr = [NSArray arrayWithObjects:@"A", @"B", @"C", @"D",nil];
     }
     if(self.pullDownView == nil) {

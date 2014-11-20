@@ -86,8 +86,8 @@
 
 -(void)initUserInfo{
     self.userImageView = [[UIImageView alloc] initWithFrame:CGRectMake(40, 40, 60, 60)];
-    self.userImageView.backgroundColor = [UIColor purpleColor];
-    self.userImageView.image = [UIImage imageNamed:@"user_img"];
+    self.userImageView.backgroundColor = [UIColor clearColor];
+    self.userImageView.image = [UIImage imageNamed:@"tou_xiang.jpg"];
     CALayer *layer = self.userImageView.layer;
     [layer setMasksToBounds:YES];
     [layer setCornerRadius:self.userImageView.frame.size.width/2];

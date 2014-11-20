@@ -12,8 +12,11 @@
 		A8001C281A1CA2E3001C3EDC /* EvaluatDownVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = A8001C271A1CA2E3001C3EDC /* EvaluatDownVIew.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A80EE0211A1D805A00A19B7E /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A80EE01F1A1D805A00A19B7E /* LoginViewController.m */; };
 		A80EE0221A1D805A00A19B7E /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A80EE0201A1D805A00A19B7E /* LoginViewController.xib */; };
-		A80EE0241A1D8C3800A19B7E /* yinzhang@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A80EE0231A1D8C3800A19B7E /* yinzhang@2x.png */; };
-		A80EE0261A1D8DB600A19B7E /* user_img@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A80EE0251A1D8DB600A19B7E /* user_img@2x.png */; };
+		A80EE02C1A1DBC1200A19B7E /* tou_xiang.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A80EE02B1A1DBC1200A19B7E /* tou_xiang.jpg */; };
+		A80EE02E1A1DBD9D00A19B7E /* yin_zhang.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A80EE02D1A1DBD9D00A19B7E /* yin_zhang.jpg */; };
+		A80EE0301A1DBEBF00A19B7E /* nav_menu_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A80EE02F1A1DBEBF00A19B7E /* nav_menu_icon@2x.png */; };
+		A80EE0341A1DC44F00A19B7E /* ScoreAndRankCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A80EE0321A1DC44F00A19B7E /* ScoreAndRankCell.m */; };
+		A80EE0351A1DC44F00A19B7E /* ScoreAndRankCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A80EE0331A1DC44F00A19B7E /* ScoreAndRankCell.xib */; };
 		A83C154B1A15988B0031C5B0 /* SliderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A83C15491A15988B0031C5B0 /* SliderViewController.m */; };
 		A83C154F1A159AC20031C5B0 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A83C154D1A159AC20031C5B0 /* MainViewController.m */; };
 		A83C15501A159AC20031C5B0 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A83C154E1A159AC20031C5B0 /* MainViewController.xib */; };
@@ -65,8 +68,12 @@
 		A80EE01E1A1D805A00A19B7E /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		A80EE01F1A1D805A00A19B7E /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		A80EE0201A1D805A00A19B7E /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
-		A80EE0231A1D8C3800A19B7E /* yinzhang@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yinzhang@2x.png"; sourceTree = "<group>"; };
-		A80EE0251A1D8DB600A19B7E /* user_img@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user_img@2x.png"; sourceTree = "<group>"; };
+		A80EE02B1A1DBC1200A19B7E /* tou_xiang.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tou_xiang.jpg; sourceTree = "<group>"; };
+		A80EE02D1A1DBD9D00A19B7E /* yin_zhang.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yin_zhang.jpg; sourceTree = "<group>"; };
+		A80EE02F1A1DBEBF00A19B7E /* nav_menu_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_menu_icon@2x.png"; sourceTree = "<group>"; };
+		A80EE0311A1DC44F00A19B7E /* ScoreAndRankCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreAndRankCell.h; sourceTree = "<group>"; };
+		A80EE0321A1DC44F00A19B7E /* ScoreAndRankCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreAndRankCell.m; sourceTree = "<group>"; };
+		A80EE0331A1DC44F00A19B7E /* ScoreAndRankCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScoreAndRankCell.xib; sourceTree = "<group>"; };
 		A83C15481A15988B0031C5B0 /* SliderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SliderViewController.h; sourceTree = "<group>"; };
 		A83C15491A15988B0031C5B0 /* SliderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SliderViewController.m; sourceTree = "<group>"; };
 		A83C154C1A159AC20031C5B0 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
@@ -209,6 +216,9 @@
 				A85A1D641A105F03007AA77D /* SafetyCheckCell.h */,
 				A85A1D651A105F03007AA77D /* SafetyCheckCell.m */,
 				A85A1D661A105F03007AA77D /* SafetyCheckCell.xib */,
+				A80EE0311A1DC44F00A19B7E /* ScoreAndRankCell.h */,
+				A80EE0321A1DC44F00A19B7E /* ScoreAndRankCell.m */,
+				A80EE0331A1DC44F00A19B7E /* ScoreAndRankCell.xib */,
 				A865D4471A1B233B00C488A5 /* HeaderView.h */,
 				A865D4481A1B233B00C488A5 /* HeaderView.m */,
 				A88A8EBB1A10C12D00A0F417 /* NIDropDown.h */,
@@ -267,8 +277,9 @@
 		A85A1D761A108D22007AA77D /* resource */ = {
 			isa = PBXGroup;
 			children = (
-				A80EE0251A1D8DB600A19B7E /* user_img@2x.png */,
-				A80EE0231A1D8C3800A19B7E /* yinzhang@2x.png */,
+				A80EE02F1A1DBEBF00A19B7E /* nav_menu_icon@2x.png */,
+				A80EE02D1A1DBD9D00A19B7E /* yin_zhang.jpg */,
+				A80EE02B1A1DBC1200A19B7E /* tou_xiang.jpg */,
 				A8828CD01A15F5A10002B1CE /* push_btn_bg@2x.png */,
 			);
 			path = resource;
@@ -357,8 +368,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A80EE0241A1D8C3800A19B7E /* yinzhang@2x.png in Resources */,
+				A80EE0351A1DC44F00A19B7E /* ScoreAndRankCell.xib in Resources */,
+				A80EE0301A1DBEBF00A19B7E /* nav_menu_icon@2x.png in Resources */,
 				A85A1D321A104AED007AA77D /* Main.storyboard in Resources */,
+				A80EE02E1A1DBD9D00A19B7E /* yin_zhang.jpg in Resources */,
 				A83C15501A159AC20031C5B0 /* MainViewController.xib in Resources */,
 				A8828CD11A15F5A10002B1CE /* push_btn_bg@2x.png in Resources */,
 				A865D40A1A1A03E100C488A5 /* PullDownCell.xib in Resources */,
@@ -367,8 +380,8 @@
 				A85A1D681A105F03007AA77D /* SafetyCheckCell.xib in Resources */,
 				A85A1D341A104AED007AA77D /* Images.xcassets in Resources */,
 				A80EE0221A1D805A00A19B7E /* LoginViewController.xib in Resources */,
+				A80EE02C1A1DBC1200A19B7E /* tou_xiang.jpg in Resources */,
 				A88A8EC11A11BA3700A0F417 /* SafetyCheck.plist in Resources */,
-				A80EE0261A1D8DB600A19B7E /* user_img@2x.png in Resources */,
 				A865D4411A1B208900C488A5 /* BasicViewController.xib in Resources */,
 				A865D4461A1B20EE00C488A5 /* SafetyCheckViewController.xib in Resources */,
 			);
@@ -412,6 +425,7 @@
 				A865D4451A1B20EE00C488A5 /* SafetyCheckViewController.m in Sources */,
 				A85A1D2F1A104AED007AA77D /* LeftViewController.m in Sources */,
 				A80EE0211A1D805A00A19B7E /* LoginViewController.m in Sources */,
+				A80EE0341A1DC44F00A19B7E /* ScoreAndRankCell.m in Sources */,
 				A83C154B1A15988B0031C5B0 /* SliderViewController.m in Sources */,
 				A8001C251A1C9E98001C3EDC /* PullDownView.m in Sources */,
 				A8001C221A1C7F1A001C3EDC /* ComboBoxView.m in Sources */,
