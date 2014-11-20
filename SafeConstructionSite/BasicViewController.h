@@ -19,5 +19,6 @@
 @property (nonatomic, strong) NSMutableArray *titleArray;
 
 @property (nonatomic, copy) NSString *titleStr;
+@property (nonatomic, copy) NSString *departmentStr;;
 
 @end

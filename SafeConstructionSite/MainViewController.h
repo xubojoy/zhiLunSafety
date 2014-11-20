@@ -12,10 +12,8 @@
 #import "ComboBoxView.h"
 #import "PullDownView.h"
 #import "EvaluatDownVIew.h"
-@protocol MainViewControllerDelegate <NSObject>
-- (void) initTitleStr: (NSString *) title;
-@end
-@interface MainViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UIPickerViewDataSource,UIPickerViewDelegate,UIGestureRecognizerDelegate>
+
+@interface MainViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 {
     NIDropDown *dropDown;
 }
@@ -23,7 +21,6 @@
 @property (nonatomic, copy) NSString *projectTitle;
 @property (nonatomic, strong) UILabel *titleLab;
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, assign) id<MainViewControllerDelegate> delegate;
 @property (nonatomic, strong) NSMutableArray *titleArray;
 @property (nonatomic, strong) NSString *dateStr;
 @property (nonatomic, strong) UILabel *choseTime;

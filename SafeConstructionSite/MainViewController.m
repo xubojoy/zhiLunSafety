@@ -302,6 +302,7 @@
     [self cancelChooseTime:sender];
 }
 
+//TODO:自定义pickerView
 
 //-(void)initPickerView{
 //    self.scheduleTimePicker.datePickerMode = UIDatePickerModeDate;//设置时间选择器格式

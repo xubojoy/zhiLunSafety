@@ -166,9 +166,6 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-//    NSString *indexStr = [NSString stringWithFormat:@"%d",indexPath.section];
-//    NSString *indexStr = [self.nameArray objectAtIndex:indexPath.row];
-//    static NSString *identifier = @"Cell";
     SafetyCheckCell *cell = [[SafetyCheckCell alloc] init];
     cell.backgroundColor = [UIColor clearColor];
     if (indexPath.section == 0) {
@@ -190,6 +187,8 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (indexPath.row == 4) {
         BasicViewController *bvc = [[BasicViewController alloc] init];
+        
+        bvc.departmentStr = self.departmentLabel.text;
         bvc.titleStr = [self.projectArray objectAtIndex:indexPath.section];
         [self.navigationController pushViewController:bvc animated:YES];
     }

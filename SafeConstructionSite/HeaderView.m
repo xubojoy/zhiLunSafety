@@ -18,8 +18,6 @@
         self.backgroundColor = RGBACOLOR(43, 61, 126, 1);
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
         btn.frame = CGRectMake(10, 20, 44, 44);
-//        btn.backgroundColor = [UIColor redColor];
-//        [btn setTitle:@"开合" forState:UIControlStateNormal];
         btn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 20);
         [btn setImage:[UIImage imageNamed:@"nav_menu_icon"] forState:UIControlStateNormal];
         [btn addTarget:self action:@selector(showLeft:) forControlEvents:UIControlEventTouchUpInside];
@@ -35,7 +33,6 @@
 }
 
 -(void)showLeft:(UIButton *)sender{
-//    [[SliderViewController sharedSliderController] showLeftViewController];
     [[SliderViewController sharedSliderController].navigationController popViewControllerAnimated:YES];
 }
 

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "NIDropDown.h"
 #import "MainViewController.h"
-@interface LeftViewController : UIViewController<UITableViewDelegate, UITableViewDataSource,MainViewControllerDelegate>
+@interface LeftViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
 {
     NIDropDown *dropDown;
 }

@@ -74,6 +74,14 @@
         if (!cell) {
             cell = [[CityCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cityCell];
         }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        NSRange range = [self.departmentStr rangeOfString:@"建设单位"];
+        
+        if (range.location != NSNotFound) {
+            cell.commonBtn.enabled = NO;
+        }else{
+            cell.commonBtn.enabled = YES;
+        }
         cell.commonBtn.tag = 900;
         [cell.commonBtn setTitle:@"80分" forState:UIControlStateNormal];
         cell.nameLab.text = @"得  分：";
@@ -81,7 +89,7 @@
 
     }else{
         UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
-        
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.textLabel.text = [self.titleArray objectAtIndex:indexPath.row];
         cell.textLabel.numberOfLines = 0;
         cell.textLabel.font = [UIFont systemFontOfSize:12];

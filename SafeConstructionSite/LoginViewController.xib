@@ -37,7 +37,7 @@
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="98d-K6-hMI">
                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                    <color key="backgroundColor" red="0.12471192389999999" green="0.06176334268" blue="0.90709918479999996" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.096587148835278178" green="0.90709918479999996" blue="0.040353297266015303" alpha="1" colorSpace="calibratedRGB"/>
                     <state key="normal" title="登录">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>

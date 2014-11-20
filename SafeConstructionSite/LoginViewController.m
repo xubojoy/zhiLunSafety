@@ -11,6 +11,7 @@
 #import "LeftViewController.h"
 #import "MainViewController.h"
 #import "UIViewController+MLTransition.h"
+#import "Macro.h"
 @interface LoginViewController ()
 
 @end
@@ -19,6 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = RGBACOLOR(60, 144, 218, 1);
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -47,8 +49,6 @@
         [alert show];
 //        return;
     }
-   
-    
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
