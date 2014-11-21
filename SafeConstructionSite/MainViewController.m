@@ -130,8 +130,6 @@
     }else if (section == 2){
         label.text = @"监理单位";
     }
-    
-    
     [view addSubview:label];
     return view;
 }
