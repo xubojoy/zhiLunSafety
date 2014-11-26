@@ -8,8 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "ComboBoxView.h"
-@interface CityCell : UITableViewCell
+#import "TestPullView.h"
+#import "LMContainsLMComboxScrollView.h"
+#import "LMComBoxView.h"
+@interface CityCell : UITableViewCell<LMComBoxViewDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *nameLab;
 @property (weak, nonatomic) IBOutlet UIButton *commonBtn;
 @property (nonatomic, strong) ComboBoxView *pullDown;
+@property (nonatomic, strong) TestPullView *testPullView;
+@property (nonatomic, strong) LMContainsLMComboxScrollView *bgScrollView;
 @end

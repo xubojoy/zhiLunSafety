@@ -19,11 +19,14 @@
 		A80EE0351A1DC44F00A19B7E /* ScoreAndRankCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A80EE0331A1DC44F00A19B7E /* ScoreAndRankCell.xib */; };
 		A80EE0391A1DCBBD00A19B7E /* CityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A80EE0371A1DCBBD00A19B7E /* CityCell.m */; };
 		A80EE03A1A1DCBBD00A19B7E /* CityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A80EE0381A1DCBBD00A19B7E /* CityCell.xib */; };
+		A81A40801A1F372700DD3D37 /* TestPullView.m in Sources */ = {isa = PBXBuildFile; fileRef = A81A407F1A1F372700DD3D37 /* TestPullView.m */; };
 		A83C154B1A15988B0031C5B0 /* SliderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A83C15491A15988B0031C5B0 /* SliderViewController.m */; };
 		A83C154F1A159AC20031C5B0 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A83C154D1A159AC20031C5B0 /* MainViewController.m */; };
 		A83C15501A159AC20031C5B0 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A83C154E1A159AC20031C5B0 /* MainViewController.xib */; };
 		A83C15571A159BE20031C5B0 /* MLTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = A83C15541A159BE20031C5B0 /* MLTransitionAnimation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A83C15581A159BE20031C5B0 /* UIViewController+MLTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = A83C15561A159BE20031C5B0 /* UIViewController+MLTransition.m */; };
+		A83D5C511A22E0B300B923FE /* LMComBoxView.m in Sources */ = {isa = PBXBuildFile; fileRef = A83D5C4E1A22E0B300B923FE /* LMComBoxView.m */; };
+		A83D5C521A22E0B300B923FE /* LMContainsLMComboxScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = A83D5C501A22E0B300B923FE /* LMContainsLMComboxScrollView.m */; };
 		A85A1D291A104AED007AA77D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A85A1D281A104AED007AA77D /* main.m */; };
 		A85A1D2C1A104AED007AA77D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A85A1D2B1A104AED007AA77D /* AppDelegate.m */; };
 		A85A1D2F1A104AED007AA77D /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A85A1D2E1A104AED007AA77D /* LeftViewController.m */; };
@@ -79,6 +82,8 @@
 		A80EE0361A1DCBBD00A19B7E /* CityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityCell.h; sourceTree = "<group>"; };
 		A80EE0371A1DCBBD00A19B7E /* CityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityCell.m; sourceTree = "<group>"; };
 		A80EE0381A1DCBBD00A19B7E /* CityCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CityCell.xib; sourceTree = "<group>"; };
+		A81A407E1A1F372700DD3D37 /* TestPullView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestPullView.h; sourceTree = "<group>"; };
+		A81A407F1A1F372700DD3D37 /* TestPullView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestPullView.m; sourceTree = "<group>"; };
 		A83C15481A15988B0031C5B0 /* SliderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SliderViewController.h; sourceTree = "<group>"; };
 		A83C15491A15988B0031C5B0 /* SliderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SliderViewController.m; sourceTree = "<group>"; };
 		A83C154C1A159AC20031C5B0 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
@@ -88,6 +93,10 @@
 		A83C15541A159BE20031C5B0 /* MLTransitionAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLTransitionAnimation.m; sourceTree = "<group>"; };
 		A83C15551A159BE20031C5B0 /* UIViewController+MLTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MLTransition.h"; sourceTree = "<group>"; };
 		A83C15561A159BE20031C5B0 /* UIViewController+MLTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MLTransition.m"; sourceTree = "<group>"; };
+		A83D5C4D1A22E0B300B923FE /* LMComBoxView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMComBoxView.h; sourceTree = "<group>"; };
+		A83D5C4E1A22E0B300B923FE /* LMComBoxView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMComBoxView.m; sourceTree = "<group>"; };
+		A83D5C4F1A22E0B300B923FE /* LMContainsLMComboxScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMContainsLMComboxScrollView.h; sourceTree = "<group>"; };
+		A83D5C501A22E0B300B923FE /* LMContainsLMComboxScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMContainsLMComboxScrollView.m; sourceTree = "<group>"; };
 		A85A1D231A104AED007AA77D /* SafeConstructionSite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafeConstructionSite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A85A1D271A104AED007AA77D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A85A1D281A104AED007AA77D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -178,6 +187,17 @@
 			path = MLTransition;
 			sourceTree = "<group>";
 		};
+		A83D5C4C1A22E0B300B923FE /* LMComBox */ = {
+			isa = PBXGroup;
+			children = (
+				A83D5C4D1A22E0B300B923FE /* LMComBoxView.h */,
+				A83D5C4E1A22E0B300B923FE /* LMComBoxView.m */,
+				A83D5C4F1A22E0B300B923FE /* LMContainsLMComboxScrollView.h */,
+				A83D5C501A22E0B300B923FE /* LMContainsLMComboxScrollView.m */,
+			);
+			path = LMComBox;
+			sourceTree = "<group>";
+		};
 		A85A1D1A1A104AED007AA77D = {
 			isa = PBXGroup;
 			children = (
@@ -237,6 +257,9 @@
 				A8001C241A1C9E98001C3EDC /* PullDownView.m */,
 				A8001C261A1CA2E3001C3EDC /* EvaluatDownVIew.h */,
 				A8001C271A1CA2E3001C3EDC /* EvaluatDownVIew.m */,
+				A81A407E1A1F372700DD3D37 /* TestPullView.h */,
+				A81A407F1A1F372700DD3D37 /* TestPullView.m */,
+				A83D5C4C1A22E0B300B923FE /* LMComBox */,
 				A865D4061A1A03E100C488A5 /* PullDownCell.h */,
 				A865D4071A1A03E100C488A5 /* PullDownCell.m */,
 				A865D4081A1A03E100C488A5 /* PullDownCell.xib */,
@@ -431,6 +454,7 @@
 				A8001C281A1CA2E3001C3EDC /* EvaluatDownVIew.m in Sources */,
 				A83C154F1A159AC20031C5B0 /* MainViewController.m in Sources */,
 				A85A1D671A105F03007AA77D /* SafetyCheckCell.m in Sources */,
+				A83D5C511A22E0B300B923FE /* LMComBoxView.m in Sources */,
 				A865D4091A1A03E100C488A5 /* PullDownCell.m in Sources */,
 				A865D4451A1B20EE00C488A5 /* SafetyCheckViewController.m in Sources */,
 				A85A1D2F1A104AED007AA77D /* LeftViewController.m in Sources */,
@@ -443,6 +467,8 @@
 				A88A8EBD1A10C12D00A0F417 /* NIDropDown.m in Sources */,
 				A83C15581A159BE20031C5B0 /* UIViewController+MLTransition.m in Sources */,
 				A85A1D2C1A104AED007AA77D /* AppDelegate.m in Sources */,
+				A83D5C521A22E0B300B923FE /* LMContainsLMComboxScrollView.m in Sources */,
+				A81A40801A1F372700DD3D37 /* TestPullView.m in Sources */,
 				A865D4401A1B208900C488A5 /* BasicViewController.m in Sources */,
 				A85A1D291A104AED007AA77D /* main.m in Sources */,
 			);

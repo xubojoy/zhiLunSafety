@@ -60,6 +60,7 @@
 }
 
 -(void)hideDropDown:(UIButton *)b {
+    
     CGRect btn;
     if (IOS_7_8) {
         btn = btnSender.superview.superview.superview.frame;
